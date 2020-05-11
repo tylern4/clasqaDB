@@ -24,18 +24,18 @@ Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
 A file which can be read by code, stored in `qa.*/qaTree.json`
 * the format of this file is like a tree:
 ```
-qaTree.json -+- run number 1
-             +- run number 2 -+- file number 1
-             |                +- file number 2
-             |                +- file number 3 -+- evnumMin
-             |                |                 +- evnumMax
-             |                |                 +- sectorDefects
-             |                |                 +- defect
-             |                |                 +- comment
-             |                +- file number 4
-             |                +- file number 5
-             +- run number 3
-             +- run number 4
+qaTree.json ─┬─ run number 1
+             ├─ run number 2 ─┬─ file number 1
+             │                ├─ file number 2
+             │                ├─ file number 3 ─┬─ evnumMin
+             │                │                 ├─ evnumMax
+             │                │                 ├─ sectorDefects
+             │                │                 ├─ defect
+             │                │                 └─ comment
+             │                ├─ file number 4
+             │                └─ file number 5
+             ├─ run number 3
+             └─ run number 4
 ```
 * for each file, the following variables are defined:
   * `evnumMin` and `evnumMax` represent the range of event numbers associated
