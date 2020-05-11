@@ -7,7 +7,7 @@ in `.table` files, which are best read by humans
 Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
 * each run begins with the keyword `RUN:`; lines below are for each of that 
   run's file and its QA result, with the following syntax:
-  * `run number`, `file number`, `defect bits`, `comment`
+  * `run number` `file number`  `defect bits` `comment`
   * the `defect bits` are listed by name, and the numbers in the `[brackets]`
     indicate which sectors have that defect; the defect bits are:
     * `GOLDEN`: if no defect bits are assigned in any sector, the file is called "golden"
@@ -24,18 +24,18 @@ Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
 A file which can be read by code, stored in `qa.*/qaTree.json`
 * the format of this file is like a tree:
 ```
-qaTree.json ─┬─ run number 1
-             ├─ run number 2 ─┬─ file number 1
-             │                ├─ file number 2
-             │                ├─ file number 3 ─┬─ evnumMin
-             │                │                 ├─ evnumMax
-             │                │                 ├─ sectorDefects
-             │                │                 ├─ defect
-             │                │                 └─ comment
-             │                ├─ file number 4
-             │                └─ file number 5
-             ├─ run number 3
-             └─ run number 4
+qaTree.json -+- run number 1
+             +- run number 2 -+- file number 1
+             |                +- file number 2
+             |                +- file number 3 -+- evnumMin
+             |                |                 +- evnumMax
+             |                |                 +- sectorDefects
+             |                |                 +- defect
+             |                |                 +- comment
+             |                +- file number 4
+             |                +- file number 5
+             +- run number 3
+             +- run number 4
 ```
 * for each file, the following variables are defined:
   * `evnumMin` and `evnumMax` represent the range of event numbers associated
