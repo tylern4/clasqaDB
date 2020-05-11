@@ -63,7 +63,7 @@ RUN: 5300
 5300 300  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5300 305  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5300 310  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
-5300 315  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET; ungated FC charge spike
+5300 315  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5300 320  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5300 325  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5300 330  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
@@ -2579,7 +2579,7 @@ RUN: 5340
 5340 330  SectorLoss[2, 3]
 5340 335  SectorLoss[2, 3]
 5340 340  SectorLoss[2, 3]
-5340 345  SectorLoss[2, 3]  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5340 345  SectorLoss[2, 3]
 5340 350  SectorLoss[2, 3]
 5340 355  SectorLoss[2, 3]
 5340 360  SectorLoss[2, 3]
@@ -2650,7 +2650,7 @@ RUN: 5340
 5340 685  SectorLoss[2, 3]
 5340 690  SectorLoss[2, 3]
 5340 695  SectorLoss[2, 3]
-5340 700  SectorLoss[2, 3]  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5340 700  SectorLoss[2, 3]
 5340 705  SectorLoss[2, 3]
 5340 710  SectorLoss[2, 3]
 5340 715  SectorLoss[2, 3]
@@ -2737,7 +2737,7 @@ RUN: 5341
 5341 310  GOLDEN
 5341 315  GOLDEN
 5341 320  GOLDEN
-5341 325  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5341 325  GOLDEN
 5341 330  GOLDEN
 5341 335  GOLDEN
 5341 340  TerminalOutlier[1, 2, 3, 4, 5, 6]
@@ -2903,7 +2903,7 @@ RUN: 5344
 5344 200  GOLDEN
 5344 205  GOLDEN
 5344 210  GOLDEN
-5344 215  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5344 215  GOLDEN
 5344 220  GOLDEN
 5344 225  GOLDEN
 5344 230  GOLDEN
@@ -3009,7 +3009,7 @@ RUN: 5345
 5345 360  GOLDEN
 5345 365  GOLDEN
 5345 370  GOLDEN
-5345 375  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5345 375  GOLDEN
 5345 380  GOLDEN
 5345 385  GOLDEN
 5345 390  GOLDEN
@@ -3076,7 +3076,7 @@ RUN: 5345
 5345 695  GOLDEN
 5345 700  GOLDEN
 5345 705  GOLDEN
-5345 710  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5345 710  GOLDEN
 5345 715  GOLDEN
 5345 720  GOLDEN
 5345 725  GOLDEN
@@ -3152,7 +3152,7 @@ RUN: 5345
 5345 1075  GOLDEN
 5345 1080  GOLDEN
 5345 1085  GOLDEN
-5345 1090  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5345 1090  GOLDEN
 5345 1095  GOLDEN
 5345 1100  GOLDEN
 5345 1105  GOLDEN
@@ -3242,7 +3242,7 @@ RUN: 5346
 5346 375  GOLDEN
 5346 380  GOLDEN
 5346 385  GOLDEN
-5346 390  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5346 390  GOLDEN
 5346 395  GOLDEN
 5346 400  GOLDEN
 5346 405  GOLDEN
@@ -3322,7 +3322,7 @@ RUN: 5346
 5346 775  GOLDEN
 5346 780  GOLDEN
 5346 785  GOLDEN
-5346 790  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5346 790  GOLDEN
 5346 795  GOLDEN
 5346 800  GOLDEN
 5346 805  GOLDEN
@@ -3481,7 +3481,7 @@ RUN: 5347
 5347 395  GOLDEN
 5347 400  GOLDEN
 5347 405  GOLDEN
-5347 410  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5347 410  GOLDEN
 5347 415  GOLDEN
 5347 420  GOLDEN
 5347 425  GOLDEN
@@ -3589,7 +3589,7 @@ RUN: 5349
 5349 370  GOLDEN
 5349 375  GOLDEN
 5349 380  GOLDEN
-5349 385  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5349 385  GOLDEN
 5349 390  GOLDEN
 5349 395  GOLDEN
 5349 400  GOLDEN
@@ -3775,7 +3775,7 @@ RUN: 5354
 5354 375  GOLDEN
 5354 380  GOLDEN
 5354 385  GOLDEN
-5354 390  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5354 390  GOLDEN
 5354 395  GOLDEN
 5354 400  GOLDEN
 5354 405  GOLDEN
@@ -3856,7 +3856,7 @@ RUN: 5354
 5354 780  GOLDEN
 5354 785  GOLDEN
 5354 790  GOLDEN
-5354 795  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5354 795  GOLDEN
 5354 800  GOLDEN
 5354 805  GOLDEN
 5354 810  GOLDEN
@@ -4011,7 +4011,7 @@ RUN: 5355
 5355 385  GOLDEN
 5355 390  GOLDEN
 5355 395  GOLDEN
-5355 400  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5355 400  GOLDEN
 5355 405  GOLDEN
 5355 410  GOLDEN
 5355 415  GOLDEN
@@ -4125,7 +4125,7 @@ RUN: 5356
 5356 420  GOLDEN
 5356 425  GOLDEN
 5356 430  GOLDEN
-5356 435  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5356 435  GOLDEN
 5356 440  GOLDEN
 5356 445  GOLDEN
 5356 450  GOLDEN
@@ -4221,7 +4221,7 @@ RUN: 5356
 5356 900  GOLDEN
 5356 905  GOLDEN
 5356 910  GOLDEN
-5356 915  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5356 915  GOLDEN
 5356 920  GOLDEN
 5356 925  GOLDEN
 5356 930  GOLDEN
@@ -4373,7 +4373,7 @@ RUN: 5357
 5357 430  GOLDEN
 5357 435  GOLDEN
 5357 440  GOLDEN
-5357 445  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5357 445  GOLDEN
 5357 450  GOLDEN
 5357 455  GOLDEN
 5357 460  GOLDEN
@@ -4463,7 +4463,7 @@ RUN: 5357
 5357 880  GOLDEN
 5357 885  GOLDEN
 5357 890  GOLDEN
-5357 895  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5357 895  GOLDEN
 5357 900  GOLDEN
 5357 905  GOLDEN
 5357 910  GOLDEN
@@ -4625,7 +4625,7 @@ RUN: 5358
 5358 460  GOLDEN
 5358 465  GOLDEN
 5358 470  GOLDEN
-5358 475  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5358 475  GOLDEN
 5358 480  GOLDEN
 5358 485  GOLDEN
 5358 490  GOLDEN
@@ -4717,7 +4717,7 @@ RUN: 5358
 5358 920  GOLDEN
 5358 925  GOLDEN
 5358 930  GOLDEN
-5358 935  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5358 935  GOLDEN
 5358 940  GOLDEN
 5358 945  GOLDEN
 5358 950  GOLDEN
@@ -4875,7 +4875,7 @@ RUN: 5359
 5359 450  GOLDEN
 5359 455  GOLDEN
 5359 460  GOLDEN
-5359 465  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5359 465  GOLDEN
 5359 470  GOLDEN
 5359 475  GOLDEN
 5359 480  GOLDEN
@@ -4968,7 +4968,7 @@ RUN: 5359
 5359 915  GOLDEN
 5359 920  GOLDEN
 5359 925  GOLDEN
-5359 930  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5359 930  GOLDEN
 5359 935  GOLDEN
 5359 940  GOLDEN
 5359 945  GOLDEN
@@ -5129,7 +5129,7 @@ RUN: 5360
 5360 440  GOLDEN
 5360 445  GOLDEN
 5360 450  GOLDEN
-5360 455  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
+5360 455  GOLDEN
 5360 460  GOLDEN
 5360 465  GOLDEN
 5360 470  GOLDEN
@@ -6364,13 +6364,13 @@ RUN: 5369
 5369 310  GOLDEN
 5369 315  GOLDEN
 5369 320  GOLDEN
-5369 325  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 330  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 335  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 340  GOLDEN  :: DAQ livetime issue noted in logbook
-5369 345  TotalOutlier[1, 2, 4, 5, 6]  MarginalOutlier[3]  :: DAQ livetime issue noted in logbook
-5369 350  TotalOutlier[1]  MarginalOutlier[2, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 355  TerminalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 325  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 330  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 335  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 340  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 345  TotalOutlier[1, 2, 4, 5, 6]  MarginalOutlier[3]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 350  TotalOutlier[1]  MarginalOutlier[2, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 355  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
 
 RUN: 5370
 5370 0  SectorLoss[5]  :: issue with TDC in FTOF ECAL sector 5

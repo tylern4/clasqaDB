@@ -2989,12 +2989,12 @@ RUN: 5130
 5130 1190  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
 
 RUN: 5137
-5137 0  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is a couple of standard deviations too low
-5137 5  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is a couple of standard deviations too low
-5137 10  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is a couple of standard deviations too low
-5137 15  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is a couple of standard deviations too low
-5137 20  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is a couple of standard deviations too low
-5137 25  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is a couple of standard deviations too low
+5137 0  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is about 1 standard deviation too low
+5137 5  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is about 1 standard deviation too low
+5137 10  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is about 1 standard deviation too low
+5137 15  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is about 1 standard deviation too low
+5137 20  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is about 1 standard deviation too low
+5137 25  Misc[1, 2, 3, 4, 5, 6]  :: pi+ beam spin asymmetry is about 1 standard deviation too low
 
 RUN: 5138
 5138 0  TerminalOutlier[1, 2, 4, 5, 6]  :: short DC windows with offset and CDN offset changed
@@ -3160,29 +3160,29 @@ RUN: 5153
 5153 205  GOLDEN
 
 RUN: 5158
-5158 0  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 5  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 10  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 15  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 20  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 25  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 30  Misc[1, 2, 3, 4, 5, 6]  :: several files have low livetime
-5158 35  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 40  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 45  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 50  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 55  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 60  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 65  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 70  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 75  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 80  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 85  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 90  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 95  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 100  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 105  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
-5158 110  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low; several files have low livetime
+5158 0  GOLDEN
+5158 5  GOLDEN
+5158 10  GOLDEN
+5158 15  GOLDEN
+5158 20  GOLDEN
+5158 25  GOLDEN
+5158 30  GOLDEN
+5158 35  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 40  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 45  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 50  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 55  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 60  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 65  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 70  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 75  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 80  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 85  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 90  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 95  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 100  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 105  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
+5158 110  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
 
 RUN: 5159
 5159 0  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
@@ -5525,9 +5525,9 @@ RUN: 5183
 5183 925  Misc[1, 2, 3, 4, 5, 6]  :: fraction of events with defined helicity is low
 
 RUN: 5189
-5189 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ test, omit this run
-5189 5  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ test, omit this run
-5189 10  MarginalOutlier[2]  :: DAQ test, omit this run
+5189 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ test, omit this run
+5189 5  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ test, omit this run
+5189 10  MarginalOutlier[2]  Misc[1, 2, 3, 4, 5, 6]  :: DAQ test, omit this run
 
 RUN: 5190
 5190 0  Misc[2]  :: sector 2 was a bit low for this run, causing some marginal outliers
@@ -5941,10 +5941,10 @@ RUN: 5193
 5193 410  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
 
 RUN: 5194
-5194 0  TerminalOutlier[2, 4, 5, 6]  MarginalOutlier[1, 3]  Misc[1, 2, 3, 4, 5, 6]  :: low livetime
-5194 5  Misc[1, 2, 3, 4, 5, 6]  :: low livetime
-5194 10  Misc[1, 2, 3, 4, 5, 6]  :: low livetime
-5194 15  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low livetime
+5194 0  TerminalOutlier[2, 4, 5, 6]  MarginalOutlier[1, 3]  Misc[1, 2, 3, 4, 5, 6]  :: N/F abnormally high
+5194 5  Misc[1, 2, 3, 4, 5, 6]  :: N/F abnormally high
+5194 10  Misc[1, 2, 3, 4, 5, 6]  :: N/F abnormally high
+5194 15  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: N/F abnormally high
 
 RUN: 5195
 5195 0  TerminalOutlier[1, 2, 3, 4, 5, 6]
@@ -9862,44 +9862,44 @@ RUN: 5225
 5225 460  MarginalOutlier[2]  Misc[1, 2, 3, 4, 5, 6]  :: very high trip rate, N/F is a bit higher than normal
 
 RUN: 5229
-5229 0  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 5  TotalOutlier[1, 6]  MarginalOutlier[2, 4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 10  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 15  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 20  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 25  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 30  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 35  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 40  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 45  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 50  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 55  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 60  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 65  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 70  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 75  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 80  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 85  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 90  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 95  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 100  MarginalOutlier[6]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 105  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 110  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 115  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 120  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 125  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 130  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 135  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 140  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 145  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 150  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 155  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 160  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 165  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 170  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 175  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 180  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5229 185  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
+5229 0  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 5  TotalOutlier[1, 6]  MarginalOutlier[2, 4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 10  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 15  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 20  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 25  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 30  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 35  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 40  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 45  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 50  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 55  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 60  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 65  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 70  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 75  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 80  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 85  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 90  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 95  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 100  MarginalOutlier[6]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 105  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 110  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 115  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 120  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 125  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 130  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 135  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 140  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 145  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 150  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 155  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 160  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 165  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 170  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 175  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 180  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5229 185  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
 
 RUN: 5230
 5230 0  GOLDEN
@@ -11458,137 +11458,137 @@ RUN: 5238
 5238 920  GOLDEN
 
 RUN: 5239
-5239 0  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 5  MarginalOutlier[2]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 10  MarginalOutlier[1]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 15  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 20  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 25  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 30  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 35  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 40  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 45  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 50  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 55  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 60  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 65  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 70  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 75  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 80  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 85  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 90  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 95  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 100  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 105  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 110  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 115  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 120  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 125  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 130  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 135  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 140  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 145  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 150  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 155  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 160  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 165  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 170  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 175  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 180  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 185  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 190  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 195  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 200  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 205  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 210  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 215  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 220  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 225  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 230  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 235  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 240  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 245  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 250  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 255  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 260  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 265  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 270  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 275  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 280  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 285  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 290  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 295  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 300  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 305  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 310  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 315  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 320  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 325  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 330  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 335  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 340  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 345  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 350  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 355  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 360  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 365  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 370  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 375  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 380  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 385  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 390  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 395  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 400  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 405  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 410  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 415  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 420  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 425  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 430  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 435  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 440  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 445  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 450  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 455  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 460  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 465  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 470  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 475  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 480  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 485  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 490  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 495  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 500  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 505  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 510  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 515  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 520  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 525  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 530  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 535  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 540  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 545  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 550  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 555  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 560  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 565  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 570  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 575  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 580  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 585  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 590  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 595  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 600  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 605  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 610  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 615  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 620  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 625  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 630  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 635  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 640  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 645  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
-5239 650  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal; several files have low livetime
+5239 0  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 5  MarginalOutlier[2]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 10  MarginalOutlier[1]  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 15  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 20  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 25  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 30  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 35  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 40  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 45  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 50  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 55  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 60  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 65  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 70  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 75  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 80  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 85  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 90  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 95  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 100  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 105  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 110  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 115  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 120  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 125  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 130  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 135  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 140  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 145  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 150  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 155  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 160  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 165  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 170  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 175  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 180  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 185  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 190  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 195  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 200  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 205  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 210  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 215  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 220  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 225  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 230  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 235  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 240  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 245  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 250  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 255  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 260  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 265  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 270  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 275  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 280  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 285  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 290  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 295  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 300  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 305  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 310  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 315  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 320  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 325  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 330  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 335  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 340  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 345  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 350  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 355  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 360  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 365  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 370  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 375  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 380  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 385  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 390  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 395  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 400  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 405  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 410  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 415  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 420  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 425  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 430  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 435  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 440  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 445  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 450  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 455  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 460  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 465  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 470  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 475  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 480  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 485  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 490  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 495  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 500  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 505  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 510  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 515  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 520  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 525  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 530  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 535  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 540  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 545  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 550  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 555  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 560  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 565  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 570  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 575  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 580  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 585  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 590  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 595  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 600  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 605  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 610  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 615  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 620  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 625  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 630  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 635  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 640  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 645  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
+5239 650  Misc[1, 2, 3, 4, 5, 6]  :: N/F a bit higher than normal
 
 RUN: 5247
 5247 0  GOLDEN
