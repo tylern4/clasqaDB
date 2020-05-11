@@ -129,7 +129,7 @@ RUN: 5301
 5301 210  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 
 RUN: 5302
-5302 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
+5302 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5302 5  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5302 10  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
 5302 15  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: EMPTY TARGET
@@ -838,7 +838,7 @@ RUN: 5306
 5306 405  GOLDEN
 5306 410  GOLDEN
 5306 415  GOLDEN
-5306 420  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5306 420  TotalOutlier[1, 2, 3, 4, 5, 6]
 5306 425  GOLDEN
 5306 430  GOLDEN
 5306 435  GOLDEN
@@ -875,7 +875,7 @@ RUN: 5306
 5306 590  GOLDEN
 5306 595  GOLDEN
 5306 600  GOLDEN
-5306 605  MarginalOutlier[4, 5]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5306 605  MarginalOutlier[4, 5]
 5306 610  GOLDEN
 5306 615  GOLDEN
 5306 620  GOLDEN
@@ -986,7 +986,7 @@ RUN: 5306
 5306 1145  GOLDEN
 5306 1150  GOLDEN
 5306 1155  GOLDEN
-5306 1160  MarginalOutlier[1, 2, 5]
+5306 1160  GOLDEN
 5306 1165  GOLDEN
 5306 1170  GOLDEN
 5306 1175  GOLDEN
@@ -1314,7 +1314,7 @@ RUN: 5315
 5315 280  GOLDEN
 
 RUN: 5316
-5316 0  SectorLoss[2]  :: sector 2 has N/F lower than normal
+5316 0  MarginalOutlier[4, 6]  SectorLoss[2]  :: sector 2 has N/F lower than normal
 5316 5  SectorLoss[2]  :: sector 2 has N/F lower than normal
 5316 10  SectorLoss[2]  :: sector 2 has N/F lower than normal
 5316 15  SectorLoss[2]  :: sector 2 has N/F lower than normal
@@ -1379,7 +1379,7 @@ RUN: 5316
 5316 310  SectorLoss[2]  :: sector 2 has N/F lower than normal
 
 RUN: 5317
-5317 0  MarginalOutlier[1]
+5317 0  MarginalOutlier[1, 3]
 5317 5  GOLDEN
 5317 10  GOLDEN
 5317 15  GOLDEN
@@ -1777,7 +1777,7 @@ RUN: 5318
 5318 780  GOLDEN
 5318 785  GOLDEN
 5318 790  GOLDEN
-5318 795  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5318 795  TotalOutlier[1, 2, 3, 4, 5, 6]
 5318 800  GOLDEN
 5318 805  GOLDEN
 5318 810  GOLDEN
@@ -2005,7 +2005,7 @@ RUN: 5319
 5319 725  GOLDEN
 5319 730  GOLDEN
 5319 735  GOLDEN
-5319 740  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5319 740  TotalOutlier[1, 2, 3, 4, 5, 6]
 5319 745  GOLDEN
 5319 750  GOLDEN
 5319 755  GOLDEN
@@ -2215,7 +2215,7 @@ RUN: 5320
 5320 565  GOLDEN
 5320 570  GOLDEN
 5320 575  GOLDEN
-5320 580  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5320 580  TerminalOutlier[1, 2, 3, 4, 5, 6]
 
 RUN: 5323
 5323 0  GOLDEN
@@ -2234,7 +2234,7 @@ RUN: 5323
 5323 65  GOLDEN
 5323 70  GOLDEN
 5323 75  GOLDEN
-5323 80  TotalOutlier[1, 2, 3, 4, 5]  SectorLoss[6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5323 80  TotalOutlier[1, 2, 3, 4, 5]  SectorLoss[6]
 5323 85  SectorLoss[6]
 5323 90  SectorLoss[6]
 5323 95  SectorLoss[6]
@@ -2285,7 +2285,7 @@ RUN: 5324
 5324 95  GOLDEN
 
 RUN: 5325
-5325 0  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
+5325 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
 5325 5  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
 5325 10  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
 5325 15  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
@@ -2338,7 +2338,7 @@ RUN: 5325
 5325 250  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
 5325 255  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
 5325 260  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
-5325 265  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
+5325 265  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: torus at 60%, high trigger rate, beam current changed to 30 nA during the run
 
 RUN: 5333
 5333 0  GOLDEN
@@ -2444,8 +2444,8 @@ RUN: 5335
 5335 20  GOLDEN
 5335 25  GOLDEN
 5335 30  GOLDEN
-5335 35  GOLDEN
-5335 40  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: dc13 issue at end of run
+5335 35  TotalOutlier[1]
+5335 40  TerminalOutlier[1, 2, 3, 4, 5, 6]  :: dc13 issue at end of run
 
 RUN: 5336
 5336 0  GOLDEN
@@ -2454,7 +2454,7 @@ RUN: 5336
 5336 15  GOLDEN
 5336 20  TotalOutlier[1]  :: dc13 issue at end of run
 5336 25  TotalOutlier[1]  :: dc13 issue at end of run
-5336 30  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: dc13 issue at end of run
+5336 30  TerminalOutlier[1, 2, 3, 4, 5, 6]  :: dc13 issue at end of run
 
 RUN: 5339
 5339 0  GOLDEN
@@ -2520,7 +2520,7 @@ RUN: 5340
 5340 35  GOLDEN
 5340 40  GOLDEN
 5340 45  GOLDEN
-5340 50  TotalOutlier[1, 6]  MarginalOutlier[2, 3, 4]
+5340 50  TotalOutlier[1, 2, 3, 4, 6]  MarginalOutlier[5]
 5340 55  GOLDEN
 5340 60  GOLDEN
 5340 65  GOLDEN
@@ -2531,7 +2531,7 @@ RUN: 5340
 5340 90  GOLDEN
 5340 95  GOLDEN
 5340 100  GOLDEN
-5340 105  TotalOutlier[6]  MarginalOutlier[1, 4, 5]  SectorLoss[2, 3]
+5340 105  TotalOutlier[1, 4, 5, 6]  SectorLoss[2, 3]
 5340 110  SectorLoss[2, 3]
 5340 115  SectorLoss[2, 3]
 5340 120  SectorLoss[2, 3]
@@ -2740,10 +2740,10 @@ RUN: 5341
 5341 325  Misc[1, 2, 3, 4, 5, 6]  :: ungated FC charge spike
 5341 330  GOLDEN
 5341 335  GOLDEN
-5341 340  TerminalOutlier[1, 2, 5, 6]  MarginalOutlier[3, 4]
+5341 340  TerminalOutlier[1, 2, 3, 4, 5, 6]
 
 RUN: 5342
-5342 0  GOLDEN
+5342 0  MarginalOutlier[6]
 5342 5  GOLDEN
 5342 10  GOLDEN
 5342 15  GOLDEN
@@ -3366,7 +3366,7 @@ RUN: 5346
 5346 995  GOLDEN
 5346 1000  GOLDEN
 5346 1005  GOLDEN
-5346 1010  MarginalOutlier[1]
+5346 1010  MarginalOutlier[1, 2, 4]
 5346 1015  GOLDEN
 5346 1020  GOLDEN
 5346 1025  GOLDEN
@@ -4284,7 +4284,7 @@ RUN: 5356
 5356 1215  GOLDEN
 
 RUN: 5357
-5357 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5357 0  GOLDEN
 5357 5  GOLDEN
 5357 10  GOLDEN
 5357 15  GOLDEN
@@ -4782,7 +4782,7 @@ RUN: 5358
 5358 1245  GOLDEN
 
 RUN: 5359
-5359 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5359 0  MarginalOutlier[2]
 5359 5  GOLDEN
 5359 10  GOLDEN
 5359 15  GOLDEN
@@ -5038,7 +5038,7 @@ RUN: 5359
 5359 1265  SectorLoss[5]
 
 RUN: 5360
-5360 0  MarginalOutlier[2, 5]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5360 0  MarginalOutlier[2, 5]
 5360 5  GOLDEN
 5360 10  GOLDEN
 5360 15  GOLDEN
@@ -5256,7 +5256,7 @@ RUN: 5360
 5360 1075  GOLDEN
 5360 1080  GOLDEN
 5360 1085  GOLDEN
-5360 1090  MarginalOutlier[2]
+5360 1090  GOLDEN
 5360 1095  GOLDEN
 5360 1100  GOLDEN
 5360 1105  GOLDEN
@@ -5286,7 +5286,7 @@ RUN: 5360
 5360 1225  GOLDEN
 
 RUN: 5361
-5361 0  MarginalOutlier[5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5361 0  MarginalOutlier[5, 6]
 5361 5  GOLDEN
 5361 10  GOLDEN
 5361 15  GOLDEN
@@ -5548,7 +5548,7 @@ RUN: 5362
 5362 75  GOLDEN
 5362 80  GOLDEN
 5362 85  GOLDEN
-5362 90  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5362 90  TerminalOutlier[5]  MarginalOutlier[1, 3, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
 
 RUN: 5366
 5366 0  GOLDEN
@@ -5606,7 +5606,7 @@ RUN: 5366
 5366 260  GOLDEN
 5366 265  GOLDEN
 5366 270  GOLDEN
-5366 275  MarginalOutlier[2]
+5366 275  GOLDEN
 5366 280  GOLDEN
 5366 285  GOLDEN
 5366 290  GOLDEN
@@ -5808,7 +5808,7 @@ RUN: 5366
 5366 1270  GOLDEN
 
 RUN: 5367
-5367 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5367 0  GOLDEN
 5367 5  GOLDEN
 5367 10  GOLDEN
 5367 15  GOLDEN
@@ -6069,7 +6069,7 @@ RUN: 5367
 5367 1290  GOLDEN
 
 RUN: 5368
-5368 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5368 0  GOLDEN
 5368 5  GOLDEN
 5368 10  GOLDEN
 5368 15  GOLDEN
@@ -6299,7 +6299,7 @@ RUN: 5368
 5368 1135  GOLDEN
 
 RUN: 5369
-5369 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5369 0  GOLDEN
 5369 5  GOLDEN
 5369 10  GOLDEN
 5369 15  GOLDEN
@@ -6364,16 +6364,16 @@ RUN: 5369
 5369 310  GOLDEN
 5369 315  GOLDEN
 5369 320  GOLDEN
-5369 325  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 330  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 335  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 340  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 345  TotalOutlier[1, 2, 4, 5, 6]  MarginalOutlier[3]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 350  TotalOutlier[1]  MarginalOutlier[2, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
-5369 355  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 325  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 330  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 335  TotalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 340  GOLDEN  :: DAQ livetime issue noted in logbook
+5369 345  TotalOutlier[1, 2, 4, 5, 6]  MarginalOutlier[3]  :: DAQ livetime issue noted in logbook
+5369 350  TotalOutlier[1]  MarginalOutlier[2, 4, 5, 6]  :: DAQ livetime issue noted in logbook
+5369 355  TerminalOutlier[1, 2, 3, 4, 5, 6]  :: DAQ livetime issue noted in logbook
 
 RUN: 5370
-5370 0  SectorLoss[5]  LowLiveTime[1, 2, 3, 4, 5, 6]  :: issue with TDC in FTOF ECAL sector 5
+5370 0  SectorLoss[5]  :: issue with TDC in FTOF ECAL sector 5
 5370 5  SectorLoss[5]  :: issue with TDC in FTOF ECAL sector 5
 5370 10  SectorLoss[5]  :: issue with TDC in FTOF ECAL sector 5
 5370 15  SectorLoss[5]  :: issue with TDC in FTOF ECAL sector 5
@@ -6408,14 +6408,14 @@ RUN: 5370
 5370 160  SectorLoss[5]  :: issue with TDC in FTOF ECAL sector 5
 
 RUN: 5371
-5371 0  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: short run, missing half of FTcal
+5371 0  Misc[1, 2, 3, 4, 5, 6]  :: short run, missing half of FTcal
 5371 5  Misc[1, 2, 3, 4, 5, 6]  :: short run, missing half of FTcal
 5371 10  Misc[1, 2, 3, 4, 5, 6]  :: short run, missing half of FTcal
 5371 15  Misc[1, 2, 3, 4, 5, 6]  :: short run, missing half of FTcal
 5371 20  Misc[1, 2, 3, 4, 5, 6]  :: short run, missing half of FTcal
 
 RUN: 5372
-5372 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5372 0  GOLDEN
 5372 5  GOLDEN
 5372 10  GOLDEN
 5372 15  GOLDEN
@@ -6677,7 +6677,7 @@ RUN: 5372
 5372 1295  GOLDEN
 
 RUN: 5373
-5373 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5373 0  GOLDEN
 5373 5  GOLDEN
 5373 10  GOLDEN
 5373 15  GOLDEN
@@ -7345,8 +7345,8 @@ RUN: 5375
 5375 700  GOLDEN
 5375 705  GOLDEN
 5375 710  GOLDEN
-5375 715  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]
-5375 720  LowLiveTime[1, 2, 3, 4, 5, 6]
+5375 715  TotalOutlier[1, 2, 3, 4, 5, 6]
+5375 720  GOLDEN
 5375 725  GOLDEN
 5375 730  GOLDEN
 5375 735  GOLDEN
@@ -7646,7 +7646,7 @@ RUN: 5376
 5376 830  GOLDEN
 5376 835  GOLDEN
 5376 840  GOLDEN
-5376 845  LowLiveTime[1, 2, 3, 4, 5, 6]
+5376 845  GOLDEN
 5376 850  GOLDEN
 5376 855  GOLDEN
 5376 860  GOLDEN
@@ -8504,7 +8504,7 @@ RUN: 5381
 5381 1280  GOLDEN
 
 RUN: 5382
-5382 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5382 0  GOLDEN
 5382 5  GOLDEN
 5382 10  GOLDEN
 5382 15  GOLDEN
@@ -8702,7 +8702,7 @@ RUN: 5382
 5382 975  GOLDEN
 5382 980  GOLDEN
 5382 985  GOLDEN
-5382 990  TotalOutlier[1, 2, 3, 4, 5]  SectorLoss[6]  LowLiveTime[1, 2, 3, 4, 5, 6]
+5382 990  TotalOutlier[1, 2, 3, 4, 5]  SectorLoss[6]
 5382 995  SectorLoss[6]
 5382 1000  SectorLoss[6]
 5382 1005  SectorLoss[6]
@@ -8769,7 +8769,7 @@ RUN: 5382
 5382 1310  SectorLoss[6]
 
 RUN: 5383
-5383 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5383 0  GOLDEN
 5383 5  GOLDEN
 5383 10  GOLDEN
 5383 15  GOLDEN
@@ -8965,7 +8965,7 @@ RUN: 5383
 5383 965  GOLDEN
 
 RUN: 5386
-5386 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5386 0  GOLDEN
 5386 5  GOLDEN
 5386 10  GOLDEN
 5386 15  GOLDEN
@@ -9360,7 +9360,7 @@ RUN: 5391
 5391 1215  GOLDEN
 
 RUN: 5392
-5392 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5392 0  GOLDEN
 5392 5  GOLDEN
 5392 10  GOLDEN
 5392 15  GOLDEN
@@ -9390,7 +9390,7 @@ RUN: 5392
 5392 135  GOLDEN
 5392 140  GOLDEN
 5392 145  GOLDEN
-5392 150  LowLiveTime[1, 2, 3, 4, 5, 6]
+5392 150  GOLDEN
 5392 155  GOLDEN
 5392 160  GOLDEN
 5392 165  GOLDEN
@@ -9491,7 +9491,7 @@ RUN: 5392
 5392 640  GOLDEN
 5392 645  GOLDEN
 5392 650  GOLDEN
-5392 655  LowLiveTime[1, 2, 3, 4, 5, 6]
+5392 655  GOLDEN
 5392 660  GOLDEN
 5392 665  GOLDEN
 5392 670  GOLDEN
@@ -9656,7 +9656,7 @@ RUN: 5393
 5393 775  GOLDEN
 5393 780  GOLDEN
 5393 785  GOLDEN
-5393 790  LowLiveTime[1, 2, 3, 4, 5, 6]
+5393 790  GOLDEN
 5393 795  GOLDEN
 5393 800  GOLDEN
 5393 805  GOLDEN
@@ -9749,7 +9749,7 @@ RUN: 5393
 5393 1240  GOLDEN
 
 RUN: 5394
-5394 0  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no helicity info
+5394 0  Misc[1, 2, 3, 4, 5, 6]  :: no helicity info
 5394 5  Misc[1, 2, 3, 4, 5, 6]  :: no helicity info
 5394 10  Misc[1, 2, 3, 4, 5, 6]  :: no helicity info
 5394 15  Misc[1, 2, 3, 4, 5, 6]  :: no helicity info
@@ -9867,14 +9867,14 @@ RUN: 5398
 5398 145  GOLDEN
 
 RUN: 5399
-5399 0  MarginalOutlier[5]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: marked as junk in logbook
+5399 0  MarginalOutlier[5]  Misc[1, 2, 3, 4, 5, 6]  :: marked as junk in logbook
 5399 5  Misc[1, 2, 3, 4, 5, 6]  :: marked as junk in logbook
 5399 10  Misc[1, 2, 3, 4, 5, 6]  :: marked as junk in logbook
 5399 15  Misc[1, 2, 3, 4, 5, 6]  :: marked as junk in logbook
 5399 20  Misc[1, 2, 3, 4, 5, 6]  :: marked as junk in logbook
 
 RUN: 5400
-5400 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5400 0  GOLDEN
 5400 5  GOLDEN
 5400 10  GOLDEN
 5400 15  GOLDEN
@@ -9922,7 +9922,7 @@ RUN: 5401
 5401 95  GOLDEN
 5401 100  GOLDEN
 5401 105  GOLDEN
-5401 110  GOLDEN
+5401 110  MarginalOutlier[3, 6]
 
 RUN: 5402
 5402 0  SectorLoss[2]  :: sector 2 had lower than normal N/F, but close to QA cut line
@@ -9953,7 +9953,7 @@ RUN: 5402
 5402 125  SectorLoss[2]  :: sector 2 had lower than normal N/F, but close to QA cut line
 
 RUN: 5403
-5403 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5403 0  GOLDEN
 5403 5  GOLDEN
 5403 10  GOLDEN
 5403 15  GOLDEN
@@ -10059,7 +10059,7 @@ RUN: 5406
 5406 50  GOLDEN
 5406 55  GOLDEN
 5406 60  GOLDEN
-5406 65  MarginalOutlier[1, 6]
+5406 65  GOLDEN
 5406 70  GOLDEN
 5406 75  GOLDEN
 5406 80  GOLDEN
@@ -10169,7 +10169,7 @@ RUN: 5406
 5406 600  GOLDEN
 
 RUN: 5407
-5407 0  LowLiveTime[1, 2, 3, 4, 5, 6]
+5407 0  GOLDEN
 5407 5  GOLDEN
 5407 10  GOLDEN
 5407 15  GOLDEN
@@ -10461,7 +10461,7 @@ RUN: 5407
 5407 1445  GOLDEN
 
 RUN: 5414
-5414 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5414 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 5  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 10  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 15  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -10546,7 +10546,7 @@ RUN: 5414
 5414 410  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 415  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 420  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5414 425  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5414 425  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 430  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 435  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 440  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -10639,7 +10639,7 @@ RUN: 5414
 5414 875  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 880  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 885  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5414 890  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5414 890  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 895  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 900  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5414 905  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -10746,7 +10746,7 @@ RUN: 5415
 5415 185  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 190  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 195  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5415 200  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5415 200  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 205  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 210  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 215  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -10813,7 +10813,7 @@ RUN: 5415
 5415 520  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 525  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 530  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5415 535  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5415 535  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 540  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 545  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5415 550  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11161,7 +11161,7 @@ RUN: 5417
 5417 20  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 25  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 30  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 35  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 35  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 40  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 45  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 50  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11227,7 +11227,7 @@ RUN: 5417
 5417 350  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 355  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 360  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 365  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 365  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 370  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 375  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 380  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11299,7 +11299,7 @@ RUN: 5417
 5417 710  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 715  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 720  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 725  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 725  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 730  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 735  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 740  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11347,8 +11347,8 @@ RUN: 5417
 5417 950  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 955  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 960  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 965  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 970  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 965  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 970  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 975  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 980  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 985  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11422,7 +11422,7 @@ RUN: 5417
 5417 1325  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1330  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1335  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 1340  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 1340  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1345  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1350  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1355  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11474,12 +11474,12 @@ RUN: 5417
 5417 1585  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1590  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1595  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 1600  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 1600  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1605  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1610  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 1615  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 1620  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
-5417 1625  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 1615  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 1620  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
+5417 1625  TotalOutlier[1, 2, 3, 4, 5, 6]  LowLiveTime[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1630  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1635  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 5417 1640  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
@@ -11495,34 +11495,34 @@ RUN: 5417
 5417 1690  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: no HTCC in trigger, basically no electron trigger yield
 
 RUN: 5418
-5418 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 5  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 10  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 15  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 20  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 25  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 30  TotalOutlier[1, 2, 3, 4, 6]  MarginalOutlier[5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 35  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 40  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 45  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 50  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 55  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 60  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 65  TotalOutlier[1, 2, 4, 5, 6]  MarginalOutlier[3]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 70  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5418 75  TerminalOutlier[1, 2, 4, 6]  MarginalOutlier[3, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 0  TerminalOutlier[1, 2, 6]  MarginalOutlier[3]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 5  MarginalOutlier[1, 2, 3, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 10  TotalOutlier[6]  MarginalOutlier[1, 2, 4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 15  TotalOutlier[1, 6]  MarginalOutlier[3]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 20  TotalOutlier[1, 2, 6]  MarginalOutlier[3, 4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 25  TotalOutlier[1, 2, 3, 6]  MarginalOutlier[4]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 30  MarginalOutlier[1, 2, 3, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 35  TotalOutlier[2]  MarginalOutlier[1, 3, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 40  MarginalOutlier[1, 2, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 45  TotalOutlier[1, 2, 5, 6]  MarginalOutlier[3, 4]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 50  TotalOutlier[2, 4]  MarginalOutlier[1, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 55  MarginalOutlier[1, 2, 3, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 60  TotalOutlier[6]  MarginalOutlier[1, 2, 3]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 65  MarginalOutlier[1, 2, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 70  MarginalOutlier[1, 3, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5418 75  TerminalOutlier[6]  MarginalOutlier[2, 4]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
 
 RUN: 5419
-5419 0  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 5  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 10  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 15  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 20  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 25  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 30  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 35  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 40  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 45  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 50  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 0  TerminalOutlier[2]  MarginalOutlier[1, 3, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 5  TotalOutlier[6]  MarginalOutlier[1, 2, 3, 4]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 10  TotalOutlier[2, 4, 6]  MarginalOutlier[1, 3, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 15  TotalOutlier[1, 6]  MarginalOutlier[2, 3, 4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 20  TotalOutlier[1, 2, 3, 6]  MarginalOutlier[4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 25  TotalOutlier[1, 6]  MarginalOutlier[2, 3, 4]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 30  TotalOutlier[1, 2, 6]  MarginalOutlier[3, 4, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 35  TotalOutlier[2, 4, 6]  MarginalOutlier[1, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 40  TotalOutlier[2]  MarginalOutlier[1, 4, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 45  TotalOutlier[2]  MarginalOutlier[1, 3, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 50  TotalOutlier[1, 2, 4, 6]  MarginalOutlier[3, 5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
 5419 55  TotalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
-5419 60  TerminalOutlier[1, 2, 3, 4, 5, 6]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
+5419 60  TerminalOutlier[1, 2, 3, 4, 6]  MarginalOutlier[5]  Misc[1, 2, 3, 4, 5, 6]  :: low lumi run
