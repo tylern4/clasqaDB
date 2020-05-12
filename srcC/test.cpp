@@ -1,17 +1,26 @@
+#include <iostream>
+#include <bitset>
 #include "QADB.h"
+
+using namespace std;
 
 int main(int, char*[]) {
   QADB * qa = new QADB("../qa.inbending1/qaTree.json");
 
   int runnum = 5194;
-  for(int evnum=1; evnum<2700000; evnum+=1) {
+  for(int evnum=1; evnum<2700000; evnum+=1000) {
     if(qa->Query(runnum,evnum)) {
       printf("%d event %d\n",runnum,evnum);
-      printf(" filenum = %d\n",qa->GetFilenum());
-      printf(" defect = %d\n",qa->GetDefect());
+      cout << " filenum = " << qa->GetFilenum() << endl;
+      cout << " evnum range = " << qa->GetEvnumMin() << " - " <<
+                                   qa->GetEvnumMax() << endl;
+      cout << " defect = " << qa->GetDefect() << " = 0b" <<
+        bitset<6>(qa->GetDefect()) << endl;
       for(int s=1; s<=6; s++) 
-        printf("  sector %d defect = %d\n",s,qa->GetDefectForSector(s));
-      printf(" comment = \"%s\"\n",qa->GetComment().c_str());
+        cout << "  sector " << s << " defect = " <<
+          qa->GetDefectForSector(s) << " = 0b" <<
+          bitset<6>(qa->GetDefectForSector(s)) << endl;
+      cout << " comment = \"" << qa->GetComment() << "\"" << endl;
     };
   };
 

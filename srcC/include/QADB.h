@@ -16,6 +16,8 @@ class QADB {
 
     bool Query(int runnum_, int evnum_);
     int GetFilenum() { return found ? filenum : -1; };
+    int GetEvnumMin() { return found ? evnumMin : -1; };
+    int GetEvnumMax() { return found ? evnumMax : -1; };
     int GetDefect() { return found ? defect : -1; };
     int GetDefectForSector(int sector_);
     string GetComment() { return found ? comment : ""; };
