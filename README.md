@@ -9,7 +9,10 @@ in `.table` files, which are best read by humans
   * __STATUS:__ working, but not fully tested
   * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
     it is a submodule of this repository and can be obtained
-    by ```git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git```
+    by
+    ```
+    git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git
+    ```
   * add the following directories to your project's include path:
     * `srcC/include` 
     * `srcC/rapidjson/include`
