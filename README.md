@@ -3,6 +3,26 @@ Result of `clasqa`, stored in `.json` files, which are best read by code, and
 in `.table` files, which are best read by humans
 * run `printGoldenList.sh` to print a list of all golden files
 
+
+## QADB Accessors
+* C++ Accessor
+  * __STATUS:__ working, but not fully tested
+  * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
+    it is a submodule of this repository and can be obtained
+    by `git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git`
+  * add the following directories to your project's include path:
+    * `srcC/include` 
+    * `srcC/rapidjson/include`
+  * see `srcC/test.cpp` for a usage example
+* Java Accessor
+  * __STATUS:__ not working yet
+  * needs `JSON.simple`, which can be found in the Maven repository
+    * on Debian-based distributions, it can be obtained via 
+      `apt install libjson-simple-java`
+
+
+## QA data storage
+
 ### Table files
 Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
 * each run begins with the keyword `RUN:`; lines below are for each of that 
