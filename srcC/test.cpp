@@ -5,12 +5,14 @@
 using namespace std;
 
 int main(int, char*[]) {
+
+  // TODO: read concatenation qaTree.json files
   QADB * qa = new QADB("../qa.inbending1/qaTree.json");
 
   int runnum = 5194;
   for(int evnum=1; evnum<2700000; evnum+=1000) {
     if(qa->Query(runnum,evnum)) {
-      printf("%d event %d\n",runnum,evnum);
+      cout << event << " event " << evnum << endl;
       cout << " filenum = " << qa->GetFilenum() << endl;
       cout << " evnum range = " << qa->GetEvnumMin() << " - " <<
                                    qa->GetEvnumMax() << endl;

@@ -1,7 +1,9 @@
 # clasqaDB
-Result of `clasqa`, stored in `.json` files, which are best read by code, and
-in `.table` files, which are best read by humans
-* run `printGoldenList.sh` to print a list of all golden files
+Result of `clasqa`, stored in `.json` files
+* run `bin/parse.sh` to convert `.json` files into `.table` files, which are
+  easier to read
+* after making `.table` files, you can run `bin/printGoldenList.sh` to print a
+  list of all golden files
 
 
 ## QADB Accessors

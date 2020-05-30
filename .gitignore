@@ -2,3 +2,4 @@
 .sw*
 *.exe
 *.class
+*.table
