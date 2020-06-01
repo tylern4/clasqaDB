@@ -47,12 +47,12 @@ class QADB {
   //..............
   // accessors
   //``````````````
-  public int getFilenum() { return found ? filenum : -1 }
+  public int getFilenum() { return found ? filenum.toInteger() : -1 }
   public int getEvnumMin() { return found ? evnumMin : -1 }
   public int getEvnumMax() { return found ? evnumMax : -1 }
   public int getDefect() { return found ? defect : -1 }
   public int getDefectForSector(int sector) {
-    return found ? sectorDefects[sector] : -1
+    return found ? sectorDefects["$sector"] : -1
   }
   public String getComment() { return found ? comment : "" }
 
@@ -63,7 +63,7 @@ class QADB {
   //   or if the event number goes outside of the range of the file which
   //   most recently queried
   //``````````````
-  public boolean Query(int runnum_, int evnum_) {
+  public boolean query(int runnum_, int evnum_) {
 
     // perform lookup, only if needed
     if( runnum_ != runnum ||
@@ -76,7 +76,7 @@ class QADB {
       found = false
 
       // search for file which contains this event
-      qaTree[runnum].each{ f, qaFile ->
+      qaTree["$runnum"].each{ f, qaFile ->
         evnumMinTmp = qaFile['evnumMin']
         evnumMaxTmp = qaFile['evnumMax']
 
@@ -99,8 +99,8 @@ class QADB {
 
       // print a warning if a file was not found for this event
       if(!found) {
-        System.err << "WARNING: QADB::Query could not find " <<
-        "runnum=$runnum_ evnum=$evnum_
+        System.err << "WARNING: QADB::query could not find " <<
+        "runnum=$runnum_ evnum=$evnum_\n"
       }
     }
 
