@@ -154,7 +154,8 @@ class Tools {
   def exeLeaves( node, clos, path=[] ) {
     // if the current node has branches, it is not a leaf; loop through the branches and
     // analyze their nodes
-    if(node.getClass()==java.util.LinkedHashMap) {
+    if(node.getClass()==java.util.LinkedHashMap ||
+       node.getClass()==groovy.json.internal.LazyMap) {
       node.each { 
         path += it.key
         exeLeaves(it.value,clos,path)

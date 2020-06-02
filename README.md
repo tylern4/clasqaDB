@@ -1,14 +1,32 @@
 # clasqaDB
 Result of `clasqa`, stored in `.json` files
-* run `bin/parse.sh` to convert `.json` files into `.table` files, which are
-  easier to read
-* after making `.table` files, you can run `bin/printGoldenList.sh` to print a
-  list of all golden files
 
 
-## QADB Accessors
-* C++ Accessor
-  * __STATUS:__ working, but not fully tested
+## QA Database Accessors
+
+* Text Access
+  * this only provides human-readable access; see below for access with
+    common programming languages used at CLAS
+  * run `bin/parse.sh` to convert `.json` files into `.table` files, which are
+    easier to understand
+  * after making `.table` files, you can run `bin/printGoldenList.sh` to print
+    a list of all golden files
+
+* Groovy Access
+  * __STATUS:__ working and tested, please report any bugs
+  * first, set environment variables with `source env.sh`
+  * then run your analysis script with `run-groovy`, a groovy wrapper script
+    provided by `coatjava`
+  * see example scripts in the `src/` subdirectory
+  * usage:
+    * include the `QADB` class with `import clasqa.QADB`, then instantiate
+    * the `QADB` class provides several methods for accessing the QA info;
+      you only need to provide it a run number and event number
+      * database lookups are only performed as needed, so it is safe to
+        use any accessor in a standard analysis event loop
+
+* C++ Access
+  * __STATUS:__ working, but not fully tested and lacks some features
   * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
     it is a submodule of this repository and can be obtained
     by
@@ -19,7 +37,8 @@ Result of `clasqa`, stored in `.json` files
     * `srcC/include` 
     * `srcC/rapidjson/include`
   * see `srcC/test.cpp` for a usage example
-* Java Accessor
+
+* Java Access
   * __STATUS:__ not working yet
   * needs `JSON.simple`, which can be found in the Maven repository
     * on Debian-based distributions, it can be obtained via 
@@ -30,6 +49,7 @@ Result of `clasqa`, stored in `.json` files
 
 ### Table files
 Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
+* these need to be generatd with `bin/parse.sh`
 * each run begins with the keyword `RUN:`; lines below are for each of that 
   run's file and its QA result, with the following syntax:
   * `run number` `file number`  `defect bits` `comment`
