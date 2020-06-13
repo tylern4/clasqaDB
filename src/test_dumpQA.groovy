@@ -39,10 +39,10 @@ for(int evnum=1; evnum<75000000; evnum+=1000000) {
 
     // if there was a sector loss, print which sectors
     // (see clasqa/Tools.groovy for a list of the bit names)
-    if(qa.hasDefect(qa.util.bit('SectorLoss'))) {
+    if(qa.hasDefectName('SectorLoss')) {
       print "  -> sector loss defect found for sectors "
-      def sectorsLost = (1..6).findAll{ sector ->
-        qa.hasDefect(qa.util.bit('SectorLoss'),sector)
+      def sectorsLost = (1..6).findAll{ sector -> 
+        qa.hasDefectName('SectorLoss',sector)
       }
       println sectorsLost
     }

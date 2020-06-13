@@ -36,6 +36,13 @@ class QADB {
     }
     //if(verbose) println util.pPrint(qaTree) // pretty print qa tree
 
+    // defect mask used for asymmetry analysis
+    asymMask = 0
+    asymMask += 0x1 << util.bit('TotalOutlier')
+    asymMask += 0x1 << util.bit('TerminalOutlier')
+    asymMask += 0x1 << util.bit('MarginalOutlier')
+    asymMask += 0x1 << util.bit('SectorLoss')
+
     // initialize local vars
     runnum = -1
     filenum = -1
@@ -67,14 +74,57 @@ class QADB {
   // you do not need to call query;
   // if query fails, this method returns false
   public boolean pass(int runnum_, int evnum_) {
-    return query(runnum_,evnum_) && !(defect & mask)
+    def foundHere = query(runnum_,evnum_)
+    return foundHere && !(defect & mask)
   }
 
   // alternatively, call this method to simply check if the file has a
   // defect
   public boolean golden(int runnum_, int evnum_) {
-    return query(runnum_,evnum_) && defect==0
+    def foundHere = query(runnum_,evnum_)
+    return foundHere && defect==0
   }
+
+
+  //.....................................
+  // QA for spin asymmetry analysis
+  //`````````````````````````````````````
+
+  // if true, this event is good for a spin asymmetry analysis
+  public boolean OkForAsymmetry(int runnum_, int evnum_) {
+
+    // perform lookup
+    def foundHere = query(runnum_,evnum_)
+    if(!foundHere) return false;
+
+    // check for bits which will always cause the file to be rejected 
+    // (asymMask is defined in the constructor)
+    if( defect & asymMask ) return false
+
+    // special cases for `Misc` bit
+    if(hasDefectName('Misc')) {
+
+      // if only the `Misc` defect bit is set, check if this is a run on the
+      // list of runs with a large fraction of events with undefined helicity;
+      // if so, accept this run, since none of these files are marked with
+      // `Misc` for any other reasons
+      if( defect == (0x1 << util.bit('Misc')) ) {
+        if( runnum_ in [ 5128, 5129, 5130, 5158,
+                         5159, 5160, 5163, 5165,
+                         5166, 5167, 5168, 5169,
+                         5180, 5181, 5182, 5183 ]) return true
+        else return false
+      }
+
+      // otherwise, reject this file
+      return false
+    }
+
+    return true
+  }
+
+    
+      
 
 
 
@@ -100,6 +150,11 @@ class QADB {
     if(sector>0) return ( sectorDefect["$sector"] >> defect_ ) & 0x1
     else return ( defect >> defect_ ) & 0x1
   }
+  // - alternatively, specify name of defect
+  public boolean hasDefectName(String name_, int sector=0) {
+    return hasDefect(util.bit(name_),sector)
+  }
+
 
   // get defect bitmask; if sector==0, gets OR of all sectors' bitmasks
   public int getDefect(int sector=0) {
@@ -183,5 +238,6 @@ class QADB {
   private def comment
   private boolean found
   private int nbits
-  private mask
+  private def mask
+  private def asymMask
 }

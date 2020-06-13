@@ -3,7 +3,10 @@
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 import clasqa.Tools
+import clasqa.QADB
+
 Tools T = new Tools()
+QADB qa = new QADB()
 
 infile="qa/qaTree.json"
 outfile="qa/qaTable.dat"
@@ -38,12 +41,20 @@ qaTree.sort{a,b -> a.key.toInteger() <=> b.key.toInteger() }.each{
 
     if(defect>0) {
       T.bitNames.eachWithIndex { str,i ->
-        if(defect >> i & 0x1) defStr += " " + str + getSecList(i)
+        if(defect >> i & 0x1) defStr += " ${i}-" + str + getSecList(i)
       }
     } else defStr += " GOLDEN"
+
     if(fileTree.comment!=null) {
       if(fileTree.comment.length()>0) defStr += " :: " + fileTree.comment
     }
+
+    int runnum = run.toInteger()
+    int evnum = fileTree['evnumMin'].toInteger()
+    if(qa.OkForAsymmetry(runnum,evnum)) {
+      defStr += " -- OK FOR ASYM"
+    }
+
     outfileW << defStr.join(' ') << "\n"
     //outfileW << fileTree.sectorDefects << "\n"
   }

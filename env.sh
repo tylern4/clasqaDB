@@ -2,5 +2,6 @@
 
 export QADB=$(dirname $(realpath $0))
 
-JYPATH="${JYPATH}:${PWD}/src/"
+JYPATH="${JYPATH}:${QADB}/src/"
 export JYPATH=$(echo $JYPATH | sed 's/^://')
+env|grep --color -w JYPATH
