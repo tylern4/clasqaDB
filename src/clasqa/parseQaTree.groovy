@@ -3,10 +3,11 @@
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
 import clasqa.Tools
-import clasqa.QADB
-
 Tools T = new Tools()
+/*
+import clasqa.QADB
 QADB qa = new QADB()
+*/
 
 infile="qa/qaTree.json"
 outfile="qa/qaTable.dat"
@@ -49,11 +50,13 @@ qaTree.sort{a,b -> a.key.toInteger() <=> b.key.toInteger() }.each{
       if(fileTree.comment.length()>0) defStr += " :: " + fileTree.comment
     }
 
+    /*
     int runnum = run.toInteger()
     int evnum = fileTree['evnumMin'].toInteger()
     if(qa.OkForAsymmetry(runnum,evnum)) {
       defStr += " -- OK FOR ASYM"
     }
+    */
 
     outfileW << defStr.join(' ') << "\n"
     //outfileW << fileTree.sectorDefects << "\n"
