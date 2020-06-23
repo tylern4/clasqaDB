@@ -5,6 +5,7 @@
 #include "rapidjson/filereadstream.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <map>
 
 using namespace rapidjson;
 using namespace std;
@@ -21,6 +22,8 @@ class QADB {
     int GetDefect() { return found ? defect : -1; };
     int GetDefectForSector(int sector_);
     string GetComment() { return found ? comment : ""; };
+    bool Golden() { return found ? defect==0 : false; };
+    bool HasDefect(const char * defectName, int sector);
 
   private:
     FILE * jsonFile;
@@ -34,6 +37,8 @@ class QADB {
     int sectorDefect[6];
     char sectorStr[8];
     string comment;
+
+    map<string,int> defectNameMap;
 
     bool found;
 };
@@ -52,6 +57,13 @@ QADB::QADB(const char * jsonFileName) {
   evnumMin = -1;
   evnumMax = -1;
   found = false;
+  
+  defectNameMap.insert(pair<string,int>("TotalOutlier",0));
+  defectNameMap.insert(pair<string,int>("TerminalOutlier",1));
+  defectNameMap.insert(pair<string,int>("MarginalOutlier",2));
+  defectNameMap.insert(pair<string,int>("SectorLoss",3));
+  defectNameMap.insert(pair<string,int>("LowLiveTime",4));
+  defectNameMap.insert(pair<string,int>("Misc",5));
 };
 
 
@@ -112,5 +124,24 @@ int QADB::GetDefectForSector(int sector_) {
     return -1;
   };
 };
+
+
+// return true if the file has the specified defect
+// - optionally specify a sector if you just want to check one sector
+bool QADB::HasDefect(const char * defectName, int sector=-1) {
+  int defectBit;
+  try { defectBit = defectNameMap.at(string(defectName)); }
+  catch(const out_of_range & e) {
+    fprintf(stderr,"ERROR: QADB::HasDefect does not understand defectName\n");
+    return true;
+  };
+  if(sector>=1 && sector<=6) {
+    return (this->GetDefectForSector(sector) >> defectBit) & 0x1;
+  } else {
+    return (this->GetDefect() >> defectBit) & 0x1;
+  };
+};
+
+
 
 #endif

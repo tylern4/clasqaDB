@@ -6,23 +6,56 @@ using namespace std;
 
 int main(int, char*[]) {
 
-  // TODO: read concatenation qaTree.json files
-  QADB * qa = new QADB("../qa.inbending1/qaTree.json");
+  QADB * qa = new QADB("./qaTree.merged.json");
 
-  int runnum = 5194;
-  for(int evnum=1; evnum<2700000; evnum+=1000) {
+  // fake event loop
+  int runnum = 5160;
+  for(int evnum=1; evnum<79000000; evnum+=400000) {
+
+    // perform the lookup, which finds the file assocated with this event
     if(qa->Query(runnum,evnum)) {
-      cout << event << " event " << evnum << endl;
+
+      // print run number and file number
+      cout << "run " << runnum << " event " << evnum << endl;
       cout << " filenum = " << qa->GetFilenum() << endl;
+
+      // print whether or not this is a golden file
+      if(qa->Golden()) cout << " --> GOLDEN FILE!" << endl;
+      else cout <<  " --> file has defects" << endl;
+
+      // print event number range
       cout << " evnum range = " << qa->GetEvnumMin() << " - " <<
                                    qa->GetEvnumMax() << endl;
+                                   
+      // print defect bits
       cout << " defect = " << qa->GetDefect() << " = 0b" <<
         bitset<6>(qa->GetDefect()) << endl;
-      for(int s=1; s<=6; s++) 
+
+      // accessing each defect bit (see below for doing this for a particular sector)
+      if(qa->HasDefect("TotalOutlier"))    cout << "   - TotalOutlier defect" << endl;
+      if(qa->HasDefect("TerminalOutlier")) cout << "   - TerminalOutlier defect" << endl;
+      if(qa->HasDefect("MarginalOutlier")) cout << "   - MarginalOutlier defect" << endl;
+      if(qa->HasDefect("SectorLoss"))      cout << "   - SectorLoss defect" << endl;
+      if(qa->HasDefect("LowLiveTime"))     cout << "   - LowLiveTime defect" << endl;
+      if(qa->HasDefect("Misc"))            cout << "   - Misc defect" << endl;
+
+      // print defect bits for each sector
+      for(int s=1; s<=6; s++) {
         cout << "  sector " << s << " defect = " <<
           qa->GetDefectForSector(s) << " = 0b" <<
           bitset<6>(qa->GetDefectForSector(s)) << endl;
-      cout << " comment = \"" << qa->GetComment() << "\"" << endl;
+      };
+
+      // if there is a sector loss, print which sectors
+      for(int s=1; s<=6; s++) {
+        if(qa->HasDefect("SectorLoss",s)) {
+          cout << "    -> sector " << s << " loss" << endl;
+        };
+      };
+
+      // print comment
+      cout << " comment = \"" << qa->GetComment() << "\"\n" << endl;
+
     };
   };
 

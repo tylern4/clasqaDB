@@ -14,29 +14,16 @@ Result of `clasqa`, stored in `.json` files
 
 * Groovy Access
   * __STATUS:__ working and tested, please report any bugs
-  * first, set environment variables with `source env.sh`
-  * then run your analysis script with `run-groovy`, a groovy wrapper script
-    provided by `coatjava`
-  * see example scripts in the `src/` subdirectory
-  * usage:
-    * include the `QADB` class with `import clasqa.QADB`, then instantiate
-    * the `QADB` class provides several methods for accessing the QA info;
-      you only need to provide it a run number and event number
-      * database lookups are only performed as needed, so it is safe to
-        use any accessor in a standard analysis event loop
+  * see `src/README.md`
 
 * C++ Access
-  * __STATUS:__ working, but not fully tested and lacks some features
+  * __STATUS:__ working, but lacks some features
   * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
-    it is a submodule of this repository and can be obtained
-    by
+    it is a submodule of this repository and can be obtained by
     ```
     git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git
     ```
-  * add the following directories to your project's include path:
-    * `srcC/include` 
-    * `srcC/rapidjson/include`
-  * see `srcC/test.cpp` for a usage example
+  * see `srcC/README.md` for further instructions
 
 * Java Access
   * __STATUS:__ not working yet
