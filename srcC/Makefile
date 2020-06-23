@@ -1,3 +1,4 @@
+CXX = g++ -std=c++11
 DEPS += -Irapidjson/include -Iinclude
 FLAGS = -g -Wno-deprecated -fPIC -m64 -fno-inline -Wno-write-strings
 SOURCES := $(basename $(wildcard *.cpp))
