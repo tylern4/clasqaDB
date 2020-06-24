@@ -16,11 +16,11 @@ def evCount = 0
 def event
 def runnum,evnum
 while(reader.hasEvent()) {
-  if(evCount>10000) break // limit to 10000 events
+  //if(evCount>10000) break // limit to 10000 events
   if(evCount % 100000 == 0) println "read $evCount events"
 
   event = reader.getNextEvent()
-  if(event.hasBank("RUN::config")) {
+  if(event.hasBank("RUN::config") && event.hasBank("REC::Particle")) {
 
     // get run and event numbers
     runnum = event.getBank("RUN::config").getInt('run',0)
@@ -32,6 +32,7 @@ while(reader.hasEvent()) {
       /* continue your analysis */
 
     }
+    else println "omit event $evnum"
   }
 
   evCount++

@@ -15,7 +15,12 @@ class QADB {
 
     QADB(const char * jsonFileName);
 
+    // perform lookup (only as necessary); returns true if the file
+    // associated with the event is found; this must be called *before*
+    // using any other accessor
     bool Query(int runnum_, int evnum_);
+
+    // accessors
     int GetFilenum() { return found ? filenum : -1; };
     int GetEvnumMin() { return found ? evnumMin : -1; };
     int GetEvnumMax() { return found ? evnumMax : -1; };
@@ -69,6 +74,8 @@ QADB::QADB(const char * jsonFileName) {
 
 bool QADB::Query(int runnum_, int evnum_) {
 
+  // if the run number changed, or if the event number is outside the range
+  // of the previously queried file, perform a new lookup
   if( runnum_ != runnum ||
       ( runnum_ == runnum && (evnum_ < evnumMin || evnum_ > evnumMax ))) {
     runnum = runnum_;
@@ -107,10 +114,14 @@ bool QADB::Query(int runnum_, int evnum_) {
     };
   };
 
+  // if a file is not found, print a warning (this is suppressed for
+  // tag1 events, where both runnum and evnum are 0)
   if(!found) {
-    fprintf(stderr,
-      "WARNING: QADB::Query could not find run %d event %d\n",
-      runnum_,evnum_);
+    if(runnum_!=0) {
+      fprintf(stderr,
+        "WARNING: QADB::Query could not find run %d event %d\n",
+        runnum_,evnum_);
+    };
   };
 
   return found;

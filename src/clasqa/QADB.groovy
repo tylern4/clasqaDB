@@ -214,9 +214,12 @@ class QADB {
       }
 
       // print a warning if a file was not found for this event
+      // - this warning is suppressed for 'tag1' events
       if(!found) {
-        System.err << "WARNING: QADB::query could not find " <<
-        "runnum=$runnum_ evnum=$evnum_\n"
+        if(runnum_!=0) {
+          System.err << "WARNING: QADB::query could not find " <<
+          "runnum=$runnum_ evnum=$evnum_\n"
+        }
       }
     }
 
