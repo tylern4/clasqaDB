@@ -7,6 +7,9 @@ Result of `clasqa`, stored in `.json` files
 * Text Access
   * this only provides human-readable access; see below for access with
     common programming languages used at CLAS
+  * first set environment variables by running `source env.sh`
+    * `bash` is recommended, though if you choose to use `tcsh`, run
+      instead `source env.csh`
   * run `bin/parse.sh` to convert `.json` files into `.table` files, which are
     easier to understand
   * after making `.table` files, you can run `bin/printGoldenList.sh` to print
@@ -14,7 +17,10 @@ Result of `clasqa`, stored in `.json` files
 
 * Groovy Access
   * __STATUS:__ working and tested, please report any bugs
-  * see `src/README.md`
+  * first set environment variables by running `source env.sh`
+    * `bash` is recommended, though if you choose to use `tcsh`, run
+      instead `source env.csh`
+  * then proceed following `src/README.md`
 
 * C++ Access
   * __STATUS:__ working, but lacks some features
