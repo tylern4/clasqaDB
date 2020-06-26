@@ -12,6 +12,8 @@ this directory contains the C++ source code to access the QA database
 - in your analysis code, add the following directories to your project's include path:
   - `srcC/include` 
   - `srcC/rapidjson/include`
+  - you may need to specify these as "absolute paths" (i.e., not relative paths); see
+    `Makefile` macro `DEPS` for an example
 - see `srcC/test.cpp` for a usage example; build it with `make`
   - instantiate QADB, specifying the location of the merged `qaTree.json` file
   - in an event loop, you must call `QADB::Query`, giving it a run number and
