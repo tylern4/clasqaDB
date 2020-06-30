@@ -7,9 +7,7 @@ Result of `clasqa`, stored in `.json` files
 * Text Access
   * this only provides human-readable access; see below for access with
     common programming languages used at CLAS
-  * first set environment variables by running `source env.sh`
-    * `bash` is recommended, though if you choose to use `tcsh`, run
-      instead `source env.csh`
+  * first set environment variables by running `source env.sh` (in bash, or in tcsh use `source env.csh`)
   * run `bin/parse.sh` to convert `.json` files into `.table` files, which are
     easier to understand
   * after making `.table` files, you can run `bin/printGoldenList.sh` to print
