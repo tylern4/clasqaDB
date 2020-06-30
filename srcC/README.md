@@ -21,3 +21,5 @@ this directory contains the C++ source code to access the QA database
   - if `QADB::Query` returns true, it found a file with QA information; then
     you can use all the other methods to access it, which are exemplified in
     `test.cpp`
+  - make sure the event has `REC::Particle` and `RUN::config` banks before any
+    lookup (otherwise you'll find events which were not part of the QA)
