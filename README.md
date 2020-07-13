@@ -22,6 +22,8 @@ Result of `clasqa`, stored in `.json` files
 
 * C++ Access
   * __STATUS:__ working, but lacks some features
+  * WARNING: this is not tested as carefully as the Groovy accessor
+    * please report any issues
   * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
     it is a submodule of this repository and can be obtained by
     ```
