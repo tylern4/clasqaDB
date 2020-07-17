@@ -32,7 +32,8 @@ while(reader.hasEvent()) {
       /* continue your analysis */
 
     }
-    else println "omit event $evnum"
+    //else println "omit event $evnum"
+    else println "omit file " + qa.getFilenum()
   }
 
   evCount++

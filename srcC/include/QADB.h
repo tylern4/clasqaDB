@@ -15,10 +15,14 @@ class QADB {
 
     QADB(const char * jsonFileName);
 
+    // use this method for a spin asymmetry analysis
+    bool OkForAsymmetry(int runnum_, int evnum_);
+
     // perform lookup (only as necessary); returns true if the file
     // associated with the event is found; this must be called *before*
     // using any other accessor
     bool Query(int runnum_, int evnum_);
+
 
     // accessors
     int GetFilenum() { return found ? filenum : -1; };
@@ -46,10 +50,12 @@ class QADB {
     map<string,int> defectNameMap;
 
     bool found;
+    int asymMask;
 };
 
 
 
+// constructor
 QADB::QADB(const char * jsonFileName) {
   jsonFile = fopen(jsonFileName,"r");
   jsonStream = new FileReadStream(jsonFile,readBuffer,sizeof(readBuffer));
@@ -69,6 +75,13 @@ QADB::QADB(const char * jsonFileName) {
   defectNameMap.insert(pair<string,int>("SectorLoss",3));
   defectNameMap.insert(pair<string,int>("LowLiveTime",4));
   defectNameMap.insert(pair<string,int>("Misc",5));
+
+  // defect mask used for asymmetry analysis
+  asymMask = 0;
+  asymMask += 0x1 << 0; // TotalOutlier
+  asymMask += 0x1 << 1; // TerminalOutlier
+  asymMask += 0x1 << 2; // MarginalOutlier
+  asymMask += 0x1 << 3; // SectorLoss
 };
 
 
@@ -152,6 +165,53 @@ bool QADB::HasDefect(const char * defectName, int sector=-1) {
     return (this->GetDefect() >> defectBit) & 0x1;
   };
 };
+
+
+// QA for spin asymmetry analysis
+// - if true, this event is good for a spin asymmetry analysis
+bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
+
+  // perform lookup
+  bool foundHere = this->Query(runnum_,evnum_);
+  if(!foundHere) return false;
+
+  // check for bits which will always cause the file to be rejected 
+  // (asymMask is defined in the constructor)
+  if( defect & asymMask ) return false;
+
+  // special cases for `Misc` bit
+  int miscBit = defectNameMap.at("Misc"); 
+  if(this->HasDefect("Misc")) {
+
+    // check if this is a run on the list of runs with a large fraction of
+    // events with undefined helicity; if so, accept this run, since none of
+    // these files are marked with `Misc` for any other reasons
+    if(runnum_==5128 ||
+       runnum_==5129 ||
+       runnum_==5130 ||
+       runnum_==5158 ||
+       runnum_==5159 ||
+       runnum_==5160 ||
+       runnum_==5163 ||
+       runnum_==5165 ||
+       runnum_==5166 ||
+       runnum_==5167 ||
+       runnum_==5168 ||
+       runnum_==5169 ||
+       runnum_==5180 ||
+       runnum_==5181 ||
+       runnum_==5182 ||
+       runnum_==5183 ||
+       runnum_==5567) return true;
+    else return false;
+  };
+
+  // otherwise, this file passes the QA
+  return true;
+}
+
+
+
 
 
 

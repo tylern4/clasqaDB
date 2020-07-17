@@ -1,11 +1,14 @@
 #include <iostream>
 #include <bitset>
+
+// include QADB header
 #include "QADB.h"
 
 using namespace std;
 
 int main(int, char*[]) {
 
+  // instantiate QADB
   QADB * qa = new QADB("./qaTree.merged.json");
 
   // fake event loop

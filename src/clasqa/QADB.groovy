@@ -104,22 +104,18 @@ class QADB {
     // special cases for `Misc` bit
     if(hasDefectName('Misc')) {
 
-      // if only the `Misc` defect bit is set, check if this is a run on the
-      // list of runs with a large fraction of events with undefined helicity;
-      // if so, accept this run, since none of these files are marked with
-      // `Misc` for any other reasons
-      if( defect == (0x1 << util.bit('Misc')) ) {
-        if( runnum_ in [ 5128, 5129, 5130, 5158,
-                         5159, 5160, 5163, 5165,
-                         5166, 5167, 5168, 5169,
-                         5180, 5181, 5182, 5183 ]) return true
-        else return false
-      }
+      // check if this is a run on the list of runs with a large fraction of
+      // events with undefined helicity; if so, accept this run, since none of
+      // these files are marked with `Misc` for any other reasons
+      if( runnum_ in [ 5128, 5129, 5130, 5158,
+                       5159, 5160, 5163, 5165,
+                       5166, 5167, 5168, 5169,
+                       5180, 5181, 5182, 5183, 5567 ]) return true
+      else return false
 
-      // otherwise, reject this file
-      return false
     }
 
+    // otherwise, this file passes the QA
     return true
   }
 
