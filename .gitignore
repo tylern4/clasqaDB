@@ -5,3 +5,4 @@
 *.table
 srcC/qaTree.merged.json
 .nfs*
+*.tex
