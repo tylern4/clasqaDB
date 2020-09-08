@@ -100,7 +100,7 @@ bool QADB::Query(int runnum_, int evnum_) {
     evnumMax = -1;
     found = false;
 
-    for( Value::MemberIterator it = runDOM.MemberBegin(); 
+    for( auto it = runDOM.MemberBegin(); 
       it != runDOM.MemberEnd(); ++it ) {
       auto fileDOM = (it->value).GetObject();
       evnumMinTmp = fileDOM["evnumMin"].GetInt();
