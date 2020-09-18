@@ -35,3 +35,6 @@ this directory contains the C++ source code to access the QA database
       you can use all the other methods to access it, which are exemplified
     - make sure the event has `REC::Particle` and `RUN::config` banks before
       any lookup (otherwise you'll find events which were not part of the QA)
+- **NOTE** `QADB` has been tested with compiled analysis code, but some users
+  encounter problems when interpreting analysis code with ROOT Cling; it is 
+  recommended to compile your analysis code
