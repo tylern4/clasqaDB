@@ -18,7 +18,7 @@ QADB qa = new QADB()
 // open `data_table.dat` file, from `clasqa`
 def inDatFile
 if(args.length>=1) inDatFile = args[0]
-else { System.err << "ERROR: specify data_table.dat file from clasqa\n"; return; }
+else { System.err << "ERROR: specify data_table.dat file\n"; return; }
 
 
 // open `data_table.dat`
