@@ -1,0 +1,7 @@
+Fraction of files with outlier N/F, but not terminal, marginal, or sector loss: 0.0025164199
+Fraction of files with outlier N/F of first or last file of run, not marginal: 0.0030605107
+Fraction of files with marginal outlier N/F, within one stddev of cut line: 0.0032159652
+Fraction of files with N/F diminished within a sector for several consecutive files: 0.0034199992
+Fraction of files with live time < 0.9: 0.0008744316
+Fraction of files with miscellaneous defect, documented as comment: 0.0406902180
+Fraction of golden files (no defects): 0.9513233065
