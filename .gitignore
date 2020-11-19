@@ -6,3 +6,4 @@
 srcC/qaTree.merged.json
 .nfs*
 *.tex
+*.sqlite
