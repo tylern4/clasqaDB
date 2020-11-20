@@ -6,9 +6,9 @@ Result of `clasqa`, stored in `.json` files
 
 * Text Access
   * this only provides human-readable access; see below for access with
-    common programming languages used at CLAS
+    common programming languages and software used at CLAS
   * first set environment variables by running `source env.sh` (in bash, or in tcsh use `source env.csh`)
-  * run `bin/parse.sh` to convert `.json` files into `.table` files, which are
+  * run `bin/makeTables.sh` to convert `.json` files into `.table` files, which are
     easier to understand
   * after making `.table` files, you can run `bin/printGoldenList.sh` to print
     a list of all golden files
@@ -21,6 +21,8 @@ Result of `clasqa`, stored in `.json` files
   * then proceed following `src/README.md`
 
 * C++ Access
+  * __NOTE:__ [`clas12root`](https://github.com/JeffersonLab/clas12root) now provides
+    access to the QADB
   * __STATUS:__ working, but lacks some features
   * WARNING: this is not tested as carefully as the Groovy accessor
     * please report any issues
@@ -31,18 +33,12 @@ Result of `clasqa`, stored in `.json` files
     ```
   * see `srcC/README.md` for further instructions
 
-* Java Access
-  * __STATUS:__ not working yet
-  * needs `JSON.simple`, which can be found in the Maven repository
-    * on Debian-based distributions, it can be obtained via 
-      `apt install libjson-simple-java`
-
 
 ## QA data storage
 
 ### Table files
 Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
-* these need to be generatd with `bin/parse.sh`
+* these need to be generated with `bin/makeTables.sh`
 * each run begins with the keyword `RUN:`; lines below are for each of that 
   run's file and its QA result, with the following syntax:
   * `run number` `file number`  `defect bits` `comment`
@@ -57,9 +53,11 @@ Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
     * `Misc`: miscellaneous defect, documented as comment
   * if a comment is included, it will be printed after the defect bits, following the
     `::` delimiter
+* the script `bin/makeLatexTables.sh` was used to generate tables for the RGA common
+  analysis note
 
 ### JSON files
-A file which can be read by code, stored in `qa.*/qaTree.json`
+The QADB itself is stored as a JSON file in `qa.*/qaTree.json`
 * the format of this file is like a tree:
 ```
 qaTree.json ─┬─ run number 1

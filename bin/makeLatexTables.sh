@@ -1,6 +1,6 @@
 #!/bin/bash
 # makes a latex table for the analysis note
-# this is meant to be run after `parse.sh`
+# this is meant to be run after `makeTables.sh`
 if [ -z "$QADB" ]; then
   echo "ERROR: you must source env.sh first"; exit
 fi

@@ -1,7 +1,8 @@
 #!/bin/bash
 
-QADB=QADB.sqlite
+dataTable=$1 # data_table.dat file
 
+QADB=QADB.sqlite
 > $QADB
 
 # create tables
@@ -37,7 +38,7 @@ ON qa (runnum,filenum);
 EOF
 
 
-# loop through data_table.dat, filling tables
+# loop through dataTable, filling tables
 while IFS=" " read -r\
   runnum\
   filenum\
@@ -106,4 +107,4 @@ EOF
     );
 EOF
   fi # eo sector-independent tables
-done < data_table.dat
+done < $dataTable
