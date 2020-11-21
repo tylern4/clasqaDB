@@ -9,7 +9,12 @@ class QADB {
   //..............
   // constructor
   //``````````````
-  public QADB(boolean verbose_=false) {
+  // arguments:
+  // - runnumMin and runnumMax: if both are negative (default), then the
+  //   entire QADB will be read; you can restrict to a specific range of
+  //   runs to limit QADB, which may be more effecient
+  // - verbose: if true, print more information
+  public QADB(int runnumMin=-1, runnumMax=-1, boolean verbose_=false) {
 
     // setup
     verbose = verbose_
@@ -22,19 +27,31 @@ class QADB {
     }
     if(verbose) println("QADB dir = $dbDirN")
 
-    // concatenate qaTree.json files into one tree
+    // concatenate trees
     qaTree = [:]
+    chargeTree = [:]
     slurper = new JsonSlurper()
     def dbDir = new File(dbDirN)
-    def dbFilter = ~/^qaTree.json$/
+    def dbFilter = ~/.*Tree.json$/
+    def slurpAction = { tree,branch ->
+      def rnum = branch.key.toInteger()
+      if( ( runnumMin<0 && runnumMax<0 ) || 
+          ( rnum>=runnumMin && rnum<=runnumMax)) {
+        if(verbose) println "run $rnum"
+        tree << branch
+      }
+    }
     dbDir.traverse( 
       type:groovy.io.FileType.FILES,
       maxDepth:1,
-      nameFilter:dbFilter) { dbFile ->
+      nameFilter:dbFilter)
+    { dbFile ->
       if(verbose) println "read " + dbFile.getAbsoluteFile()
-      slurper.parse(dbFile).each{ obj -> qaTree << obj }
+      if(dbFile.name.contains("qaTree.json"))
+        slurper.parse(dbFile).each{ obj -> slurpAction(qaTree,obj) }
+      else if(dbFile.name.contains("chargeTree.json"))
+        slurper.parse(dbFile).each{ obj -> slurpAction(chargeTree,obj) }
     }
-    //if(verbose) println util.pPrint(qaTree) // pretty print qa tree
 
     // defect mask used for asymmetry analysis
     asymMask = 0
@@ -51,6 +68,10 @@ class QADB {
     found = false
     mask = 0
 
+    // initialize accumulated charge
+    chargeTotal = 0
+    chargeCounted = false
+    chargeCountedFiles = []
   }
 
   
@@ -133,6 +154,7 @@ class QADB {
   public String getComment() { return found ? comment : "" }
   public int getEvnumMin() { return found ? evnumMin : -1 }
   public int getEvnumMax() { return found ? evnumMax : -1 }
+  public BigDecimal getCharge() { return found ? charge : -1 }
 
   // check if the file has a particular defect; if sector==0, checks
   // the OR of all the sectors
@@ -160,9 +182,8 @@ class QADB {
   }
 
   // access the full tree
-  public def db() { return qaTree }
-
-
+  public def getQaTree() { return qaTree }
+  public def getChargeTree() { return chargeTree }
 
 
   //..............
@@ -190,19 +211,25 @@ class QADB {
 
         // found matching file, set all variables and stop the search
         if(evnum_>=evnumMinTmp && evnum_<=evnumMaxTmp) {
+
+          // qa vars
           filenum = f
           evnumMin = evnumMinTmp
           evnumMax = evnumMaxTmp
           comment = qaFile['comment']
           defect = qaFile['defect']
           sectorDefect = [:]
-
           qaFile['sectorDefects'].each{ sec,defs ->
             sectorDefect[sec] = 0
             defs.each{ 
               sectorDefect[sec] += 0x1 << it
             }
           }
+
+          // charge vars
+          charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
+          chargeCounted = false
+
 
           found = true
           return true
@@ -223,15 +250,42 @@ class QADB {
     return found
   }
 
+
+  //.................................
+  // Faraday Cup charge accumulator
+  //`````````````````````````````````
+  // call this method after evaluating QA cuts (or at least after calling query())
+  // to add the current file's charge to the total charge;
+  // - charge is accumulated per DST file, since the QA filters per DST file
+  // - a DST file's charge is only accounted for if we have not counted it before
+  public void AccumulateCharge() {
+    if(!chargeCounted) {
+      if(!( [runnum,filenum] in chargeCountedFiles )) {
+        chargeTotal += charge
+        chargeCountedFiles << [runnum,filenum]
+      }
+      chargeCounted = true
+    }
+  }
+
+
+
+  //===============================================================
+
   public Tools util
 
   private def qaTree
+  private def chargeTree
 
   private boolean verbose
   private def dbDirN
   private def slurper
 
   private def runnum,filenum,evnumMin,evnumMax,evnumMinTmp,evnumMaxTmp
+  private BigDecimal charge
+  private BigDecimal chargeTotal
+  private boolean chargeCounted
+  private def chargeCountedFiles
   private def defect
   private def sectorDefect
   private def comment
