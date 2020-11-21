@@ -1,5 +1,5 @@
-// This is the standard usage example of QA cuts
-// - reads a hipo (skim) file, and evaluates QA cuts in an event loop
+// calculate total analyzed charge for an example event loop
+// with QA cuts enabled
 
 // open hipo file reader; the hipo file must be specified as the argument
 import org.jlab.io.hipo.HipoDataSource
@@ -28,14 +28,25 @@ while(reader.hasEvent()) {
     runnum = event.getBank("RUN::config").getInt('run',0)
     evnum = event.getBank("RUN::config").getInt('event',0)
 
-    // QA cut for spin asymmetries
+
+    // QA cut: standard cut for spin asymmetry analysis
     if(qa.OkForAsymmetry(runnum,evnum)) {
 
-      /* continue your analysis */
+      // accumulate charge; note that although the call to
+      // QADB::AccumulateCharge() charge happens for each
+      // event within a DST file that passed the QA cuts, that
+      // file's charge will only be accumulated once, so
+      // overcounting is not possible 
+      qa.AccumulateCharge()
 
+      /* continue your analysis here */
     }
-    else println "omit file " + qa.getFilenum()
-  }
 
+  }
   evCount++
 }
+
+// after the event loop, print the total accumulated charge
+// that was analyzed
+println "total accumulated charge analyzed: " + 
+  qa.getAccumulatedCharge() + " nC"

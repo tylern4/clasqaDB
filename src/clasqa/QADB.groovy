@@ -2,6 +2,7 @@ package clasqa
 
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
+import java.math.BigDecimal
 import clasqa.Tools
 
 class QADB {
@@ -68,8 +69,8 @@ class QADB {
     found = false
     mask = 0
 
-    // initialize accumulated charge
-    chargeTotal = 0
+    charge = new BigDecimal(0)
+    chargeTotal = new BigDecimal(0)
     chargeCounted = false
     chargeCountedFiles = []
   }
@@ -202,6 +203,7 @@ class QADB {
       filenum = -1
       evnumMin = -1
       evnumMax = -1
+      charge = -1
       found = false
 
       // search for file which contains this event
@@ -212,7 +214,6 @@ class QADB {
         // found matching file, set all variables and stop the search
         if(evnum_>=evnumMinTmp && evnum_<=evnumMaxTmp) {
 
-          // qa vars
           filenum = f
           evnumMin = evnumMinTmp
           evnumMax = evnumMaxTmp
@@ -226,15 +227,18 @@ class QADB {
             }
           }
 
-          // charge vars
-          charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
-          chargeCounted = false
-
-
           found = true
-          return true
+          return
         }
       }
+
+
+      // query charge
+      if(found) {
+        charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
+        chargeCounted = false
+      }
+
 
       // print a warning if a file was not found for this event
       // - this warning is suppressed for 'tag1' events
@@ -246,7 +250,7 @@ class QADB {
       }
     }
 
-    // lookup was not needed, return current value of found
+    // result of query
     return found
   }
 
@@ -261,12 +265,13 @@ class QADB {
   public void AccumulateCharge() {
     if(!chargeCounted) {
       if(!( [runnum,filenum] in chargeCountedFiles )) {
-        chargeTotal += charge
+        chargeTotal = chargeTotal.add(charge)
         chargeCountedFiles << [runnum,filenum]
       }
       chargeCounted = true
     }
   }
+  public BigDecimal getAccumulatedCharge() { return chargeTotal }
 
 
 

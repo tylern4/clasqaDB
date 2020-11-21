@@ -10,4 +10,11 @@ import clasqa.Tools
 
 Tools T = new Tools()
 QADB qa = new QADB()
-println T.pPrint(T.jAccess(qa.db(),args))
+
+println "=========== raw"
+println T.jAccess(qa.getQaTree(),args)
+println T.jAccess(qa.getChargeTree(),args)
+
+println "=========== pretty print"
+println T.pPrint(T.jAccess(qa.getQaTree(),args))
+println T.pPrint(T.jAccess(qa.getChargeTree(),args))

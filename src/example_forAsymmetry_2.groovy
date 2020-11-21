@@ -1,6 +1,7 @@
+// This is the standard usage example of QA cuts
+// - reads a hipo (skim) file, and evaluates QA cuts in an event loop
 // NOTE: this script has a simulated event loop; see 
 // `example_forAsymmetry.groovy` for a better example reading a HIPO file
-// - this testing script is for crosschecking with the C++ implementation
 
 import clasqa.QADB
 
