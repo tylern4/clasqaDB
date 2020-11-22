@@ -1,3 +1,8 @@
+// this example demonstrates how to obtain a variety of information from QADB;
+// the run in this example has several defects
+// - see other examples for a demonstration of simple access to QADB in a
+//   typical analysis event loop, with QA cuts applied
+
 // instantiate QADB
 import clasqa.QADB
 QADB qa = new QADB()
@@ -18,13 +23,14 @@ for(int evnum=1; evnum<75000000; evnum+=1000000) {
     - the event number is outside of the previously queried file's event 
       number range
   */
-
+ 
   if(qa.query(runnum,evnum)) {
     println "\nevent number $evnum"
 
     // print file number and range of event numbers associated to this file
     println "  filenum = " + qa.getFilenum()
     println "  evnumRange = " + qa.getEvnumMin() + " to " + qa.getEvnumMax()
+    println "  charge = " + qa.getCharge() + " nC"
 
     // call QADB::getDefect with no arguments to get the bitmask for
     // this file's defects

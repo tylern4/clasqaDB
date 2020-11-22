@@ -1,5 +1,6 @@
 // calculate total analyzed charge for an example event loop
 // with QA cuts enabled
+// - you must specify a hipo file as an argument
 
 // open hipo file reader; the hipo file must be specified as the argument
 import org.jlab.io.hipo.HipoDataSource

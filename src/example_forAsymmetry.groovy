@@ -1,7 +1,9 @@
 // This is the standard usage example of QA cuts
 // - reads a hipo (skim) file, and evaluates QA cuts in an event loop
+// - you must specify a hipo file as an argument
 
-// open hipo file reader; the hipo file must be specified as the argument
+
+// open hipo file reader
 import org.jlab.io.hipo.HipoDataSource
 def inHipoFile
 if(args.length>=1) inHipoFile = args[0]

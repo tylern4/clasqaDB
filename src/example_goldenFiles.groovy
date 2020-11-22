@@ -1,5 +1,8 @@
 // this script shows how to check if an event is part of a "golden file", 
 // which means the file passes all QA criteria
+// - see other examples for a demonstration of simple access to QADB in a
+//   typical analysis event loop, with QA cuts applied; you can replace
+//   the cuts used there with the golden cut used here
 
 // instantiate QADB
 import clasqa.QADB
