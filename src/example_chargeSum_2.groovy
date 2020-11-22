@@ -10,8 +10,8 @@ QADB qa = new QADB()
 
 // fake event loop, for demonstration
 int evnum = 0
-def runnum = 5052
-for(evnum=1; evnum<9206206; evnum+=1000) {
+def runnum = 5717
+for(evnum=1; evnum<100011440; evnum+=1000) {
 
   // QA cut
   if(qa.OkForAsymmetry(runnum,evnum)) {

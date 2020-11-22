@@ -14,7 +14,7 @@ class QADB {
   // - runnumMin and runnumMax: if both are negative (default), then the
   //   entire QADB will be read; you can restrict to a specific range of
   //   runs to limit QADB, which may be more effecient
-  // - verbose: if true, print more information
+  // - verbose: if true, print (a lot) more information
   public QADB(int runnumMin=-1, runnumMax=-1, boolean verbose_=false) {
 
     // setup
@@ -207,36 +207,31 @@ class QADB {
       found = false
 
       // search for file which contains this event
-      qaTree["$runnum"].each{ f, qaFile ->
-        evnumMinTmp = qaFile['evnumMin']
-        evnumMaxTmp = qaFile['evnumMax']
-
-        // found matching file, set all variables and stop the search
-        if(evnum_>=evnumMinTmp && evnum_<=evnumMaxTmp) {
-
-          filenum = f
-          evnumMin = evnumMinTmp
-          evnumMax = evnumMaxTmp
-          comment = qaFile['comment']
-          defect = qaFile['defect']
-          sectorDefect = [:]
-          qaFile['sectorDefects'].each{ sec,defs ->
-            sectorDefect[sec] = 0
-            defs.each{ 
-              sectorDefect[sec] += 0x1 << it
-            }
-          }
-
-          found = true
-          return
-        }
+      if(verbose) println "query qaTree..."
+      qaFile = qaTree["$runnum"].find{
+        if(verbose) println " search file "+it.key+" for event $evnum_"
+        evnum_ >= it.value['evnumMin'] && evnum_ <= it.value['evnumMax']
       }
 
+      if(qaFile!=null) {
+        filenum = qaFile.key
+        if(verbose) println "- evnum $evnum_ found in file $filenum"
+        evnumMin = qaFile.value['evnumMin']
+        evnumMax = qaFile.value['evnumMax']
+        comment = qaFile.value['comment']
+        defect = qaFile.value['defect']
+        sectorDefect = [:]
+        qaFile.value['sectorDefects'].each{ sec,defs ->
+          sectorDefect[sec] = 0
+          defs.each{ 
+            sectorDefect[sec] += 0x1 << it
+          }
+        }
 
-      // query charge
-      if(found) {
         charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
         chargeCounted = false
+
+        found = true
       }
 
 
@@ -281,6 +276,8 @@ class QADB {
 
   private def qaTree
   private def chargeTree
+  private def qaFile
+  private def filenumKey
 
   private boolean verbose
   private def dbDirN
