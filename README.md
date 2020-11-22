@@ -83,31 +83,11 @@ qaTree.json ─┬─ run number 1
   * `comment` stores an optional comment regarding the QA result
 
 
-## Tables of FC Charge and Electron Yield
-* For analysis convenience, tables which include FC charge and electron yields,
-  for each run, DST file, and sector, are included in `qa.*/data_table.dat`
-* The columns of `data_table.dat` are:
-  * run number
-  * DST file number
-  * minimum event number in the DST file
-  * maximum event number in the DST file
-  * sector
-  * number of FD electrons
-  * number of FT electrons (cuts may not be optimal for this number)
-  * minimum DAQ-gated FC accumulated charge in the DST file
-  * maximum DAQ-gated FC accumulated charge in the DST file
-  * minimum ungated FC accumulated charge in the DST file
-  * maximum ungated FC accumulated charge in the DST file
-* note: the number of FT electrons and the FC charges do not depend on the
-  sector number; the total numbers for the DST file are duplicated in each
-  sector's row
-* **example:** calculate the total FC charge (DAQ-gated) for a single run:
-  * select the rows corresponding to that run, and one of the sectors (does
-    not matter which sector)
-  * for each DST file, the accumulated FC charge is the difference between the
-    maximum and minimum DAQ-gated FC charge
-  * sum the accumulated FC charges from each DST file in the run
-  * to be more precise, it is useful to apply QA cuts
-  * an example `groovy` script which provides the total accumulated FC charge
-    for a given `data_table.dat` file, with QA cuts applied, is found at
-    `src/clasqa/util/chargeSum.groovy`
+## Accessing Faraday Cup Charge
+* currently only available with the Groovy accessor
+* see `src/example_chargeSum.groovy` for usage example in an analysis event loop
+  * call `QADB::AccumulateCharge()` within your event loop, after your QA cuts
+    are satsified; the QADB instance will keep track of the accumulated charge
+    you analyzed (accumulation performed per DST file)
+  * at the end of your event loop, the total accumulated charge you analyzed is
+    given by `QADB::getAccumulatedCharge()`
