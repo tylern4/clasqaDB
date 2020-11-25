@@ -20,7 +20,9 @@ qa.getQaTree().sort{a,b ->
   runTree.sort{c,d ->
     c.key.toInteger() <=> d.key.toInteger()
   }.each { filenum,fileTree ->
+    def evnumMin = fileTree['evnumMin']
     def evnumMax = fileTree['evnumMax']
+    //println "CHECK: $runnum $filenum $evnumMin $evnumMax"
     def filenumNxt = filenum.toInteger() + 5
     if(runTree["$filenumNxt"]!=null) {
       def fileTreeNxt = runTree["$filenumNxt"]

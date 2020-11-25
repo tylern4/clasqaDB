@@ -2,7 +2,7 @@ package clasqa
 
 import groovy.json.JsonOutput
 
-class Tools {
+public class Tools {
 
   /////////////////
   // defect bits //

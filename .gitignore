@@ -7,3 +7,7 @@ srcC/qaTree.merged.json
 .nfs*
 *.tex
 *.sqlite
+src/jni/unjar/*
+src/jni/.gradle/*
+src/jni/build/*
+*.jar

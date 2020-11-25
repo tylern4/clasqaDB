@@ -5,7 +5,7 @@ import groovy.json.JsonOutput
 import java.math.BigDecimal
 import clasqa.Tools
 
-class QADB {
+public class QADB {
 
   //..............
   // constructor
