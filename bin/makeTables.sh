@@ -5,7 +5,7 @@ if [ -z "$QADB" ]; then
   echo "ERROR: you must source env.sh first"; exit
 fi
 pushd $QADB
-for file in qa.*/qaTree.json; do
+for file in qadb/qa.*/qaTree.json; do
   run-groovy src/clasqa/parseQaTree.groovy $file
 done
 popd

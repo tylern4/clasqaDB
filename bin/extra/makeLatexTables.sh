@@ -4,8 +4,8 @@
 if [ -z "$QADB" ]; then
   echo "ERROR: you must source env.sh first"; exit
 fi
-pushd $QADB > /dev/null
-run-groovy src/clasqa/util/makeLatexTable.groovy
+pushd $QADB/qadb > /dev/null
+run-groovy ../src/clasqa/util/makeLatexTable.groovy
 
 nrow=45 # number of rows per table
 
@@ -51,6 +51,6 @@ app '\end{table}'
 
 rm qaTable.tex.tmp
 
-echo "done: see ${QADB}/qaTable.tex"
+echo "done: see ${QADB}/qadb/qaTable.tex"
 
 popd > /dev/null

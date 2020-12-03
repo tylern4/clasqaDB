@@ -37,7 +37,7 @@ Result of `clasqa`, stored in `.json` files
 ## QA data storage
 
 ### Table files
-Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
+Human-readable format of QA result, stored in `qadb/qa.*/qaTree.json.table`
 * these need to be generated with `bin/makeTables.sh`
 * each run begins with the keyword `RUN:`; lines below are for each of that 
   run's file and its QA result, with the following syntax:
@@ -53,11 +53,11 @@ Human-readable format of QA result, stored in `qa.*/qaTree.json.table`
     * `Misc`: miscellaneous defect, documented as comment
   * if a comment is included, it will be printed after the defect bits, following the
     `::` delimiter
-* the script `bin/makeLatexTables.sh` was used to generate tables for the RGA common
+* the script `bin/extra/makeLatexTables.sh` was used to generate tables for the RGA common
   analysis note
 
 ### JSON files
-The QADB itself is stored as a JSON file in `qa.*/qaTree.json`
+The QADB itself is stored as a JSON file in `qadb/qa.*/qaTree.json`
 * the format of this file is like a tree:
 ```
 qaTree.json ─┬─ run number 1
@@ -84,7 +84,7 @@ qaTree.json ─┬─ run number 1
 
 
 ## Accessing Faraday Cup Charge
-* currently only available with the Groovy accessor
+* currently only available with the Groovy accessor; C++ access is under development
 * see `src/example_chargeSum.groovy` for usage example in an analysis event loop
   * call `QADB::AccumulateCharge()` within your event loop, after your QA cuts
     are satsified; the QADB instance will keep track of the accumulated charge

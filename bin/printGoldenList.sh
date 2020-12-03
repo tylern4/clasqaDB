@@ -5,7 +5,7 @@ if [ -z "$QADB" ]; then
   echo "ERROR: you must source env.sh first"; exit
 fi
 pushd $QADB > /dev/null
-for file in qa.*/qaTree.json.table; do
+for file in qadb/qa.*/qaTree.json.table; do
   grep -w GOLDEN $file | awk '{print $1" "$2}'
 done
 popd > /dev/null

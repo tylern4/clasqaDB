@@ -6,7 +6,7 @@ import clasqa.Tools
 Tools T = new Tools()
 
 
-def dbDirN = System.getenv('QADB')
+def dbDirN = System.getenv('QADB') + '/qadb'
 if(dbDirN==null) {
   System.err << "ERROR: env var QADB not set; source env.sh\n\n\n"
   return

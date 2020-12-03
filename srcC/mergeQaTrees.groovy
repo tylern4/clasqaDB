@@ -5,7 +5,7 @@ import groovy.json.JsonOutput
 
 def qaTree = [:]
 def slurper = new JsonSlurper()
-def dbDir = new File('..')
+def dbDir = new File('../qadb')
 def dbFilter = ~/^qaTree.json$/
 dbDir.traverse( 
   type:groovy.io.FileType.FILES,

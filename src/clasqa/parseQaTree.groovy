@@ -15,6 +15,7 @@ if(args.length>=1) {
   infile = args[0]
   outfile = "${infile}.table"
 }
+println "reading $infile ..."
 
 def outfileF = new File(outfile)
 def outfileW = outfileF.newWriter(false)
@@ -64,3 +65,4 @@ qaTree.sort{a,b -> a.key.toInteger() <=> b.key.toInteger() }.each{
 }
 
 outfileW.close()
+println "produced $outfile"
