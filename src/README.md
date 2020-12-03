@@ -2,8 +2,7 @@
 
 this directory contains the Groovy source code to access the QA database
 
-- first, set environment variables with `source env.sh` (do this in `..`,
-  the parent directory)
+- first, set environment variables with `source ../env.sh`
 - then run your analysis script with `run-groovy`, a groovy wrapper script
   provided by `coatjava` (at `$COATJAVA/bin/run-groovy`)
 - see example scripts in this directory 

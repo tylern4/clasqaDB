@@ -31,7 +31,12 @@ Result of `clasqa`, stored in `.json` files
     ```
     git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git
     ```
-  * see `srcC/README.md` for further instructions
+  * first set environment variables by running `source env.sh`
+    * alternatively, set environment variable `$QADB` to the path to this
+      `clasqaDB` repository
+    * `bash` is recommended, though if you choose to use `tcsh`, run
+      instead `source env.csh`
+  * then proceed following `srcC/README.md`
 
 
 ## QA data storage

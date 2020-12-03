@@ -8,6 +8,8 @@ this directory contains the C++ source code to access the QA database
   ```
   git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git
   ```
+- be sure the `$QADB` environment variable points to the `clasqaDB` repository
+  - this can be done with `source ../env.sh`
 - next, merge the QA json files into one file by running `groovy mergeQaTrees.groovy`
 - in your analysis code, add the following directories to your project's include path:
   - `srcC/include` 

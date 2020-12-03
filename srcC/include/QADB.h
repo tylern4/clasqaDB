@@ -5,7 +5,9 @@
 #include "rapidjson/filereadstream.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <dirent.h>
 #include <map>
+#include <vector>
 
 using namespace rapidjson;
 using namespace std;
@@ -13,7 +15,17 @@ using namespace std;
 class QADB {
   public:
 
-    QADB(const char * jsonFileName);
+    //.................
+    // constructor
+    //`````````````````
+    //arguments:
+    // - runnumMin and runnumMax: if both are negative (default), then the
+    //   entire QADB will be read; you can restrict to a specific range of
+    //   runs to limit QADB, which may be more effecient
+    // - verbose: if true, print (a lot) more information
+    QADB(int runnumMin_=-1, int runnumMax=-1, bool verbose_=false);
+
+
 
     // use this method for a spin asymmetry analysis
     bool OkForAsymmetry(int runnum_, int evnum_);
@@ -34,11 +46,20 @@ class QADB {
     bool Golden() { return found ? defect==0 : false; };
     bool HasDefect(const char * defectName, int sector);
 
+
   private:
+
+
+    int runnumMin, runnumMax;
+    bool verbose = true;
+    string dbDirN;
+    vector<string> qaJsonList;
+    vector<string> chargeJsonList;
+
     FILE * jsonFile;
-    FileReadStream * jsonStream;
-    Document jsonDOM;
+    Document qaTree, chargeTree, tmpTree;
     char readBuffer[65536];
+    void chainTrees(vector<string> jsonList, Document * treePtr);
 
     char runnumStr[32];
     int runnum,filenum,evnumMin,evnumMax,evnumMinTmp,evnumMaxTmp;
@@ -56,13 +77,51 @@ class QADB {
 
 
 // constructor
-QADB::QADB(const char * jsonFileName) {
-  jsonFile = fopen(jsonFileName,"r");
-  jsonStream = new FileReadStream(jsonFile,readBuffer,sizeof(readBuffer));
-  if(jsonDOM.ParseStream(*jsonStream).HasParseError()) {
-    fprintf(stderr,"ERROR: QADB could not parse %s\n",jsonFileName);
+QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
+
+  runnumMin = runnumMin_;
+  runnumMax = runnumMax_;
+  verbose = verbose_;
+
+  // get QADB directory
+  if(verbose) cout << "\n[+] find json files" << endl;
+  dbDirN = getenv("QADB") ? getenv("QADB") : "";
+  if(dbDirN.compare("")==0) {
+    cerr << "ERROR: QADB environment variable not set" << endl;
     return;
   };
+  dbDirN += "/qadb";
+  if(verbose) cout << "QADB at " << dbDirN << endl;
+
+  // get list of json files
+  DIR * dbDir = opendir(dbDirN.c_str());
+  struct dirent * dbDirent;
+  while((dbDirent=readdir(dbDir))) {
+    string qaDirN = string(dbDirent->d_name);
+    if(qaDirN.find("qa.")!=string::npos) {
+      qaJsonList.push_back(dbDirN+"/"+qaDirN+"/qaTree.json");
+      chargeJsonList.push_back(dbDirN+"/"+qaDirN+"/chargeTree.json");
+    };
+  };
+  closedir(dbDir);
+  if(verbose) {
+    cout << "qaTree files:" << endl;
+    for(string str : qaJsonList) cout << " - " << str << endl;
+    cout << "chargeTree files:" << endl;
+    for(string str : chargeJsonList) cout << " - " << str << endl;
+  };
+
+
+  // read json files and concatenate, including only runs within specified
+  // range [runnumMin,runnumMax]
+  if(verbose) cout << "\n[+] read specified runs from json files" << endl;
+  this->chainTrees(qaJsonList,&qaTree);
+  this->chainTrees(chargeJsonList,&chargeTree);
+
+
+  return;
+
+
   runnum = -1;
   filenum = -1;
   evnumMin = -1;
@@ -85,6 +144,49 @@ QADB::QADB(const char * jsonFileName) {
 };
 
 
+// concatenate trees from json files in jsonList to tree at treePtr
+void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
+
+  // loop through list of json files
+  for(string jsonFileN : jsonList) {
+
+    // open json file stream
+    if(verbose) cout << "read json stream " << jsonFileN << endl;
+    jsonFile = fopen(jsonFileN.c_str(),"r");
+    FileReadStream * jsonStream = new FileReadStream(
+      jsonFile,readBuffer,sizeof(readBuffer)
+    );
+    
+    // parse stream to tmpTree
+    if(tmpTree.ParseStream(*jsonStream).HasParseError()) {
+      cerr << "ERROR: QADB could not parse " << jsonFileN << endl;
+      return;
+    };
+
+    // append to tmpTree to treePtr
+    bool once = true;
+    for( auto it = tmpTree.MemberBegin(); it != tmpTree.MemberEnd(); ++it ) {
+      runnum = atoi((it->name).GetString());
+      if( ( runnumMin<0 && runnumMax<0) ||
+          ( runnum>=runnumMin && runnum<=runnumMax))
+      {
+        if(verbose) cout << "- add run " << runnum << endl;
+        if(once) treePtr->CopyFrom(tmpTree,treePtr->GetAllocator());
+        else treePtr->AddMember(it->name,it->value,treePtr->GetAllocator());
+        once = false;
+      };
+    };
+
+    // close json file
+    fclose(jsonFile);
+    if(jsonStream) delete jsonStream;
+  };
+
+  // reset runnum
+  runnum = -1;
+};
+
+
 bool QADB::Query(int runnum_, int evnum_) {
 
   // if the run number changed, or if the event number is outside the range
@@ -93,28 +195,28 @@ bool QADB::Query(int runnum_, int evnum_) {
       ( runnum_ == runnum && (evnum_ < evnumMin || evnum_ > evnumMax ))) {
     runnum = runnum_;
     sprintf(runnumStr,"%d",runnum);
-    assert(jsonDOM.HasMember(runnumStr));
-    auto runDOM = jsonDOM[runnumStr].GetObject();
+    assert(qaTree.HasMember(runnumStr));
+    auto runTree = qaTree[runnumStr].GetObject();
     filenum = -1;
     evnumMin = -1;
     evnumMax = -1;
     found = false;
 
-    for( auto it = runDOM.MemberBegin(); 
-      it != runDOM.MemberEnd(); ++it ) {
-      auto fileDOM = (it->value).GetObject();
-      evnumMinTmp = fileDOM["evnumMin"].GetInt();
-      evnumMaxTmp = fileDOM["evnumMax"].GetInt();
+    for( auto it = runTree.MemberBegin(); 
+      it != runTree.MemberEnd(); ++it ) {
+      auto fileTree = (it->value).GetObject();
+      evnumMinTmp = fileTree["evnumMin"].GetInt();
+      evnumMaxTmp = fileTree["evnumMax"].GetInt();
       if( evnum_ >= evnumMinTmp && evnum_ <= evnumMaxTmp ) {
         filenum = atoi((it->name).GetString());
         evnumMin = evnumMinTmp;
         evnumMax = evnumMaxTmp;
-        comment = fileDOM["comment"].GetString();
-        defect = fileDOM["defect"].GetInt();
-        auto sectorDOM = fileDOM["sectorDefects"].GetObject();
+        comment = fileTree["comment"].GetString();
+        defect = fileTree["defect"].GetInt();
+        auto sectorTree = fileTree["sectorDefects"].GetObject();
         for(int s=0; s<6; s++) {
           sprintf(sectorStr,"%d",s+1);
-          const Value& defList = sectorDOM[sectorStr];
+          const Value& defList = sectorTree[sectorStr];
           sectorDefect[s] = 0;
           for(SizeType i=0; i<defList.Size(); i++) {
             sectorDefect[s] += 0x1 << defList[i].GetInt();
