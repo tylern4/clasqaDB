@@ -67,18 +67,21 @@ class QADB {
     string GetComment() { return found ? comment : ""; };
     int GetEvnumMin() { return found ? evnumMin : -1; };
     int GetEvnumMax() { return found ? evnumMax : -1; };
-    double GetChage() { return found ? charge : -1; };
+    double GetCharge() { return found ? charge : -1; };
     // --- access QA info
-    // check if the file has a particular defect; if sector==0, checks
-    // the OR of all the sectors
+    // check if the file has a particular defect
+    // - if sector==0, checks the OR of all the sectors
     // - if an error is thrown, return true so file will be flagged
-    // - alternatively, check for defect by name
-    bool HasDefect(const char * defectName, int sector); // TODO
-    bool HasDefectName(const char * defectName, int sector); // TODO
+    bool HasDefect(const char * defectName, int sector) {
+      return HasDefectBit(Bit(defectName),sector);
+    };
+    // - alternatively, check for defect by bit number
+    bool HasDefectBit(int defect_, int sector) {
+      return (this->GetDefect(sector) >> defect_) & 0x1;
+    };
     // get this file's defect bitmask;
-    // if sector==0, gets OR of all sectors' bitmasks
-    int GetDefect() { return found ? defect : -1; }; // TODO
-    int GetDefectForSector(int sector_); // TODO
+    // - if sector==0, gets OR of all sectors' bitmasks
+    int GetDefect(int sector=0);
     // translate defect name to defect bit
     int Bit(const char * defectName);
 
@@ -113,11 +116,9 @@ class QADB {
 
     int runnumMin, runnumMax;
     bool verbose = true;
-    string dbDirN;
     vector<string> qaJsonList;
     vector<string> chargeJsonList;
 
-    FILE * jsonFile;
     Document qaTree, chargeTree, tmpTree;
     char readBuffer[65536];
     void chainTrees(vector<string> jsonList, Document * treePtr);
@@ -154,7 +155,7 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
 
   // get QADB directory
   if(verbose) cout << "\n[+] find json files" << endl;
-  dbDirN = getenv("QADB") ? getenv("QADB") : "";
+  string dbDirN = getenv("QADB") ? getenv("QADB") : "";
   if(dbDirN.compare("")==0) {
     cerr << "ERROR: QADB environment variable not set" << endl;
     return;
@@ -199,10 +200,10 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
 
   // defect mask used for asymmetry analysis
   asymMask = 0;
-  asymMask += 0x1 << defectNameMap.at("TotalOutlier");
-  asymMask += 0x1 << defectNameMap.at("TerminalOutlier");
-  asymMask += 0x1 << defectNameMap.at("MarginalOutlier");
-  asymMask += 0x1 << defectNameMap.at("SectorLoss");
+  asymMask += 0x1 << Bit("TotalOutlier");
+  asymMask += 0x1 << Bit("TerminalOutlier");
+  asymMask += 0x1 << Bit("MarginalOutlier");
+  asymMask += 0x1 << Bit("SectorLoss");
 
   // initialize local vars
   runnum = -1;
@@ -217,9 +218,10 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
 };
 
 
-//...................
-// concatenate trees from json files in jsonList to tree at treePtr
-//```````````````````
+//....................................................................
+// concatenate trees from JSON files in jsonList to tree at treePtr
+//````````````````````````````````````````````````````````````````````
+// - includes only runs within specified range [runnumMin,runnumMax]
 void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
 
   // loop through list of json files
@@ -227,7 +229,7 @@ void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
 
     // open json file stream
     if(verbose) cout << "read json stream " << jsonFileN << endl;
-    jsonFile = fopen(jsonFileN.c_str(),"r");
+    FILE * jsonFile = fopen(jsonFileN.c_str(),"r");
     FileReadStream * jsonStream = new FileReadStream(
       jsonFile,readBuffer,sizeof(readBuffer)
     );
@@ -262,6 +264,49 @@ void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
 };
 
 
+//...................................
+// QA for spin asymmetry analysis
+//```````````````````````````````````
+bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
+
+  // perform lookup
+  bool foundHere = this->Query(runnum_,evnum_);
+  if(!foundHere) return false;
+
+  // check for bits which will always cause the file to be rejected 
+  // (asymMask is defined in the constructor)
+  if( defect & asymMask ) return false;
+
+  // special cases for `Misc` bit
+  if(this->HasDefect("Misc")) {
+
+    // check if this is a run on the list of runs with a large fraction of
+    // events with undefined helicity; if so, accept this run, since none of
+    // these files are marked with `Misc` for any other reasons
+    if(runnum_==5128 ||
+       runnum_==5129 ||
+       runnum_==5130 ||
+       runnum_==5158 ||
+       runnum_==5159 ||
+       runnum_==5160 ||
+       runnum_==5163 ||
+       runnum_==5165 ||
+       runnum_==5166 ||
+       runnum_==5167 ||
+       runnum_==5168 ||
+       runnum_==5169 ||
+       runnum_==5180 ||
+       runnum_==5181 ||
+       runnum_==5182 ||
+       runnum_==5183 ||
+       runnum_==5567) return true;
+    else return false;
+  };
+
+  // otherwise, this file passes the QA
+  return true;
+};
+
 
 //...............................
 // user-defined custom QA cuts
@@ -281,22 +326,25 @@ bool QADB::Pass(int runnum_, int evnum_) {
 }
 
 
+
+
 //.................
 // accessors
 //`````````````````
-int QADB::GetDefectForSector(int sector_) {
-  if(sector_>=1 && sector_<=6) return found ? sectorDefect[sector_-1] : -1;
+int QADB::GetDefect(int sector) {
+  if(!found) return -1;
+  if(sector==0) return defect;
+  else if(sector>=1 && sector<=6) return sectorDefect[sector-1];
   else {
-    fprintf(stderr,"ERROR: bad sector number for QADB::GetDefectForSector\n");
+    cerr << "ERROR: bad sector number for QADB::GetDefect" << endl;
     return -1;
   };
 };
-
 int QADB::Bit(const char * defectName) {
   int defectBit;
   try { defectBit = defectNameMap.at(string(defectName)); }
   catch(const out_of_range & e) {
-    fprintf(stderr,"ERROR: QADB::HasDefect does not understand defectName\n");
+    cerr << "ERROR: QADB::Bit() unknown defectName" << endl;
     return -1;
   };
   return defectBit;
@@ -398,67 +446,6 @@ void QADB::AccumulateCharge() {
     chargeCounted = true;
   };
 };
-
-
-
-
-
-// return true if the file has the specified defect
-// - optionally specify a sector if you just want to check one sector
-bool QADB::HasDefect(const char * defectName, int sector=-1) {
-  int defectBit = this->Bit(defectName);
-  if(sector>=1 && sector<=6) {
-    return (this->GetDefectForSector(sector) >> defectBit) & 0x1;
-  } else {
-    return (this->GetDefect() >> defectBit) & 0x1;
-  };
-};
-
-
-
-//...................................
-// QA for spin asymmetry analysis
-//```````````````````````````````````
-bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
-
-  // perform lookup
-  bool foundHere = this->Query(runnum_,evnum_);
-  if(!foundHere) return false;
-
-  // check for bits which will always cause the file to be rejected 
-  // (asymMask is defined in the constructor)
-  if( defect & asymMask ) return false;
-
-  // special cases for `Misc` bit
-  if(this->HasDefect("Misc")) {
-
-    // check if this is a run on the list of runs with a large fraction of
-    // events with undefined helicity; if so, accept this run, since none of
-    // these files are marked with `Misc` for any other reasons
-    if(runnum_==5128 ||
-       runnum_==5129 ||
-       runnum_==5130 ||
-       runnum_==5158 ||
-       runnum_==5159 ||
-       runnum_==5160 ||
-       runnum_==5163 ||
-       runnum_==5165 ||
-       runnum_==5166 ||
-       runnum_==5167 ||
-       runnum_==5168 ||
-       runnum_==5169 ||
-       runnum_==5180 ||
-       runnum_==5181 ||
-       runnum_==5182 ||
-       runnum_==5183 ||
-       runnum_==5567) return true;
-    else return false;
-  };
-
-  // otherwise, this file passes the QA
-  return true;
-};
-
 
 
 #endif

@@ -1,8 +1,10 @@
-# clasqaDB
-Result of `clasqa`, stored in `.json` files
+# QADB
+CLAS12 Quality Assurance Database
+* provides storage of and access to the QA monitoring results for the 
+  CLAS12 experiment at Jefferson Lab
 
 
-## QA Database Accessors
+## QA Database Access
 
 * Text Access
   * this only provides human-readable access; see below for access with
@@ -96,3 +98,20 @@ qaTree.json ─┬─ run number 1
     you analyzed (accumulation performed per DST file)
   * at the end of your event loop, the total accumulated charge you analyzed is
     given by `QADB::getAccumulatedCharge()`
+
+
+
+# Change Log
+
+### December 2020
+* `qa.*/` directories have been moved to the subdirectory `qadb/`
+* `data_table.dat` files replaced by `chargeTree.json` files
+* FC charge is now accessible in both Groovy and C++ classes; see examples
+* C++ and Groovy classes have been updated and synchronized
+  * the methods `hasDefect` and/or `hasDefectName` have been changed such
+    that:
+    * `hasDefect` takes a defect *name* as an argument
+    * `hasDefectBit` takes a defect *bit number* as an argument
+    * `hasDefectName` is no longer used; use `hasDefect` instead
+  * C++ class no longer requires the JSON files be merged with a Groovy
+    script; the class only requires the environment variable `$QADB`

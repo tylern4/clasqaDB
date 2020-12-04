@@ -56,10 +56,10 @@ class QADB {
 
     // defect mask used for asymmetry analysis
     asymMask = 0
-    asymMask += 0x1 << util.bit('TotalOutlier')
-    asymMask += 0x1 << util.bit('TerminalOutlier')
-    asymMask += 0x1 << util.bit('MarginalOutlier')
-    asymMask += 0x1 << util.bit('SectorLoss')
+    asymMask += 0x1 << Bit('TotalOutlier')
+    asymMask += 0x1 << Bit('TerminalOutlier')
+    asymMask += 0x1 << Bit('MarginalOutlier')
+    asymMask += 0x1 << Bit('SectorLoss')
 
     // initialize local vars
     runnum = -1
@@ -100,7 +100,7 @@ class QADB {
     if( defect & asymMask ) return false
 
     // special cases for `Misc` bit
-    if(hasDefectName('Misc')) {
+    if(hasDefect('Misc')) {
 
       // check if this is a run on the list of runs with a large fraction of
       // events with undefined helicity; if so, accept this run, since none of
@@ -125,12 +125,12 @@ class QADB {
   // none are set; the variable `mask` will be applied as a mask
   // on the defect bits
   public void setMaskBit(String bitStr, boolean state=true) { 
-    def bit = util.bit(bitStr)
-    if(bit<0 || bit>=nbits)
-      System.err << "ERROR: QADB::setMaskBit called for unknown bit\n"
+    def defectBit = Bit(bitStr)
+    if(defectBit<0 || defectBit>=nbits)
+      System.err << "ERROR: QADB::setMaskBit called for unknown defectBit\n"
     else  {
-      mask &= ~(0x1 << bit)
-      if(state) mask |= (0x1 << bit)
+      mask &= ~(0x1 << defectBit)
+      if(state) mask |= (0x1 << defectBit)
     }
   }
   // access the custom mask, if you want to double-check it
@@ -146,40 +146,36 @@ class QADB {
   //..............
   // accessors
   //``````````````
-
-  // access this file's info
+  // --- access this file's info
   public int getFilenum() { return found ? filenum.toInteger() : -1 }
   public String getComment() { return found ? comment : "" }
   public int getEvnumMin() { return found ? evnumMin : -1 }
   public int getEvnumMax() { return found ? evnumMax : -1 }
   public BigDecimal getCharge() { return found ? charge : -1 }
-
-  // check if the file has a particular defect; if sector==0, checks
-  // the OR of all the sectors
+  // --- access QA info
+  // check if the file has a particular defect
+  // - if sector==0, checks the OR of all the sectors
   // - if an error is thrown, return true so file will be flagged
-  public boolean hasDefect(int defect_, int sector=0) {
-    if( ! (0..nbits).contains(defect_) ) {
-      System.err << "ERROR: bad defect number for QADB::hasDefect\n"
-      return true
-    }
-    if(!found) return true
-    if(sector>0) return ( sectorDefect["$sector"] >> defect_ ) & 0x1
-    else return ( defect >> defect_ ) & 0x1
+  public boolean hasDefect(String name_, int sector=0) {
+    return hasDefectBit(Bit(name_),sector)
   }
-  // - alternatively, check for defect by name
-  public boolean hasDefectName(String name_, int sector=0) {
-    return hasDefect(util.bit(name_),sector)
+  // - alternatively, check for defect by bit number
+  public boolean hasDefectBit(int defect_, int sector=0) {
+    return (getDefect(sector) >> defect_) & 0x1
   }
-
-
   // get defect bitmask; if sector==0, gets OR of all sectors' bitmasks
   public int getDefect(int sector=0) {
     if(!found) return -1
-    if(sector>0) return sectorDefect["$sector"]
-    else return defect
+    if(sector==0) return defect
+    else if(sector>=1 && sector<=6) return sectorDefect["$sector"]
+    else {
+      System.err << "ERROR: bad sector number in QADB::getDefect\n"
+      return -1;
+    }
   }
-
-  // access the full tree
+  // translate defect name to defect bit
+  public int Bit(String name_) { return util.bit(name_) }
+  // --- access the full tree
   public def getQaTree() { return qaTree }
   public def getChargeTree() { return chargeTree }
 
