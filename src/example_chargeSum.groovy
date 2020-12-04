@@ -34,11 +34,11 @@ while(reader.hasEvent()) {
     if(qa.OkForAsymmetry(runnum,evnum)) {
 
       // accumulate charge; note that although the call to
-      // QADB::AccumulateCharge() charge happens for each
+      // QADB::accumulateCharge() charge happens for each
       // event within a DST file that passed the QA cuts, that
       // file's charge will only be accumulated once, so
       // overcounting is not possible 
-      qa.AccumulateCharge()
+      qa.accumulateCharge()
 
       /* continue your analysis here */
     }

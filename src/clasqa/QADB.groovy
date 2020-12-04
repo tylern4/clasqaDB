@@ -68,40 +68,17 @@ class QADB {
     evnumMax = -1
     found = false
     mask = 0
-
     charge = new BigDecimal(0)
     chargeTotal = new BigDecimal(0)
     chargeCounted = false
     chargeCountedFiles = []
   }
 
-  
+
   //...............................
-  // methods for simple QA check
+  // golden QA cut
   //```````````````````````````````
-  // first set which defect bits you want to filter out; by default
-  // none are called
-  public void setMaskBit(String bitStr, boolean state=true) { 
-    def bit = util.bit(bitStr)
-    if(bit<0 || bit>nbits)
-      System.err << "ERROR: QADB::maskBit called for unknown bit\n"
-    else  {
-      mask &= ~(0x1 << bit)
-      if(state) mask |= (0x1 << bit)
-    }
-  }
-  public int getMask() { return mask }
-
-  // then call this method for a run number and event number;
-  // you do not need to call query;
-  // if query fails, this method returns false
-  public boolean pass(int runnum_, int evnum_) {
-    def foundHere = query(runnum_,evnum_)
-    return foundHere && !(defect & mask)
-  }
-
-  // alternatively, call this method to simply check if the file has a
-  // defect
+  // returns false if the event is in a file with *any* defect
   public boolean golden(int runnum_, int evnum_) {
     def foundHere = query(runnum_,evnum_)
     return foundHere && defect==0
@@ -111,7 +88,6 @@ class QADB {
   //.....................................
   // QA for spin asymmetry analysis
   //`````````````````````````````````````
-
   // if true, this event is good for a spin asymmetry analysis
   public boolean OkForAsymmetry(int runnum_, int evnum_) {
 
@@ -141,9 +117,30 @@ class QADB {
     return true
   }
 
-    
-      
-
+  
+  //...............................
+  // user-defined custom QA cuts
+  //```````````````````````````````
+  // first set which defect bits you want to filter out; by default
+  // none are set; the variable `mask` will be applied as a mask
+  // on the defect bits
+  public void setMaskBit(String bitStr, boolean state=true) { 
+    def bit = util.bit(bitStr)
+    if(bit<0 || bit>=nbits)
+      System.err << "ERROR: QADB::setMaskBit called for unknown bit\n"
+    else  {
+      mask &= ~(0x1 << bit)
+      if(state) mask |= (0x1 << bit)
+    }
+  }
+  // access the custom mask, if you want to double-check it
+  public int getMask() { return mask }
+  // then call this method to check your custom QA cut for a given
+  // run number and event number
+  public boolean pass(int runnum_, int evnum_) {
+    def foundHere = query(runnum_,evnum_)
+    return foundHere && !(defect & mask)
+  }
 
 
   //..............
@@ -169,7 +166,7 @@ class QADB {
     if(sector>0) return ( sectorDefect["$sector"] >> defect_ ) & 0x1
     else return ( defect >> defect_ ) & 0x1
   }
-  // - alternatively, specify name of defect
+  // - alternatively, check for defect by name
   public boolean hasDefectName(String name_, int sector=0) {
     return hasDefect(util.bit(name_),sector)
   }
@@ -187,18 +184,20 @@ class QADB {
   public def getChargeTree() { return chargeTree }
 
 
-  //..............
+  //....................................................................
   // query qaTree to get QA info for this run number and event number
   // - a lookup is only performed if necessary: if the run number changes
   //   or if the event number goes outside of the range of the file which
   //   most recently queried
-  //``````````````
+  // - this method is called automatically when evaluating QA cuts
+  //````````````````````````````````````````````````````````````````````
   public boolean query(int runnum_, int evnum_) {
 
     // perform lookup, only if needed
     if( runnum_ != runnum ||
         ( runnum_ == runnum && (evnum_ < evnumMin || evnum_ > evnumMax ))
     ) {
+      // reset vars
       runnum = runnum_
       filenum = -1
       evnumMin = -1
@@ -237,11 +236,9 @@ class QADB {
 
       // print a warning if a file was not found for this event
       // - this warning is suppressed for 'tag1' events
-      if(!found) {
-        if(runnum_!=0) {
-          System.err << "WARNING: QADB::query could not find " <<
-          "runnum=$runnum_ evnum=$evnum_\n"
-        }
+      if(!found && runnum_!=0) {
+        System.err << "WARNING: QADB::query could not find " <<
+        "runnum=$runnum_ evnum=$evnum_\n"
       }
     }
 
@@ -253,11 +250,12 @@ class QADB {
   //.................................
   // Faraday Cup charge accumulator
   //`````````````````````````````````
+  // -- accumulator
   // call this method after evaluating QA cuts (or at least after calling query())
   // to add the current file's charge to the total charge;
   // - charge is accumulated per DST file, since the QA filters per DST file
   // - a DST file's charge is only accounted for if we have not counted it before
-  public void AccumulateCharge() {
+  public void accumulateCharge() {
     if(!chargeCounted) {
       if(!( [runnum,filenum] in chargeCountedFiles )) {
         chargeTotal = chargeTotal.add(charge)
@@ -266,6 +264,8 @@ class QADB {
       chargeCounted = true
     }
   }
+  // -- accessor
+  // call this method at the end of your event loop
   public BigDecimal getAccumulatedCharge() { return chargeTotal }
 
 

@@ -9,19 +9,18 @@ import clasqa.QADB
 QADB qa = new QADB()
 
 // fake event loop, for demonstration
-int evnum = 0
 def runnum = 5717
-for(evnum=1; evnum<100011440; evnum+=1000) {
+for(int evnum=1; evnum<100011440; evnum+=1000) {
 
   // QA cut
   if(qa.OkForAsymmetry(runnum,evnum)) {
 
     // accumulate charge; note that although the call to
-    // QADB::AccumulateCharge() charge happens for each
+    // QADB::accumulateCharge() charge happens for each
     // event within a DST file that passed the QA cuts, that
     // file's charge will only be accumulated once, so
     // overcounting is not possible 
-    qa.AccumulateCharge()
+    qa.accumulateCharge()
 
     /* continue your analysis here */
 

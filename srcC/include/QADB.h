@@ -3,11 +3,13 @@
 
 #include "rapidjson/document.h"
 #include "rapidjson/filereadstream.h"
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
 #include <map>
 #include <vector>
+#include <algorithm>
 
 using namespace rapidjson;
 using namespace std;
@@ -26,29 +28,88 @@ class QADB {
     QADB(int runnumMin_=-1, int runnumMax=-1, bool verbose_=false);
 
 
+    //...............................
+    // golden QA cut
+    //```````````````````````````````
+    // returns false if the event is in a file with *any* defect
+    bool Golden(int runnum_, int evnum_) { 
+      bool foundHere = this->Query(runnum_,evnum_);
+      return foundHere && defect==0;
+    };
 
-    // use this method for a spin asymmetry analysis
+
+    //.....................................
+    // QA for spin asymmetry analysis
+    //`````````````````````````````````````
+    // if true, this event is good for a spin asymmetry analysis
     bool OkForAsymmetry(int runnum_, int evnum_);
 
-    // perform lookup (only as necessary); returns true if the file
-    // associated with the event is found; this must be called *before*
-    // using any other accessor
+
+    //...............................
+    // user-defined custom QA cuts
+    //```````````````````````````````
+    // first set which defect bits you want to filter out; by default
+    // none are set; the variable `mask` will be applied as a mask
+    // on the defect bits
+    void SetMaskBit(string bitStr, bool state=true);
+    // access the custom mask, if you want to double-check it
+    int GetMask() { return mask; };
+    // then call this method to check your custom QA cut for a given
+    // run number and event number
+    bool Pass(int runnum_, int evnum_);
+
+
+    //.................
+    // accessors
+    //`````````````````
+    // --- access this file's info
+    int GetFilenum() { return found ? filenum : -1; };
+    string GetComment() { return found ? comment : ""; };
+    int GetEvnumMin() { return found ? evnumMin : -1; };
+    int GetEvnumMax() { return found ? evnumMax : -1; };
+    double GetChage() { return found ? charge : -1; };
+    // --- access QA info
+    // check if the file has a particular defect; if sector==0, checks
+    // the OR of all the sectors
+    // - if an error is thrown, return true so file will be flagged
+    // - alternatively, check for defect by name
+    bool HasDefect(const char * defectName, int sector); // TODO
+    bool HasDefectName(const char * defectName, int sector); // TODO
+    // get this file's defect bitmask;
+    // if sector==0, gets OR of all sectors' bitmasks
+    int GetDefect() { return found ? defect : -1; }; // TODO
+    int GetDefectForSector(int sector_); // TODO
+    // translate defect name to defect bit
+    int Bit(const char * defectName);
+
+
+    //.................................................................
+    // query qaTree to get QA info for this run number and event number
+    // - a lookup is only performed if necessary: if the run number changes
+    //   or if the event number goes outside of the range of the file which
+    //   most recently queried
+    // - this method is called automatically when evaluating QA cuts
+    //`````````````````````````````````````````````````````````````````
     bool Query(int runnum_, int evnum_);
 
 
-    // accessors
-    int GetFilenum() { return found ? filenum : -1; };
-    int GetEvnumMin() { return found ? evnumMin : -1; };
-    int GetEvnumMax() { return found ? evnumMax : -1; };
-    int GetDefect() { return found ? defect : -1; };
-    int GetDefectForSector(int sector_);
-    string GetComment() { return found ? comment : ""; };
-    bool Golden() { return found ? defect==0 : false; };
-    bool HasDefect(const char * defectName, int sector);
+    //.................................
+    // Faraday Cup charge
+    //`````````````````````````````````
+    // -- accumulator
+    // call this method after evaluating QA cuts (or at least after calling Query())
+    // to add the current file's charge to the total charge;
+    // - charge is accumulated per DST file, since the QA filters per DST file
+    // - a DST file's charge is only accounted for if we have not counted it before
+    void AccumulateCharge();
+    // -- accessor
+    // returns total accumlated charge that passed your QA cuts; call this
+    // method after your event loop
+    double GetAccumulatedCharge() { return chargeTotal; };
+
 
 
   private:
-
 
     int runnumMin, runnumMax;
     bool verbose = true;
@@ -62,21 +123,29 @@ class QADB {
     void chainTrees(vector<string> jsonList, Document * treePtr);
 
     char runnumStr[32];
+    char filenumStr[32];
     int runnum,filenum,evnumMin,evnumMax,evnumMinTmp,evnumMaxTmp;
     int defect;
     int sectorDefect[6];
     char sectorStr[8];
     string comment;
+    double charge, chargeTotal;
+    bool chargeCounted;
+    vector<pair<int,int>> chargeCountedFiles;
 
     map<string,int> defectNameMap;
+    int nbits;
 
     bool found;
     int asymMask;
+    int mask;
 };
 
 
 
+//...............
 // constructor
+//```````````````
 QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
 
   runnumMin = runnumMin_;
@@ -111,40 +180,46 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
     for(string str : chargeJsonList) cout << " - " << str << endl;
   };
 
-
   // read json files and concatenate, including only runs within specified
   // range [runnumMin,runnumMax]
   if(verbose) cout << "\n[+] read specified runs from json files" << endl;
   this->chainTrees(qaJsonList,&qaTree);
   this->chainTrees(chargeJsonList,&chargeTree);
 
+  // define bits (must match those in Tools.groovy, in order)
+  nbits=0;
+  defectNameMap.insert(pair<string,int>("TotalOutlier",nbits++));
+  defectNameMap.insert(pair<string,int>("TerminalOutlier",nbits++));
+  defectNameMap.insert(pair<string,int>("MarginalOutlier",nbits++));
+  defectNameMap.insert(pair<string,int>("SectorLoss",nbits++));
+  defectNameMap.insert(pair<string,int>("LowLiveTime",nbits++));
+  defectNameMap.insert(pair<string,int>("Misc",nbits++));
 
-  return;
+  // 6 elements
 
+  // defect mask used for asymmetry analysis
+  asymMask = 0;
+  asymMask += 0x1 << defectNameMap.at("TotalOutlier");
+  asymMask += 0x1 << defectNameMap.at("TerminalOutlier");
+  asymMask += 0x1 << defectNameMap.at("MarginalOutlier");
+  asymMask += 0x1 << defectNameMap.at("SectorLoss");
 
+  // initialize local vars
   runnum = -1;
   filenum = -1;
   evnumMin = -1;
   evnumMax = -1;
   found = false;
-  
-  defectNameMap.insert(pair<string,int>("TotalOutlier",0));
-  defectNameMap.insert(pair<string,int>("TerminalOutlier",1));
-  defectNameMap.insert(pair<string,int>("MarginalOutlier",2));
-  defectNameMap.insert(pair<string,int>("SectorLoss",3));
-  defectNameMap.insert(pair<string,int>("LowLiveTime",4));
-  defectNameMap.insert(pair<string,int>("Misc",5));
-
-  // defect mask used for asymmetry analysis
-  asymMask = 0;
-  asymMask += 0x1 << 0; // TotalOutlier
-  asymMask += 0x1 << 1; // TerminalOutlier
-  asymMask += 0x1 << 2; // MarginalOutlier
-  asymMask += 0x1 << 3; // SectorLoss
+  mask = 0;
+  charge = 0;
+  chargeTotal = 0;
+  chargeCounted = false;
 };
 
 
+//...................
 // concatenate trees from json files in jsonList to tree at treePtr
+//```````````````````
 void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
 
   // loop through list of json files
@@ -168,8 +243,8 @@ void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
     for( auto it = tmpTree.MemberBegin(); it != tmpTree.MemberEnd(); ++it ) {
       runnum = atoi((it->name).GetString());
       if( ( runnumMin<0 && runnumMax<0) ||
-          ( runnum>=runnumMin && runnum<=runnumMax))
-      {
+          ( runnum>=runnumMin && runnum<=runnumMax)
+      ) {
         if(verbose) cout << "- add run " << runnum << endl;
         if(once) treePtr->CopyFrom(tmpTree,treePtr->GetAllocator());
         else treePtr->AddMember(it->name,it->value,treePtr->GetAllocator());
@@ -187,62 +262,28 @@ void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
 };
 
 
-bool QADB::Query(int runnum_, int evnum_) {
 
-  // if the run number changed, or if the event number is outside the range
-  // of the previously queried file, perform a new lookup
-  if( runnum_ != runnum ||
-      ( runnum_ == runnum && (evnum_ < evnumMin || evnum_ > evnumMax ))) {
-    runnum = runnum_;
-    sprintf(runnumStr,"%d",runnum);
-    assert(qaTree.HasMember(runnumStr));
-    auto runTree = qaTree[runnumStr].GetObject();
-    filenum = -1;
-    evnumMin = -1;
-    evnumMax = -1;
-    found = false;
-
-    for( auto it = runTree.MemberBegin(); 
-      it != runTree.MemberEnd(); ++it ) {
-      auto fileTree = (it->value).GetObject();
-      evnumMinTmp = fileTree["evnumMin"].GetInt();
-      evnumMaxTmp = fileTree["evnumMax"].GetInt();
-      if( evnum_ >= evnumMinTmp && evnum_ <= evnumMaxTmp ) {
-        filenum = atoi((it->name).GetString());
-        evnumMin = evnumMinTmp;
-        evnumMax = evnumMaxTmp;
-        comment = fileTree["comment"].GetString();
-        defect = fileTree["defect"].GetInt();
-        auto sectorTree = fileTree["sectorDefects"].GetObject();
-        for(int s=0; s<6; s++) {
-          sprintf(sectorStr,"%d",s+1);
-          const Value& defList = sectorTree[sectorStr];
-          sectorDefect[s] = 0;
-          for(SizeType i=0; i<defList.Size(); i++) {
-            sectorDefect[s] += 0x1 << defList[i].GetInt();
-          };
-        };
-
-        found = true;
-        break;
-      };
-    };
+//...............................
+// user-defined custom QA cuts
+//```````````````````````````````
+void QADB::SetMaskBit(string bitStr, bool state) {
+  int defectBit = this->Bit(defectName);
+  if(defectBit<0 || defectBit>=nbits)
+    cerr << "ERROR: QADB::SetMaskBit called for unknown bit" << endl;
+  else {
+    mask &= ~(0x1 << defectBit);
+    if(state) mask |= (0x1 << defectBit);
   };
-
-  // if a file is not found, print a warning (this is suppressed for
-  // tag1 events, where both runnum and evnum are 0)
-  if(!found) {
-    if(runnum_!=0) {
-      fprintf(stderr,
-        "WARNING: QADB::Query could not find run %d event %d\n",
-        runnum_,evnum_);
-    };
-  };
-
-  return found;
 };
+bool QADB::Pass(int runnum_, int evnum_) {
+  bool foundHere = this->Query(runnum_,evnum_);
+  return foundHere && !(defect & mask);
+}
 
 
+//.................
+// accessors
+//`````````````````
 int QADB::GetDefectForSector(int sector_) {
   if(sector_>=1 && sector_<=6) return found ? sectorDefect[sector_-1] : -1;
   else {
@@ -251,16 +292,121 @@ int QADB::GetDefectForSector(int sector_) {
   };
 };
 
-
-// return true if the file has the specified defect
-// - optionally specify a sector if you just want to check one sector
-bool QADB::HasDefect(const char * defectName, int sector=-1) {
+int QADB::Bit(const char * defectName) {
   int defectBit;
   try { defectBit = defectNameMap.at(string(defectName)); }
   catch(const out_of_range & e) {
     fprintf(stderr,"ERROR: QADB::HasDefect does not understand defectName\n");
-    return true;
+    return -1;
   };
+  return defectBit;
+};
+  
+
+
+
+//.....................................................................
+// query qaTree to get QA info for this run number and event number
+// - a lookup is only performed if necessary: if the run number changes
+//   or if the event number goes outside of the range of the file which
+//   most recently queried
+//`````````````````````````````````````````````````````````````````````
+bool QADB::Query(int runnum_, int evnum_) {
+
+  // if the run number changed, or if the event number is outside the range
+  // of the previously queried file, perform a new lookup
+  if( runnum_ != runnum ||
+      ( runnum_ == runnum && (evnum_ < evnumMin || evnum_ > evnumMax ))
+  ) {
+    // reset vars
+    runnum = runnum_;
+    filenum = -1;
+    evnumMin = -1;
+    evnumMax = -1;
+    charge = -1;
+    found = false;
+
+
+    // search for file which contains this event
+    sprintf(runnumStr,"%d",runnum);
+    if(qaTree.HasMember(runnumStr)) {
+      auto runTree = qaTree[runnumStr].GetObject();
+
+      for( 
+        auto it = runTree.MemberBegin(); 
+        it != runTree.MemberEnd();
+        ++it
+      ) {
+        auto fileTree = (it->value).GetObject();
+        evnumMinTmp = fileTree["evnumMin"].GetInt();
+        evnumMaxTmp = fileTree["evnumMax"].GetInt();
+        if( evnum_ >= evnumMinTmp && evnum_ <= evnumMaxTmp ) {
+          filenum = atoi((it->name).GetString());
+          evnumMin = evnumMinTmp;
+          evnumMax = evnumMaxTmp;
+          comment = fileTree["comment"].GetString();
+          defect = fileTree["defect"].GetInt();
+          auto sectorTree = fileTree["sectorDefects"].GetObject();
+          for(int s=0; s<6; s++) {
+            sprintf(sectorStr,"%d",s+1);
+            const Value& defList = sectorTree[sectorStr];
+            sectorDefect[s] = 0;
+            for(SizeType i=0; i<defList.Size(); i++) {
+              sectorDefect[s] += 0x1 << defList[i].GetInt();
+            };
+          };
+
+          sprintf(filenumStr,"%d",filenum);
+          charge = chargeTree[runnumStr][filenumStr]["fcCharge"].GetDouble();
+          chargeCounted = false;
+
+          found = true;
+          break;
+        };
+      };
+    };
+
+    // print a warning if a file was not found for this event
+    // - this warning is suppressed for 'tag1' events
+    if(!found && runnum_!=0) {
+      cerr << "WARNING: QADB::Query could not find runnum=" <<
+        runnum_ << " evnum=" << evnum_ << endl;
+    };
+  };
+
+  // result of query
+  return found;
+};
+
+
+
+//.................................
+// Faraday Cup charge accumulator
+//`````````````````````````````````
+void QADB::AccumulateCharge() {
+  if(!chargeCounted) {
+    if(
+      find(
+        chargeCountedFiles.begin(),
+        chargeCountedFiles.end(),
+        pair<int,int>(runnum,filenum)
+      ) == chargeCountedFiles.end()
+    ) {
+      chargeTotal += charge;
+      chargeCountedFiles.push_back(pair<int,int>(runnum,filenum));
+    };
+    chargeCounted = true;
+  };
+};
+
+
+
+
+
+// return true if the file has the specified defect
+// - optionally specify a sector if you just want to check one sector
+bool QADB::HasDefect(const char * defectName, int sector=-1) {
+  int defectBit = this->Bit(defectName);
   if(sector>=1 && sector<=6) {
     return (this->GetDefectForSector(sector) >> defectBit) & 0x1;
   } else {
@@ -269,8 +415,10 @@ bool QADB::HasDefect(const char * defectName, int sector=-1) {
 };
 
 
+
+//...................................
 // QA for spin asymmetry analysis
-// - if true, this event is good for a spin asymmetry analysis
+//```````````````````````````````````
 bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
 
   // perform lookup
@@ -282,7 +430,6 @@ bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
   if( defect & asymMask ) return false;
 
   // special cases for `Misc` bit
-  int miscBit = defectNameMap.at("Misc"); 
   if(this->HasDefect("Misc")) {
 
     // check if this is a run on the list of runs with a large fraction of
@@ -310,10 +457,7 @@ bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
 
   // otherwise, this file passes the QA
   return true;
-}
-
-
-
+};
 
 
 

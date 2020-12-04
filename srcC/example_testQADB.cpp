@@ -9,8 +9,7 @@ using namespace std;
 int main(int, char*[]) {
 
   // instantiate QADB
-  QADB * qa = new QADB(5032,5043,true);
-  return 0;
+  QADB * qa = new QADB(5160,5170,true);
 
   // fake event loop, for demonstration
   int runnum = 5160;
