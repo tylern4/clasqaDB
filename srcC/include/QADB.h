@@ -51,7 +51,7 @@ class QADB {
     // first set which defect bits you want to filter out; by default
     // none are set; the variable `mask` will be applied as a mask
     // on the defect bits
-    void SetMaskBit(string bitStr, bool state=true);
+    void SetMaskBit(const char * defectName, bool state=true);
     // access the custom mask, if you want to double-check it
     int GetMask() { return mask; };
     // then call this method to check your custom QA cut for a given
@@ -72,11 +72,11 @@ class QADB {
     // check if the file has a particular defect
     // - if sector==0, checks the OR of all the sectors
     // - if an error is thrown, return true so file will be flagged
-    bool HasDefect(const char * defectName, int sector) {
+    bool HasDefect(const char * defectName, int sector=0) {
       return HasDefectBit(Bit(defectName),sector);
     };
     // - alternatively, check for defect by bit number
-    bool HasDefectBit(int defect_, int sector) {
+    bool HasDefectBit(int defect_, int sector=0) {
       return (this->GetDefect(sector) >> defect_) & 0x1;
     };
     // get this file's defect bitmask;
@@ -311,7 +311,7 @@ bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
 //...............................
 // user-defined custom QA cuts
 //```````````````````````````````
-void QADB::SetMaskBit(string bitStr, bool state) {
+void QADB::SetMaskBit(const char * defectName, bool state) {
   int defectBit = this->Bit(defectName);
   if(defectBit<0 || defectBit>=nbits)
     cerr << "ERROR: QADB::SetMaskBit called for unknown bit" << endl;
