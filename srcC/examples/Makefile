@@ -11,7 +11,7 @@ LIBS += -L$(CLAS12ROOT)/lib -lClas12Banks -lClas12Root -lHipo4 -llz4
 # ROOT
 DEPS += $(shell root-config --cflags)
 LIBS += $(shell root-config --glibs)
-LIBS += -lMinuit -lRooFitCore -lRooFit
+#LIBS += -lMinuit -lRooFitCore -lRooFit
 
 
 #--------------------------------------------

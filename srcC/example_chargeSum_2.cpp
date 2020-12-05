@@ -7,6 +7,7 @@ int main() {
 
   // instantiate QADB
   QADB * qa = new QADB();
+  //QADB * qa = new QADB(5700,5720,true);
 
   // fake event loop, for demonstration
   int runnum = 5717;

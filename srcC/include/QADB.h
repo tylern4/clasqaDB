@@ -119,7 +119,8 @@ class QADB {
     vector<string> qaJsonList;
     vector<string> chargeJsonList;
 
-    Document qaTree, chargeTree, tmpTree;
+    Document * qaTree;
+    Document * chargeTree;
     char readBuffer[65536];
     void chainTrees(vector<string> jsonList, Document * treePtr);
 
@@ -184,8 +185,17 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
   // read json files and concatenate, including only runs within specified
   // range [runnumMin,runnumMax]
   if(verbose) cout << "\n[+] read specified runs from json files" << endl;
-  this->chainTrees(qaJsonList,&qaTree);
-  this->chainTrees(chargeJsonList,&chargeTree);
+  qaTree = new Document(kObjectType);
+  chargeTree = new Document(kObjectType);
+  this->chainTrees(qaJsonList,qaTree);
+  this->chainTrees(chargeJsonList,chargeTree);
+  if(verbose) {
+    cout << "full list of runs read from QADB:" << endl;
+    for(auto it=qaTree->MemberBegin(); it!=qaTree->MemberEnd(); ++it)
+      cout << (it->name).GetString() << endl;
+    cout << "-----\n";
+  };
+
 
   // define bits (must match those in Tools.groovy, in order)
   nbits=0;
@@ -235,28 +245,30 @@ void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
     );
     
     // parse stream to tmpTree
-    if(tmpTree.ParseStream(*jsonStream).HasParseError()) {
+    Document * tmpTree = new Document(kObjectType);
+    if(tmpTree->ParseStream(*jsonStream).HasParseError()) {
       cerr << "ERROR: QADB could not parse " << jsonFileN << endl;
       return;
     };
 
     // append to tmpTree to treePtr
-    bool once = true;
-    for( auto it = tmpTree.MemberBegin(); it != tmpTree.MemberEnd(); ++it ) {
+    for(auto it=tmpTree->MemberBegin(); it!=tmpTree->MemberEnd(); ++it) {
       runnum = atoi((it->name).GetString());
       if( ( runnumMin<0 && runnumMax<0) ||
           ( runnum>=runnumMin && runnum<=runnumMax)
       ) {
         if(verbose) cout << "- add run " << runnum << endl;
-        if(once) treePtr->CopyFrom(tmpTree,treePtr->GetAllocator());
-        else treePtr->AddMember(it->name,it->value,treePtr->GetAllocator());
-        once = false;
+        Value objKey, objVal;
+        objKey.CopyFrom(it->name,treePtr->GetAllocator());
+        objVal.CopyFrom(it->value,treePtr->GetAllocator());
+        treePtr->AddMember(objKey,objVal,treePtr->GetAllocator());
       };
     };
 
     // close json file
     fclose(jsonFile);
     if(jsonStream) delete jsonStream;
+    if(tmpTree) delete tmpTree;
   };
 
   // reset runnum
@@ -377,14 +389,10 @@ bool QADB::Query(int runnum_, int evnum_) {
 
     // search for file which contains this event
     sprintf(runnumStr,"%d",runnum);
-    if(qaTree.HasMember(runnumStr)) {
-      auto runTree = qaTree[runnumStr].GetObject();
+    if(qaTree->HasMember(runnumStr)) {
+      auto runTree = (*qaTree)[runnumStr].GetObject();
 
-      for( 
-        auto it = runTree.MemberBegin(); 
-        it != runTree.MemberEnd();
-        ++it
-      ) {
+      for(auto it=runTree.MemberBegin(); it!=runTree.MemberEnd(); ++it) {
         auto fileTree = (it->value).GetObject();
         evnumMinTmp = fileTree["evnumMin"].GetInt();
         evnumMaxTmp = fileTree["evnumMax"].GetInt();
@@ -405,7 +413,7 @@ bool QADB::Query(int runnum_, int evnum_) {
           };
 
           sprintf(filenumStr,"%d",filenum);
-          charge = chargeTree[runnumStr][filenumStr]["fcCharge"].GetDouble();
+          charge = (*chargeTree)[runnumStr][filenumStr]["fcCharge"].GetDouble();
           chargeCounted = false;
 
           found = true;
