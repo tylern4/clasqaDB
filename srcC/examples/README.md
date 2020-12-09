@@ -3,9 +3,10 @@
 Here are some examples of reading HIPO files in an event loop, using
 [`clas12root`](https://github.com/JeffersonLab/clas12root)
 If you do not use `clas12root` in your analysis, you can still use these
-examples to see how to implement `QADB.h` in your analysis.
+examples to see how to implement `QADB.h` in your analysis. See also the
+groovy implementation.
 
-## Build instructions
+## Instructions
 * make sure environment variable `$CLAS12ROOT` is set to your `clas12root` installation
 * be sure `$LD_LIBRARY_PATH` includes `${CLAS12ROOT}/lib`
 * compile examples with `make`

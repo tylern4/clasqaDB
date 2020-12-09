@@ -1,5 +1,5 @@
-// calculate total analyzed charge for an example event loop
-// with QA cuts enabled
+// demonstrates how to select events from golden files only, which 
+// are files that have no defect
 // - you must specify a hipo file as an argument
 
 #include <iostream>
@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
   // define variables
   int runnum,evnum;
   int evCount = 0;
+  int evCountOK = 0;
 
 
   // event loop
@@ -49,24 +50,20 @@ int main(int argc, char** argv) {
     evnum = c12->runconfig()->getEvent();
 
     // QA cuts
-    if(qa->OkForAsymmetry(runnum,evnum)) {
-
-      // accumulate charge; note that although the call to
-      // QADB::accumulateCharge() charge happens for each
-      // event within a DST file that passed the QA cuts, that
-      // file's charge will only be accumulated once, so
-      // overcounting is not possible 
-      qa->AccumulateCharge();
+    if(qa->Golden(runnum,evnum)) {
+      evCountOK++;
 
       /* continue your analysis here */
 
     };
 
-    evCount++;
+    // do not increment evCount for events with runnum==0, which fail QA
+    if(runnum>0) evCount++;
   };
 
-  // print charge
-  cout << "\ntotal accumulated charge analyzed: " << endl;
-  cout << "run=" << runnum << "  charge=" <<
-    qa->GetAccumulatedCharge() << " nC" << endl;
+  // print fraction of events which pass QA cuts
+  printf("\nrun = %d\n",runnum);
+  printf("number of events analyzed = %d\n",evCount);
+  printf("number of events in golden DSTs = %d  (%f%%)\n",
+    evCountOK,100.*(double)evCountOK/evCount);
 };

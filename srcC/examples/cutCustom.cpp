@@ -1,8 +1,9 @@
-// calculate total analyzed charge for an example event loop
-// with QA cuts enabled
+// demonstrates how to select events that pass the set
+// of QA criteria specified by the user
 // - you must specify a hipo file as an argument
 
 #include <iostream>
+#include <bitset>
 
 // clas12root headers
 #include "reader.h"
@@ -30,10 +31,26 @@ int main(int argc, char** argv) {
   // alternatively, specify run range to restrict QADB (may be more efficient)
   //QADB * qa = new QADB(5000,5500);
 
+  // custom QA cut definition
+  // - decide which defects you want to check for; an event will not pass
+  //   the QA cut if the associated file has any of the specified defects
+  // - set to true to check the bit
+  // - set to false to ignore the bit (by default, all bits are ignored)
+  qa->SetMaskBit("TotalOutlier",false);
+  qa->SetMaskBit("TerminalOutlier",false);
+  qa->SetMaskBit("MarginalOutlier",false);
+  qa->SetMaskBit("SectorLoss",true); // this is the only bit we check here
+  qa->SetMaskBit("LowLiveTime",false);
+  qa->SetMaskBit("Misc",false);
+
+  // print the defect bit mask
+  cout << "\ndefect mask = 0b" << bitset<6>(qa->GetMask()) << endl;
+
 
   // define variables
   int runnum,evnum;
   int evCount = 0;
+  int evCountOK = 0;
 
 
   // event loop
@@ -49,24 +66,20 @@ int main(int argc, char** argv) {
     evnum = c12->runconfig()->getEvent();
 
     // QA cuts
-    if(qa->OkForAsymmetry(runnum,evnum)) {
-
-      // accumulate charge; note that although the call to
-      // QADB::accumulateCharge() charge happens for each
-      // event within a DST file that passed the QA cuts, that
-      // file's charge will only be accumulated once, so
-      // overcounting is not possible 
-      qa->AccumulateCharge();
+    if(qa->Pass(runnum,evnum)) {
+      evCountOK++;
 
       /* continue your analysis here */
 
     };
 
-    evCount++;
+    // do not increment evCount for events with runnum==0, which fail QA
+    if(runnum>0) evCount++;
   };
 
-  // print charge
-  cout << "\ntotal accumulated charge analyzed: " << endl;
-  cout << "run=" << runnum << "  charge=" <<
-    qa->GetAccumulatedCharge() << " nC" << endl;
+  // print fraction of events which pass QA cuts
+  printf("\nrun = %d\n",runnum);
+  printf("number of events analyzed = %d\n",evCount);
+  printf("number of events which pass QA cuts = %d  (%f%%)\n",
+    evCountOK,100.*(double)evCountOK/evCount);
 };
