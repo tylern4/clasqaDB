@@ -63,6 +63,7 @@ class QADB {
     // accessors
     //`````````````````
     // --- access this file's info
+    int GetRunnum() { return found ? runnum : -1; };
     int GetFilenum() { return found ? filenum : -1; };
     string GetComment() { return found ? comment : ""; };
     int GetEvnumMin() { return found ? evnumMin : -1; };
@@ -94,6 +95,14 @@ class QADB {
     // - this method is called automatically when evaluating QA cuts
     //`````````````````````````````````````````````````````````````````
     bool Query(int runnum_, int evnum_);
+    // if you know the DST file number, you can call QueryByFilenum to perform
+    // lookups via the file number, rather than via the event number
+    // - you can subsequently call any QA cut method, such as `Golden()`;
+    //   although QA cut methods require an event number, no additional lookup
+    //   query will be performed since it already has been done in QueryByFilenum
+    bool QueryByFilenum(int runnum_, int filenum_);
+    // get maximum file number for a given run (useful for QADB validation)
+    int GetMaxFilenum(int runnum_);
 
 
     //.................................
@@ -386,7 +395,6 @@ bool QADB::Query(int runnum_, int evnum_) {
     charge = -1;
     found = false;
 
-
     // search for file which contains this event
     sprintf(runnumStr,"%d",runnum);
     if(qaTree->HasMember(runnumStr)) {
@@ -397,26 +405,7 @@ bool QADB::Query(int runnum_, int evnum_) {
         evnumMinTmp = fileTree["evnumMin"].GetInt();
         evnumMaxTmp = fileTree["evnumMax"].GetInt();
         if( evnum_ >= evnumMinTmp && evnum_ <= evnumMaxTmp ) {
-          filenum = atoi((it->name).GetString());
-          evnumMin = evnumMinTmp;
-          evnumMax = evnumMaxTmp;
-          comment = fileTree["comment"].GetString();
-          defect = fileTree["defect"].GetInt();
-          auto sectorTree = fileTree["sectorDefects"].GetObject();
-          for(int s=0; s<6; s++) {
-            sprintf(sectorStr,"%d",s+1);
-            const Value& defList = sectorTree[sectorStr];
-            sectorDefect[s] = 0;
-            for(SizeType i=0; i<defList.Size(); i++) {
-              sectorDefect[s] += 0x1 << defList[i].GetInt();
-            };
-          };
-
-          sprintf(filenumStr,"%d",filenum);
-          charge = (*chargeTree)[runnumStr][filenumStr]["fcCharge"].GetDouble();
-          chargeCounted = false;
-
-          found = true;
+          this->QueryByFilenum(runnum_,atoi((it->name).GetString()));
           break;
         };
       };
@@ -433,6 +422,70 @@ bool QADB::Query(int runnum_, int evnum_) {
   // result of query
   return found;
 };
+
+// ------ query by file number
+bool QADB::QueryByFilenum(int runnum_, int filenum_) {
+
+  // if the run number or file number changed, perform new lookup
+  if( runnum_ != runnum || filenum_ != filenum) {
+    
+    // reset vars
+    runnum = runnum_;
+    filenum = filenum_;
+    evnumMin = -1;
+    evnumMax = -1;
+    charge = -1;
+    found = false;
+
+    sprintf(runnumStr,"%d",runnum);
+    if(qaTree->HasMember(runnumStr)) {
+      auto runTree = (*qaTree)[runnumStr].GetObject();
+      sprintf(filenumStr,"%d",filenum);
+      if(runTree.HasMember(filenumStr)) {
+        auto fileTree = runTree[filenumStr].GetObject();
+        evnumMin = fileTree["evnumMin"].GetInt();
+        evnumMax = fileTree["evnumMax"].GetInt();
+        comment = fileTree["comment"].GetString();
+        defect = fileTree["defect"].GetInt();
+        auto sectorTree = fileTree["sectorDefects"].GetObject();
+        for(int s=0; s<6; s++) {
+          sprintf(sectorStr,"%d",s+1);
+          const Value& defList = sectorTree[sectorStr];
+          sectorDefect[s] = 0;
+          for(SizeType i=0; i<defList.Size(); i++) {
+            sectorDefect[s] += 0x1 << defList[i].GetInt();
+          };
+        };
+        charge = (*chargeTree)[runnumStr][filenumStr]["fcCharge"].GetDouble();
+        chargeCounted = false;
+        found = true;
+      };
+    };
+
+    // print a warning if a file was not found for this event
+    // - this warning is suppressed for 'tag1' events
+    if(!found && runnum!=0) {
+      cerr << "WARNING: QADB::QueryByFilenum could not find runnum=" <<
+        runnum_ << " filenum=" << filenum_ << endl;
+    };
+  };
+
+  // result of query
+  return found;
+};
+
+// ----- return maximum filenum for a given runnum
+int QADB::GetMaxFilenum(int runnum_) {
+  int maxFilenum=0;
+  sprintf(runnumStr,"%d",runnum_);
+  auto runTree = (*qaTree)[runnumStr].GetObject();
+  for(auto it=runTree.MemberBegin(); it!=runTree.MemberEnd(); ++it) {
+    maxFilenum = atoi((it->name).GetString()) > maxFilenum ?
+                 atoi((it->name).GetString()) : maxFilenum;
+  };
+  return maxFilenum;
+};
+
 
 
 

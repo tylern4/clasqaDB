@@ -147,6 +147,7 @@ class QADB {
   // accessors
   //``````````````
   // --- access this file's info
+  public int getRunnum() { return found ? runnum.toInteger() : -1 }
   public int getFilenum() { return found ? filenum.toInteger() : -1 }
   public String getComment() { return found ? comment : "" }
   public int getEvnumMin() { return found ? evnumMin : -1 }
