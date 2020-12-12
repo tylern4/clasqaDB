@@ -1,5 +1,5 @@
-// dump QADB data for a specified run; this demonstrates the various data
-// that are accessible in the QADB
+// dump QADB data for a specified run; this demonstrates access to the various
+// data stored in QADB
 // - this program does not require a HIPO file or clas12root; it only loops
 //   through the QADB itself, performing lookup by file number
 // - you can specify a run number as an argument
@@ -63,7 +63,7 @@ int main(int argc, char ** argv) {
 
       // print defect bits (OR over all sectors)
       sep("-",40);
-      cout << "-  defect = " << qa->GetDefect() << " = 0b" <<
+      cout << "- defect = " << qa->GetDefect() << " = 0b" <<
         bitset<6>(qa->GetDefect()) << endl;
       if(qa->HasDefect("TotalOutlier"))    cout << "   - TotalOutlier defect" << endl;
       if(qa->HasDefect("TerminalOutlier")) cout << "   - TerminalOutlier defect" << endl;
@@ -89,7 +89,7 @@ int main(int argc, char ** argv) {
 
       // print comment
       sep(".",40);
-      cout << " comment = \"" << qa->GetComment() << "\"" << endl;
+      cout << "comment = \"" << qa->GetComment() << "\"" << endl;
 
     };
 

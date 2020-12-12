@@ -18,7 +18,7 @@ using namespace std;
 // print separator
 void sep(string s,int n) {for(int k=0;k<n;k++) cout<<s; cout<<endl;};
 
-// prent error
+// print error
 void err(string s) { cerr << "ERROR: " << s << endl; };
 
 // MAIN
@@ -40,6 +40,7 @@ int main(int argc, char ** argv) {
   // loop through files
   int evnum;
   string defname;
+  int chargeInt;
   for(int filenum=0; filenum<=qa->GetMaxFilenum(runnum); filenum+=5) {
     sep("=",50);
 
@@ -62,9 +63,10 @@ int main(int argc, char ** argv) {
     if(qa->GetEvnumMin() >= qa->GetEvnumMax())
       err("GetEvnumMin() >= GetEvnumMax()");
 
-    // print charge
+    // print charge (convert to pC and truncate, for easier comparison)
+    chargeInt = (int) (1000*qa->GetCharge());
     cout << "- charge,comment" << endl;
-    cout << qa->GetCharge() << endl;
+    cout << chargeInt << endl;
     qa->AccumulateCharge();
 
     // print comment
@@ -110,7 +112,7 @@ int main(int argc, char ** argv) {
 
   // print accumulated charge
   cout << "- charge, max filenum" << endl;
-  cout << qa->GetAccumulatedCharge() << endl;
+  cout << ((int)(1000*qa->GetAccumulatedCharge())) << endl;
 
   // print max file number
   cout << qa->GetMaxFilenum(runnum) << endl;

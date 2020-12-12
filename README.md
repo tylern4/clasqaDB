@@ -60,7 +60,7 @@ Human-readable format of QA result, stored in `qadb/qa.*/qaTree.json.table`
     * `Misc`: miscellaneous defect, documented as comment
   * if a comment is included, it will be printed after the defect bits, following the
     `::` delimiter
-* the script `bin/extra/makeLatexTables.sh` was used to generate tables for the RGA common
+* the script `util/makeLatexTables.sh` was used to generate tables for the RGA common
   analysis note
 
 ### JSON files

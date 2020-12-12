@@ -209,27 +209,10 @@ class QADB {
         evnum_ >= it.value['evnumMin'] && evnum_ <= it.value['evnumMax']
       }
 
+      // if file found, set variables
       if(qaFile!=null) {
-        filenum = qaFile.key
-        if(verbose) println "- evnum $evnum_ found in file $filenum"
-        evnumMin = qaFile.value['evnumMin']
-        evnumMax = qaFile.value['evnumMax']
-        comment = qaFile.value['comment']
-        defect = qaFile.value['defect']
-        sectorDefect = [:]
-        qaFile.value['sectorDefects'].each{ sec,defs ->
-          sectorDefect[sec] = 0
-          defs.each{ 
-            sectorDefect[sec] += 0x1 << it
-          }
-        }
-
-        charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
-        chargeCounted = false
-
-        found = true
+        queryByFilenum(runnum_,qaFile.key)
       }
-
 
       // print a warning if a file was not found for this event
       // - this warning is suppressed for 'tag1' events
@@ -242,6 +225,71 @@ class QADB {
     // result of query
     return found
   }
+
+  //........................................
+  // if you know the DST file number, you can call QueryByFilenum to perform
+  // lookups via the file number, rather than via the event number
+  // - you can subsequently call any QA cut method, such as `Golden()`;
+  //   although QA cut methods require an event number, no additional lookup
+  //   query will be performed since it already has been done in QueryByFilenum
+  //````````````````````````````````````````
+  public boolean queryByFilenum(int runnum_, int filenum_) {
+
+    // if the run number or file number changed, perform new lookup
+    if( runnum_ != runnum || filenum_ != filenum) {
+      
+      // reset vars
+      runnum = runnum_
+      filenum = filenum_
+      evnumMin = -1
+      evnumMax = -1
+      charge = -1
+      found = false
+
+      if(qaTree["$runnum"]!=null) {
+        if(qaTree["$runnum"]["$filenum"]!=null) {
+          qaFileTree = qaTree["$runnum"]["$filenum"]
+          evnumMin = qaFileTree['evnumMin']
+          evnumMax = qaFileTree['evnumMax']
+          comment = qaFileTree['comment']
+          defect = qaFileTree['defect']
+          sectorDefect = [:]
+          qaFileTree['sectorDefects'].each{ sec,defs ->
+            sectorDefect[sec] = 0
+            defs.each{ 
+              sectorDefect[sec] += 0x1 << it
+            }
+          }
+          charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
+          chargeCounted = false
+          found = true
+        }
+      }
+
+      // print a warning if a file was not found for this event
+      // - this warning is suppressed for 'tag1' events
+      if(!found && runnum_!=0) {
+        System.err << "WARNING: QADB::queryByFilenum could not find " <<
+          "runnum=$runnum_ filenum=$filenum_\n"
+      }
+    }
+
+    // result of query
+    return found
+  }
+
+
+  // get maximum file number for a given run (useful for QADB validation)
+  public int getMaxFilenum(int runnum_) {
+    int maxFilenum=0
+    qaTree["$runnum_"].each{ 
+      maxFilenum = it.key.toInteger() > maxFilenum ? 
+                   it.key.toInteger() : maxFilenum
+    }
+    return maxFilenum
+  }
+
+
 
 
   //.................................
@@ -274,7 +322,7 @@ class QADB {
   private def qaTree
   private def chargeTree
   private def qaFile
-  private def filenumKey
+  private def qaFileTree
 
   private boolean verbose
   private def dbDirN
