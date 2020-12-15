@@ -19,22 +19,27 @@ echo "ARGUMENT = $arg"
 
 mkdir -p ${QADB}/tmp
 
+suffix=$arg
+if [ $testnum -eq 1 ]; then
+  suffix=$(echo $arg | sed 's/^.*\///g')
+fi
+
 # groovy test
 echo "EXECUTE GROOVY TEST $testnum"
 pushd ${QADB}/src/examples
-run-groovy test${testnum}.groovy $arg > ${QADB}/tmp/groovy.${arg}.out
+run-groovy test${testnum}.groovy $arg > ${QADB}/tmp/groovy.${suffix}.out
 popd
 
 # c++ test
 echo "EXECUTE C++ TEST $testnum"
 pushd ${QADB}/srcC/examples
-test${testnum}.exe $arg > ${QADB}/tmp/cpp.${arg}.out
+test${testnum}.exe $arg > ${QADB}/tmp/cpp.${suffix}.out
 popd
 
 # vimdiff
 if [ $# -lt 3 ]; then
-  vimdiff ${QADB}/tmp/{cpp,groovy}.${arg}.out
+  vimdiff ${QADB}/tmp/{cpp,groovy}.${suffix}.out
 else
-  diff ${QADB}/tmp/{cpp,groovy}.${arg}.out > ${QADB}/tmp/diff.${arg}.out
-  echo produced ${QADB}/tmp/diff.${arg}.out
+  diff ${QADB}/tmp/{cpp,groovy}.${suffix}.out > ${QADB}/tmp/diff.${suffix}.out
+  echo produced ${QADB}/tmp/diff.${suffix}.out
 fi
