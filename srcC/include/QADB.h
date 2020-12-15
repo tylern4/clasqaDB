@@ -118,6 +118,8 @@ class QADB {
     // returns total accumlated charge that passed your QA cuts; call this
     // method after your event loop
     double GetAccumulatedCharge() { return chargeTotal; };
+    // reset accumulated charge, if you ever need to
+    void ResetAccumulatedCharge() { chargeTotal = 0; };
 
 
 

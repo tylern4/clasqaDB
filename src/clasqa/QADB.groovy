@@ -313,6 +313,8 @@ class QADB {
   // -- accessor
   // call this method at the end of your event loop
   public double getAccumulatedCharge() { return chargeTotal }
+  // reset accumulated charge, if you ever need to
+  public void resetAccumulatedCharge() { chargeTotal = 0 }
 
 
 
