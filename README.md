@@ -10,13 +10,13 @@ CLAS12 Quality Assurance Database
   * this only provides human-readable access; see below for access with
     common programming languages and software used at CLAS
   * first set environment variables by running `source env.sh` (in bash, or in tcsh use `source env.csh`)
-  * run `bin/makeTables.sh` to convert `.json` files into `.table` files, which are
-    easier to understand
+  * QADB JSON files are stored in `qadb/*/qaTree.json`; run `bin/makeTables.sh` to
+    convert them into `.table` files, which are easier to read
   * after making `.table` files, you can run `bin/printGoldenList.sh` to print
     a list of all golden files
+  * for more details, see section *QA data storage, Table files*
 
 * Groovy Access
-  * __STATUS:__ working and tested, please report any bugs
   * first set environment variables by running `source env.sh`
     * `bash` is recommended, though if you choose to use `tcsh`, run
       instead `source env.csh`
@@ -25,9 +25,6 @@ CLAS12 Quality Assurance Database
 * C++ Access
   * __NOTE:__ [`clas12root`](https://github.com/JeffersonLab/clas12root) now provides
     access to the QADB
-  * __STATUS:__ working, but lacks some features
-  * WARNING: this is not tested as carefully as the Groovy accessor
-    * please report any issues
   * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
     it is a submodule of this repository and can be obtained by
     ```
@@ -60,12 +57,12 @@ Human-readable format of QA result, stored in `qadb/qa.*/qaTree.json.table`
     * `Misc`: miscellaneous defect, documented as comment
   * if a comment is included, it will be printed after the defect bits, following the
     `::` delimiter
-* the script `util/makeLatexTables.sh` was used to generate tables for the RGA common
-  analysis note
 
 ### JSON files
-The QADB itself is stored as a JSON file in `qadb/qa.*/qaTree.json`
-* the format of this file is like a tree:
+
+#### qaTree.json
+* The QADB itself is stored as JSON files in `qadb/qa.*/qaTree.json`
+* the format is a tree (nested maps):
 ```
 qaTree.json ─┬─ run number 1
              ├─ run number 2 ─┬─ file number 1
@@ -89,15 +86,58 @@ qaTree.json ─┬─ run number 1
     example, `11=0b1011` means the `OR` of the defect bit lists is `[0,1,3]`
   * `comment` stores an optional comment regarding the QA result
 
+#### chargeTree.json
+* the charge is also stored in JSON files in `qadb/qa.*/chargeTree.json`, with
+  a similar format:
+```
+chargeTree.json ─┬─ run number 1
+                 ├─ run number 2 ─┬─ file number 1
+                 │                ├─ file number 2
+                 │                ├─ file number 3 ─┬─ fcChargeMin
+                 │                │                 ├─ fcChargeMax
+                 │                │                 ├─ ufcChargeMin
+                 │                │                 ├─ ufcChargeMax
+                 │                │                 └─ nElec ─┬─ sector 1
+                 │                │                           ├─ sector 2
+                 │                │                           ├─ sector 3
+                 │                │                           ├─ sector 4
+                 │                │                           ├─ sector 5
+                 │                │                           └─ sector 6
+                 │                ├─ file number 4
+                 │                └─ file number 5
+                 ├─ run number 3
+                 └─ run number 4
+```
+* for each file, the following variables are defined:
+  * `fcChargeMin` and `fcChargeMax` represent the minimum and maximum DAQ-gated
+    Faraday cup charge, in nC
+  * `ufcChargeMin` and `ufcChargeMax` represent the minimum and maximum FC charge,
+    but not gated by the DAQ
+  * the difference between the maximum and minimum charge is the accumulated charge
+    in that file
+  * `nElec` lists the number of electrons from each sector
+
 
 ## Accessing Faraday Cup Charge
-* currently only available with the Groovy accessor; C++ access is under development
-* see `src/example_chargeSum.groovy` for usage example in an analysis event loop
+* the charge is stored in the QADB for each DST file, so that it is possible to
+  determine the amount of accumulated charge for data that satisfy your
+  specified QA criteria.
+* see `src/examples/chargeSum.groovy` or `srcC/examples/chargeSum.cpp` for
+  usage example in an analysis event loop
   * call `QADB::AccumulateCharge()` within your event loop, after your QA cuts
     are satsified; the QADB instance will keep track of the accumulated charge
     you analyzed (accumulation performed per DST file)
   * at the end of your event loop, the total accumulated charge you analyzed is
     given by `QADB::getAccumulatedCharge()`
+* note: we find some evidence that the charge from file to file may slightly overlap,
+  or there may be gaps in the accumulated charge between each file; the former leads to
+  a slight overcounting and the latter leads to a slight undercounting
+  * for RGK, we find the correction to this issue would be very small
+    (no more than the order of 0.1%)
+  * corrections of this issue are therefore not applied
+  * if you require higher precision of the accumulated charge than what is
+    provided, contact the developers to discuss an implementation of the
+    corrections
 
 
 
@@ -105,9 +145,13 @@ qaTree.json ─┬─ run number 1
 
 ### December 2020
 * `qa.*/` directories have been moved to the subdirectory `qadb/`
+  `qadb/qa.inbending1` and `qadb/qa.inbending2` have been merged and 
+  renamed to `qadb/qa.rga_inbending`; furthermore, `qadb/qa.outbending`
+  has been renamed to `qadb/qa.rga_outbending`
 * `data_table.dat` files replaced by `chargeTree.json` files
 * FC charge is now accessible in both Groovy and C++ classes; see examples
 * C++ and Groovy classes have been updated and synchronized
+  * several new methods added, especially for charge access
   * the methods `hasDefect` and/or `hasDefectName` have been changed such
     that:
     * `hasDefect` takes a defect *name* as an argument

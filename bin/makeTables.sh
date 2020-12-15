@@ -6,6 +6,6 @@ if [ -z "$QADB" ]; then
 fi
 pushd $QADB
 for file in qadb/qa.*/qaTree.json; do
-  run-groovy src/clasqa/parseQaTree.groovy $file
+  run-groovy util/parseQaTree.groovy $file
 done
 popd

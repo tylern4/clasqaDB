@@ -2,7 +2,7 @@ CXX = g++ -std=c++11
 FLAGS = -g -Wno-deprecated -fPIC -m64 -fno-inline -Wno-write-strings
 
 # QADB and rapidjson
-DEPS += -I../rapidjson/include -I../include
+DEPS += -I$(QADB)/srcC/rapidjson/include -I$(QADB)/srcC/include
 
 # clas12root
 DEPS += -I$(CLAS12ROOT)/hipo4 -I$(CLAS12ROOT)/Clas12Banks -I$(CLAS12ROOT)/Clas12Root

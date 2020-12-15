@@ -12,3 +12,5 @@ groovy implementation.
 * compile examples with `make`
 * executables `*.exe` will appear; most of them require a HIPO file as an
   argument
+* example programs named `test*.cpp` are actually developer tools for
+  testing the QADB, but may also be useful as additional examples

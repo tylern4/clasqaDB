@@ -12,3 +12,5 @@ also the C++ implementation.
 * use `${COATJAVA}/bin/run-groovy` to execute these examples
   * it is useful to have `${COATJAVA}/bin` in your `$PATH`
 * most of the example scripts require a HIPO file as an argument
+* example scripts named `test*.groovy` are actually developer tools for
+  testing the QADB, but may also be useful as additional examples
