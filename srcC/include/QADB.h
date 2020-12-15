@@ -140,7 +140,7 @@ class QADB {
     int sectorDefect[6];
     char sectorStr[8];
     string comment;
-    double charge, chargeTotal;
+    double charge, chargeMin, chargeMax, chargeTotal;
     bool chargeCounted;
     vector<pair<int,int>> chargeCountedFiles;
 
@@ -456,7 +456,9 @@ bool QADB::QueryByFilenum(int runnum_, int filenum_) {
             sectorDefect[s] += 0x1 << defList[i].GetInt();
           };
         };
-        charge = (*chargeTree)[runnumStr][filenumStr]["fcCharge"].GetDouble();
+        chargeMin = (*chargeTree)[runnumStr][filenumStr]["fcChargeMin"].GetDouble();
+        chargeMax = (*chargeTree)[runnumStr][filenumStr]["fcChargeMax"].GetDouble();
+        charge = chargeMax - chargeMin;
         chargeCounted = false;
         found = true;
       };

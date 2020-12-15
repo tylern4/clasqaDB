@@ -2,7 +2,6 @@ package clasqa
 
 import groovy.json.JsonSlurper
 import groovy.json.JsonOutput
-import java.math.BigDecimal
 import clasqa.Tools
 
 class QADB {
@@ -68,8 +67,8 @@ class QADB {
     evnumMax = -1
     found = false
     mask = 0
-    charge = new BigDecimal(0)
-    chargeTotal = new BigDecimal(0)
+    charge = 0
+    chargeTotal = 0
     chargeCounted = false
     chargeCountedFiles = []
   }
@@ -152,7 +151,7 @@ class QADB {
   public String getComment() { return found ? comment : "" }
   public int getEvnumMin() { return found ? evnumMin : -1 }
   public int getEvnumMax() { return found ? evnumMax : -1 }
-  public BigDecimal getCharge() { return found ? charge : -1 }
+  public double getCharge() { return found ? charge : -1 }
   // --- access QA info
   // check if the file has a particular defect
   // - if sector==0, checks the OR of all the sectors
@@ -211,7 +210,7 @@ class QADB {
 
       // if file found, set variables
       if(qaFile!=null) {
-        queryByFilenum(runnum_,qaFile.key)
+        queryByFilenum(runnum_,qaFile.key.toInteger())
       }
 
       // print a warning if a file was not found for this event
@@ -260,7 +259,9 @@ class QADB {
               sectorDefect[sec] += 0x1 << it
             }
           }
-          charge = chargeTree["$runnum"]["$filenum"]["fcCharge"].toBigDecimal()
+          chargeMin = chargeTree["$runnum"]["$filenum"]["fcChargeMin"]
+          chargeMax = chargeTree["$runnum"]["$filenum"]["fcChargeMax"]
+          charge = chargeMax - chargeMin
           chargeCounted = false
           found = true
         }
@@ -303,7 +304,7 @@ class QADB {
   public void accumulateCharge() {
     if(!chargeCounted) {
       if(!( [runnum,filenum] in chargeCountedFiles )) {
-        chargeTotal = chargeTotal.add(charge)
+        chargeTotal += charge
         chargeCountedFiles << [runnum,filenum]
       }
       chargeCounted = true
@@ -311,7 +312,7 @@ class QADB {
   }
   // -- accessor
   // call this method at the end of your event loop
-  public BigDecimal getAccumulatedCharge() { return chargeTotal }
+  public double getAccumulatedCharge() { return chargeTotal }
 
 
 
@@ -329,8 +330,7 @@ class QADB {
   private def slurper
 
   private def runnum,filenum,evnumMin,evnumMax,evnumMinTmp,evnumMaxTmp
-  private BigDecimal charge
-  private BigDecimal chargeTotal
+  private double charge,chargeMin,chargeMax,chargeTotal
   private boolean chargeCounted
   private def chargeCountedFiles
   private def defect
