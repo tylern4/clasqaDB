@@ -49,6 +49,9 @@ while(reader.hasEvent()) {
   // skip tag1 events
   if(runnum==0) continue
 
+  // apply QA cut
+  //if(!(qa.OkForAsymmetry(runnum,evnum))) continue
+
   // get filenum; only print info if we queried a different file
   filenum = qa.getFilenum()
   if(filenum==filenumTmp) continue
