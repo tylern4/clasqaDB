@@ -46,6 +46,7 @@ runnumList.each{ runnum ->
     ) {
       qa.accumulateCharge()
     }
+
   } // end file loop
 
   // print this run's charge, and reset
