@@ -1,4 +1,4 @@
-![QADB](/util/logo1.png)
+![QADB](/util/logo.png)
 
 **CLAS12 Quality Assurance Database**
 * provides storage of and access to the QA monitoring results for the 
