@@ -1,5 +1,6 @@
-# QADB
-CLAS12 Quality Assurance Database
+![QADB](/util/logo1.png)
+
+**CLAS12 Quality Assurance Database**
 * provides storage of and access to the QA monitoring results for the 
   CLAS12 experiment at Jefferson Lab
 
