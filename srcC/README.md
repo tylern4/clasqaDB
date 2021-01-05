@@ -6,7 +6,7 @@ this directory contains the C++ source code to access the QA database
   [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
   it is a submodule of this repository and can be obtained by
   ```
-  git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git
+  git clone --recurse-submodules https://github.com/JeffersonLab/clasqaDB.git
   ```
 - be sure the `$QADB` environment variable points to the `clasqaDB` repository
   - this can be done with `source ../env.sh`

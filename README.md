@@ -29,7 +29,7 @@
   * needs [`rapidjson`](https://github.com/Tencent/rapidjson/) libary; 
     it is a submodule of this repository and can be obtained by
     ```
-    git clone --recurse-submodules https://github.com/c-dilks/clasqaDB.git
+    git clone --recurse-submodules https://github.com/JeffersonLab/clasqaDB.git
     ```
   * first set environment variables by running `source env.sh`
     * alternatively, set environment variable `$QADB` to the path to this
