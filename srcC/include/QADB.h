@@ -11,9 +11,6 @@
 #include <vector>
 #include <algorithm>
 
-using namespace rapidjson;
-using namespace std;
-
 class QADB {
   public:
 
@@ -65,7 +62,7 @@ class QADB {
     // --- access this file's info
     int GetRunnum() { return found ? runnum : -1; };
     int GetFilenum() { return found ? filenum : -1; };
-    string GetComment() { return found ? comment : ""; };
+    std::string GetComment() { return found ? comment : ""; };
     int GetEvnumMin() { return found ? evnumMin : -1; };
     int GetEvnumMax() { return found ? evnumMax : -1; };
     double GetCharge() { return found ? charge : -1; };
@@ -74,7 +71,7 @@ class QADB {
     // - if sector==0, checks the OR of all the sectors
     // - if an error is thrown, return true so file will be flagged
     bool HasDefect(const char * defectName, int sector=0) {
-      return HasDefectBit(Bit(defectName),sector);
+      return this->HasDefectBit(Bit(defectName),sector);
     };
     // - alternatively, check for defect by bit number
     bool HasDefectBit(int defect_, int sector=0) {
@@ -127,13 +124,13 @@ class QADB {
 
     int runnumMin, runnumMax;
     bool verbose = true;
-    vector<string> qaJsonList;
-    vector<string> chargeJsonList;
+    std::vector<std::string> qaJsonList;
+    std::vector<std::string> chargeJsonList;
 
-    Document * qaTree;
-    Document * chargeTree;
+    rapidjson::Document * qaTree;
+    rapidjson::Document * chargeTree;
     char readBuffer[65536];
-    void chainTrees(vector<string> jsonList, Document * treePtr);
+    void chainTrees(std::vector<std::string> jsonList, rapidjson::Document * treePtr);
 
     char runnumStr[32];
     char filenumStr[32];
@@ -141,12 +138,12 @@ class QADB {
     int defect;
     int sectorDefect[6];
     char sectorStr[8];
-    string comment;
+    std::string comment;
     double charge, chargeMin, chargeMax, chargeTotal;
     bool chargeCounted;
-    vector<pair<int,int>> chargeCountedFiles;
+    std::vector<std::pair<int,int>> chargeCountedFiles;
 
-    map<string,int> defectNameMap;
+    std::map<std::string,int> defectNameMap;
     int nbits;
 
     bool found;
@@ -166,56 +163,56 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
   verbose = verbose_;
 
   // get QADB directory
-  if(verbose) cout << "\n[+] find json files" << endl;
-  string dbDirN = getenv("QADB") ? getenv("QADB") : "";
+  if(verbose) std::cout << "\n[+] find json files" << std::endl;
+  std::string dbDirN = getenv("QADB") ? getenv("QADB") : "";
   if(dbDirN.compare("")==0) {
-    cerr << "ERROR: QADB environment variable not set" << endl;
+    std::cerr << "ERROR: QADB environment variable not set" << std::endl;
     return;
   };
   dbDirN += "/qadb";
-  if(verbose) cout << "QADB at " << dbDirN << endl;
+  if(verbose) std::cout << "QADB at " << dbDirN << std::endl;
 
   // get list of json files
   DIR * dbDir = opendir(dbDirN.c_str());
   struct dirent * dbDirent;
   while((dbDirent=readdir(dbDir))) {
-    string qaDirN = string(dbDirent->d_name);
-    if(qaDirN.find("qa.")!=string::npos) {
+    std::string qaDirN = std::string(dbDirent->d_name);
+    if(qaDirN.find("qa.")!=std::string::npos) {
       qaJsonList.push_back(dbDirN+"/"+qaDirN+"/qaTree.json");
       chargeJsonList.push_back(dbDirN+"/"+qaDirN+"/chargeTree.json");
     };
   };
   closedir(dbDir);
   if(verbose) {
-    cout << "qaTree files:" << endl;
-    for(string str : qaJsonList) cout << " - " << str << endl;
-    cout << "chargeTree files:" << endl;
-    for(string str : chargeJsonList) cout << " - " << str << endl;
+    std::cout << "qaTree files:" << std::endl;
+    for(std::string str : qaJsonList) std::cout << " - " << str << std::endl;
+    std::cout << "chargeTree files:" << std::endl;
+    for(std::string str : chargeJsonList) std::cout << " - " << str << std::endl;
   };
 
   // read json files and concatenate, including only runs within specified
   // range [runnumMin,runnumMax]
-  if(verbose) cout << "\n[+] read specified runs from json files" << endl;
-  qaTree = new Document(kObjectType);
-  chargeTree = new Document(kObjectType);
+  if(verbose) std::cout << "\n[+] read specified runs from json files" << std::endl;
+  qaTree = new rapidjson::Document(rapidjson::kObjectType);
+  chargeTree = new rapidjson::Document(rapidjson::kObjectType);
   this->chainTrees(qaJsonList,qaTree);
   this->chainTrees(chargeJsonList,chargeTree);
   if(verbose) {
-    cout << "full list of runs read from QADB:" << endl;
+    std::cout << "full list of runs read from QADB:" << std::endl;
     for(auto it=qaTree->MemberBegin(); it!=qaTree->MemberEnd(); ++it)
-      cout << (it->name).GetString() << endl;
-    cout << "-----\n";
+      std::cout << (it->name).GetString() << std::endl;
+    std::cout << "-----\n";
   };
 
 
   // define bits (must match those in Tools.groovy, in order)
   nbits=0;
-  defectNameMap.insert(pair<string,int>("TotalOutlier",nbits++));
-  defectNameMap.insert(pair<string,int>("TerminalOutlier",nbits++));
-  defectNameMap.insert(pair<string,int>("MarginalOutlier",nbits++));
-  defectNameMap.insert(pair<string,int>("SectorLoss",nbits++));
-  defectNameMap.insert(pair<string,int>("LowLiveTime",nbits++));
-  defectNameMap.insert(pair<string,int>("Misc",nbits++));
+  defectNameMap.insert(std::pair<std::string,int>("TotalOutlier",nbits++));
+  defectNameMap.insert(std::pair<std::string,int>("TerminalOutlier",nbits++));
+  defectNameMap.insert(std::pair<std::string,int>("MarginalOutlier",nbits++));
+  defectNameMap.insert(std::pair<std::string,int>("SectorLoss",nbits++));
+  defectNameMap.insert(std::pair<std::string,int>("LowLiveTime",nbits++));
+  defectNameMap.insert(std::pair<std::string,int>("Misc",nbits++));
 
   // 6 elements
 
@@ -243,22 +240,22 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
 // concatenate trees from JSON files in jsonList to tree at treePtr
 //````````````````````````````````````````````````````````````````````
 // - includes only runs within specified range [runnumMin,runnumMax]
-void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
+void QADB::chainTrees(std::vector<std::string> jsonList, rapidjson::Document * treePtr) {
 
   // loop through list of json files
-  for(string jsonFileN : jsonList) {
+  for(std::string jsonFileN : jsonList) {
 
     // open json file stream
-    if(verbose) cout << "read json stream " << jsonFileN << endl;
+    if(verbose) std::cout << "read json stream " << jsonFileN << std::endl;
     FILE * jsonFile = fopen(jsonFileN.c_str(),"r");
-    FileReadStream * jsonStream = new FileReadStream(
+    rapidjson::FileReadStream * jsonStream = new rapidjson::FileReadStream(
       jsonFile,readBuffer,sizeof(readBuffer)
     );
     
     // parse stream to tmpTree
-    Document * tmpTree = new Document(kObjectType);
+    rapidjson::Document * tmpTree = new rapidjson::Document(rapidjson::kObjectType);
     if(tmpTree->ParseStream(*jsonStream).HasParseError()) {
-      cerr << "ERROR: QADB could not parse " << jsonFileN << endl;
+      std::cerr << "ERROR: QADB could not parse " << jsonFileN << std::endl;
       return;
     };
 
@@ -268,8 +265,8 @@ void QADB::chainTrees(vector<string> jsonList, Document * treePtr) {
       if( ( runnumMin<0 && runnumMax<0) ||
           ( runnum>=runnumMin && runnum<=runnumMax)
       ) {
-        if(verbose) cout << "- add run " << runnum << endl;
-        Value objKey, objVal;
+        if(verbose) std::cout << "- add run " << runnum << std::endl;
+        rapidjson::Value objKey, objVal;
         objKey.CopyFrom(it->name,treePtr->GetAllocator());
         objVal.CopyFrom(it->value,treePtr->GetAllocator());
         treePtr->AddMember(objKey,objVal,treePtr->GetAllocator());
@@ -337,7 +334,7 @@ bool QADB::OkForAsymmetry(int runnum_, int evnum_) {
 void QADB::SetMaskBit(const char * defectName, bool state) {
   int defectBit = this->Bit(defectName);
   if(defectBit<0 || defectBit>=nbits)
-    cerr << "ERROR: QADB::SetMaskBit called for unknown bit" << endl;
+    std::cerr << "ERROR: QADB::SetMaskBit called for unknown bit" << std::endl;
   else {
     mask &= ~(0x1 << defectBit);
     if(state) mask |= (0x1 << defectBit);
@@ -359,15 +356,15 @@ int QADB::GetDefect(int sector) {
   if(sector==0) return defect;
   else if(sector>=1 && sector<=6) return sectorDefect[sector-1];
   else {
-    cerr << "ERROR: bad sector number for QADB::GetDefect" << endl;
+    std::cerr << "ERROR: bad sector number for QADB::GetDefect" << std::endl;
     return -1;
   };
 };
 int QADB::Bit(const char * defectName) {
   int defectBit;
-  try { defectBit = defectNameMap.at(string(defectName)); }
-  catch(const out_of_range & e) {
-    cerr << "ERROR: QADB::Bit() unknown defectName" << endl;
+  try { defectBit = defectNameMap.at(std::string(defectName)); }
+  catch(const std::out_of_range & e) {
+    std::cerr << "ERROR: QADB::Bit() unknown defectName" << std::endl;
     return -1;
   };
   return defectBit;
@@ -416,8 +413,8 @@ bool QADB::Query(int runnum_, int evnum_) {
     // print a warning if a file was not found for this event
     // - this warning is suppressed for 'tag1' events
     if(!found && runnum_!=0) {
-      cerr << "WARNING: QADB::Query could not find runnum=" <<
-        runnum_ << " evnum=" << evnum_ << endl;
+      std::cerr << "WARNING: QADB::Query could not find runnum=" <<
+        runnum_ << " evnum=" << evnum_ << std::endl;
     };
   };
 
@@ -452,9 +449,9 @@ bool QADB::QueryByFilenum(int runnum_, int filenum_) {
         auto sectorTree = fileTree["sectorDefects"].GetObject();
         for(int s=0; s<6; s++) {
           sprintf(sectorStr,"%d",s+1);
-          const Value& defList = sectorTree[sectorStr];
+          const rapidjson::Value& defList = sectorTree[sectorStr];
           sectorDefect[s] = 0;
-          for(SizeType i=0; i<defList.Size(); i++) {
+          for(rapidjson::SizeType i=0; i<defList.Size(); i++) {
             sectorDefect[s] += 0x1 << defList[i].GetInt();
           };
         };
@@ -469,8 +466,8 @@ bool QADB::QueryByFilenum(int runnum_, int filenum_) {
     // print a warning if a file was not found for this event
     // - this warning is suppressed for 'tag1' events
     if(!found && runnum!=0) {
-      cerr << "WARNING: QADB::QueryByFilenum could not find runnum=" <<
-        runnum_ << " filenum=" << filenum_ << endl;
+      std::cerr << "WARNING: QADB::QueryByFilenum could not find runnum=" <<
+        runnum_ << " filenum=" << filenum_ << std::endl;
     };
   };
 
@@ -502,11 +499,11 @@ void QADB::AccumulateCharge() {
       find(
         chargeCountedFiles.begin(),
         chargeCountedFiles.end(),
-        pair<int,int>(runnum,filenum)
+        std::pair<int,int>(runnum,filenum)
       ) == chargeCountedFiles.end()
     ) {
       chargeTotal += charge;
-      chargeCountedFiles.push_back(pair<int,int>(runnum,filenum));
+      chargeCountedFiles.push_back(std::pair<int,int>(runnum,filenum));
     };
     chargeCounted = true;
   };
