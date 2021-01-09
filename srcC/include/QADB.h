@@ -127,10 +127,10 @@ class QADB {
     std::vector<std::string> qaJsonList;
     std::vector<std::string> chargeJsonList;
 
-    rapidjson::Document * qaTree;
-    rapidjson::Document * chargeTree;
+    rapidjson::Document qaTree;
+    rapidjson::Document chargeTree;
     char readBuffer[65536];
-    void chainTrees(std::vector<std::string> jsonList, rapidjson::Document * treePtr);
+    void chainTrees(std::vector<std::string> jsonList, rapidjson::Document & outTree);
 
     char runnumStr[32];
     char filenumStr[32];
@@ -193,13 +193,13 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
   // read json files and concatenate, including only runs within specified
   // range [runnumMin,runnumMax]
   if(verbose) std::cout << "\n[+] read specified runs from json files" << std::endl;
-  qaTree = new rapidjson::Document(rapidjson::kObjectType);
-  chargeTree = new rapidjson::Document(rapidjson::kObjectType);
+  qaTree.SetObject();
+  chargeTree.SetObject();
   this->chainTrees(qaJsonList,qaTree);
   this->chainTrees(chargeJsonList,chargeTree);
   if(verbose) {
     std::cout << "full list of runs read from QADB:" << std::endl;
-    for(auto it=qaTree->MemberBegin(); it!=qaTree->MemberEnd(); ++it)
+    for(auto it=qaTree.MemberBegin(); it!=qaTree.MemberEnd(); ++it)
       std::cout << (it->name).GetString() << std::endl;
     std::cout << "-----\n";
   };
@@ -237,10 +237,10 @@ QADB::QADB(int runnumMin_, int runnumMax_, bool verbose_) {
 
 
 //....................................................................
-// concatenate trees from JSON files in jsonList to tree at treePtr
+// concatenate trees from JSON files in jsonList to tree outTree
 //````````````````````````````````````````````````````````````````````
 // - includes only runs within specified range [runnumMin,runnumMax]
-void QADB::chainTrees(std::vector<std::string> jsonList, rapidjson::Document * treePtr) {
+void QADB::chainTrees(std::vector<std::string> jsonList, rapidjson::Document & outTree) {
 
   // loop through list of json files
   for(std::string jsonFileN : jsonList) {
@@ -248,35 +248,31 @@ void QADB::chainTrees(std::vector<std::string> jsonList, rapidjson::Document * t
     // open json file stream
     if(verbose) std::cout << "read json stream " << jsonFileN << std::endl;
     FILE * jsonFile = fopen(jsonFileN.c_str(),"r");
-    rapidjson::FileReadStream * jsonStream = new rapidjson::FileReadStream(
-      jsonFile,readBuffer,sizeof(readBuffer)
-    );
+    rapidjson::FileReadStream jsonStream(jsonFile,readBuffer,sizeof(readBuffer));
     
     // parse stream to tmpTree
-    rapidjson::Document * tmpTree = new rapidjson::Document(rapidjson::kObjectType);
-    if(tmpTree->ParseStream(*jsonStream).HasParseError()) {
+    rapidjson::Document tmpTree(rapidjson::kObjectType);
+    if(tmpTree.ParseStream(jsonStream).HasParseError()) {
       std::cerr << "ERROR: QADB could not parse " << jsonFileN << std::endl;
       return;
     };
 
-    // append to tmpTree to treePtr
-    for(auto it=tmpTree->MemberBegin(); it!=tmpTree->MemberEnd(); ++it) {
+    // append to tmpTree to outTree
+    for(auto it=tmpTree.MemberBegin(); it!=tmpTree.MemberEnd(); ++it) {
       runnum = atoi((it->name).GetString());
       if( ( runnumMin<0 && runnumMax<0) ||
           ( runnum>=runnumMin && runnum<=runnumMax)
       ) {
         if(verbose) std::cout << "- add run " << runnum << std::endl;
         rapidjson::Value objKey, objVal;
-        objKey.CopyFrom(it->name,treePtr->GetAllocator());
-        objVal.CopyFrom(it->value,treePtr->GetAllocator());
-        treePtr->AddMember(objKey,objVal,treePtr->GetAllocator());
+        objKey.CopyFrom(it->name,outTree.GetAllocator());
+        objVal.CopyFrom(it->value,outTree.GetAllocator());
+        outTree.AddMember(objKey,objVal,outTree.GetAllocator());
       };
     };
 
     // close json file
     fclose(jsonFile);
-    if(jsonStream) delete jsonStream;
-    if(tmpTree) delete tmpTree;
   };
 
   // reset runnum
@@ -396,8 +392,8 @@ bool QADB::Query(int runnum_, int evnum_) {
 
     // search for file which contains this event
     sprintf(runnumStr,"%d",runnum);
-    if(qaTree->HasMember(runnumStr)) {
-      auto runTree = (*qaTree)[runnumStr].GetObject();
+    if(qaTree.HasMember(runnumStr)) {
+      auto runTree = qaTree[runnumStr].GetObject();
 
       for(auto it=runTree.MemberBegin(); it!=runTree.MemberEnd(); ++it) {
         auto fileTree = (it->value).GetObject();
@@ -437,8 +433,8 @@ bool QADB::QueryByFilenum(int runnum_, int filenum_) {
     found = false;
 
     sprintf(runnumStr,"%d",runnum);
-    if(qaTree->HasMember(runnumStr)) {
-      auto runTree = (*qaTree)[runnumStr].GetObject();
+    if(qaTree.HasMember(runnumStr)) {
+      auto runTree = qaTree[runnumStr].GetObject();
       sprintf(filenumStr,"%d",filenum);
       if(runTree.HasMember(filenumStr)) {
         auto fileTree = runTree[filenumStr].GetObject();
@@ -455,8 +451,8 @@ bool QADB::QueryByFilenum(int runnum_, int filenum_) {
             sectorDefect[s] += 0x1 << defList[i].GetInt();
           };
         };
-        chargeMin = (*chargeTree)[runnumStr][filenumStr]["fcChargeMin"].GetDouble();
-        chargeMax = (*chargeTree)[runnumStr][filenumStr]["fcChargeMax"].GetDouble();
+        chargeMin = chargeTree[runnumStr][filenumStr]["fcChargeMin"].GetDouble();
+        chargeMax = chargeTree[runnumStr][filenumStr]["fcChargeMax"].GetDouble();
         charge = chargeMax - chargeMin;
         chargeCounted = false;
         found = true;
@@ -479,7 +475,7 @@ bool QADB::QueryByFilenum(int runnum_, int filenum_) {
 int QADB::GetMaxFilenum(int runnum_) {
   int maxFilenum=0;
   sprintf(runnumStr,"%d",runnum_);
-  auto runTree = (*qaTree)[runnumStr].GetObject();
+  auto runTree = qaTree[runnumStr].GetObject();
   for(auto it=runTree.MemberBegin(); it!=runTree.MemberEnd(); ++it) {
     maxFilenum = atoi((it->name).GetString()) > maxFilenum ?
                  atoi((it->name).GetString()) : maxFilenum;
