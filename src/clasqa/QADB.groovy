@@ -335,9 +335,9 @@ class QADB {
   private double charge,chargeMin,chargeMax,chargeTotal
   private boolean chargeCounted
   private def chargeCountedFiles
-  private def defect
-  private def sectorDefect
-  private def comment
+  private int defect
+  private int sectorDefect
+  private String comment
   private boolean found
   private int nbits
   private def mask

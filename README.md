@@ -13,8 +13,16 @@
   * first set environment variables by running `source env.sh` (in bash, or in tcsh use `source env.csh`)
   * QADB JSON files are stored in `qadb/*/qaTree.json`; run `bin/makeTables.sh` to
     convert them into `.table` files, which are easier to read
-  * after making `.table` files, you can run `bin/printGoldenList.sh` to print
-    a list of all golden files
+  * after making `.table` files, you can run `bin/printGoldenFiles.sh` to print
+    a list of all golden files (that is, files with no defects)
+  * alternatively, run `bin/printGoldenRuns.sh` to print a list of golden runs
+    * 3 QA levels are assigned for runs:
+      * `gold`: all files have no defects
+      * `silver`: the only defects are terminal outliers (first or last file is
+        an outlier); note that `gold` runs are, by definition, also `silver`
+      * defect: not `gold` or `silver`; note that the requirements for a run to
+        be `gold` or `silver` are very strict, and in practice it is better to
+        apply QA cuts per file
   * for more details, see section *QA data storage, Table files*
 
 * Groovy Access
