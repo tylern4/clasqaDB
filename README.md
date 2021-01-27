@@ -10,19 +10,26 @@
 * Text Access
   * this only provides human-readable access; see below for access with
     common programming languages and software used at CLAS
-  * first set environment variables by running `source env.sh` (in bash, or in tcsh use `source env.csh`)
-  * QADB JSON files are stored in `qadb/*/qaTree.json`; run `bin/makeTables.sh` to
-    convert them into `.table` files, which are easier to read
-  * after making `.table` files, you can run `bin/printGoldenFiles.sh` to print
-    a list of all golden files (that is, files with no defects)
+    * using the Groovy or C++ access is the preferred method to apply QA cuts
+  * QADB JSON files are stored in `qadb/*/qaTree.json`; run `bin/makeTables.sh`
+    to convert them into `.table` files, which are easier to read
+    * note: first set environment variables by running `source env.sh` (in
+      bash, or in tcsh use `source env.csh`)
+  * run `bin/printGoldenFiles.sh` to print a list of all golden files (that is,
+    files with no defects)
+    * for convenience, this list is stored as `text/listOfGoldFiles.txt`
   * alternatively, run `bin/printGoldenRuns.sh` to print a list of golden runs
-    * 3 QA levels are assigned for runs:
-      * `gold`: all files have no defects
+    * for convenience, this list is stored as `text/listOfGoldRuns.txt`
+    * each run is classified as one of the following:
+      * `gold`: all files have no defects. Note that this is **very strict**,
+        so not many runs are `gold`, since most runs have at least one file
+        with a defect; in practice it is better to apply QA cuts per file,
+        using the QADB software
       * `silver`: the only defects are terminal outliers (first or last file is
-        an outlier); note that `gold` runs are, by definition, also `silver`
-      * defect: not `gold` or `silver`; note that the requirements for a run to
-        be `gold` or `silver` are very strict, and in practice it is better to
-        apply QA cuts per file
+        an outlier); note that `gold` runs are, by definition, also `silver`.
+        This is also **very strict**: so far, only about half the runs are
+        `silver`
+      * defect: not `gold` or `silver`
   * for more details, see section *QA data storage, Table files*
 
 * Groovy Access
