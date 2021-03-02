@@ -336,7 +336,7 @@ class QADB {
   private boolean chargeCounted
   private def chargeCountedFiles
   private int defect
-  private int sectorDefect
+  private def sectorDefect
   private String comment
   private boolean found
   private int nbits
