@@ -8,8 +8,9 @@
 #include <iostream>
 #include <bitset>
 
-// include QADB header
+// QADB header and namespace
 #include "QADB.h"
+using namespace QA;
 
 const int maxbit = 5; // max defect bit number
 

@@ -7,8 +7,9 @@
 #include "reader.h"
 #include "clas12reader.h"
 
-// QADB header
+// QADB header and namespace
 #include "QADB.h"
+using namespace QA;
 
 using namespace clas12; // for clas12root
 using namespace std;

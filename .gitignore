@@ -7,3 +7,6 @@ srcC/qaTree.merged.json
 *.tex
 *.sqlite
 tmp/*
+srcC/lib/*
+*.pcm
+*Dict.cxx
