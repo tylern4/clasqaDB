@@ -11,12 +11,18 @@
   * this only provides human-readable access; see below for access with
     common programming languages and software used at CLAS
     * using the Groovy or C++ access is the preferred method to apply QA cuts
-  * QADB JSON files are stored in `qadb/*/qaTree.json`; run `bin/makeTables.sh`
-    to convert them into `.table` files, which are easier to read
-    * note: first set environment variables by running `source env.sh` (in
-      bash, or in tcsh use `source env.csh`)
+  * the human-readable tables are stored in `qadb/*/qaTree.json.table`; see
+    the section *QA data storage, Table files* below for details for how
+    to read these files
+  * QADB JSON files are stored in `qadb/*/qaTree.json`
+    * the JSON files are the QADB files
+      * for now we use JSON out of convenience, although it's not a proper
+        database format; future development plans include considering more
+        efficient formats, such as SQLlite
   * run `bin/printGoldenFiles.sh` to print a list of all golden files (that is,
     files with no defects)
+    * note: first set environment variables by running `source env.sh` (in
+      bash, or in tcsh use `source env.csh`)
     * for convenience, this list is stored as `text/listOfGoldFiles.txt`
   * alternatively, run `bin/printGoldenRuns.sh` to print a list of golden runs
     * for convenience, this list is stored as `text/listOfGoldRuns.txt`
@@ -30,7 +36,6 @@
         This is also **very strict**: so far, only about half the runs are
         `silver`
       * defect: not `gold` or `silver`
-  * for more details, see section *QA data storage, Table files*
 
 * Groovy Access
   * first set environment variables by running `source env.sh`
@@ -58,7 +63,6 @@
 
 ### Table files
 Human-readable format of QA result, stored in `qadb/qa.*/qaTree.json.table`
-* these need to be generated with `bin/makeTables.sh`
 * each run begins with the keyword `RUN:`; lines below are for each of that 
   run's file and its QA result, with the following syntax:
   * `run number` `file number`  `defect bits` `comment`
@@ -73,6 +77,7 @@ Human-readable format of QA result, stored in `qadb/qa.*/qaTree.json.table`
     * `Misc`: miscellaneous defect, documented as comment
   * if a comment is included, it will be printed after the defect bits, following the
     `::` delimiter
+* these table files can be generated from the JSON files using `bin/makeTables.sh`
 
 ### JSON files
 

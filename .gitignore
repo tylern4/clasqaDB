@@ -2,7 +2,6 @@
 .sw*
 *.exe
 *.class
-*.table
 srcC/qaTree.merged.json
 .nfs*
 *.tex
