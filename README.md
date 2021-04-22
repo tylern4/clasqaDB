@@ -161,6 +161,25 @@ chargeTree.json ─┬─ run number 1
     corrections
 
 
+# QADB Management
+
+Documentation for QADB maintenance and revision
+
+## Adding to or revising the QADB
+* the QADB files are produced by [`clasqa`](https://github.com/c-dilks/clasqa);
+  if you have produced QA results for a new data set, and would like to add
+  them to the QADB, or if you would like to update results for an existing
+  dataset, follow the following procedure:
+  * `mkdir qadb/qa.${dataset}/`, then copy the final `qaTree.json` and
+    `chargeTree.json` to that directory
+  * run `bin/makeTables.sh`
+  * run `bin/printGoldenRuns.sh > text/listOfGoldRuns.txt`, then remove any
+    extraneous output in `text/listOfGoldRuns.txt`, such as the COATJAVA
+    version; repeat the same procedure for
+    `bin/printGoldenFiles.sh > text/listOfGoldFiles.txt`
+  * use `git status` and `git diff` to review changes, then add and commit to
+    git, and push to the remote branch
+
 
 # Change Log
 

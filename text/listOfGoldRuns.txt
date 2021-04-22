@@ -617,13 +617,13 @@
  5999  defect
  6000  defect
  6156  gold (and silver)
- 6157  gold (and silver)
+ 6157  defect
  6164  gold (and silver)
  6167  defect
  6168  defect
  6169  defect
  6170  defect
- 6189  gold (and silver)
+ 6189  defect
  6190  gold (and silver)
  6191  gold (and silver)
  6193  gold (and silver)
@@ -631,52 +631,52 @@
  6197  gold (and silver)
  6198  gold (and silver)
  6199  defect
- 6200  gold (and silver)
- 6201  gold (and silver)
- 6202  gold (and silver)
+ 6200  defect
+ 6201  silver
+ 6202  defect
  6204  gold (and silver)
  6206  gold (and silver)
  6208  gold (and silver)
- 6209  gold (and silver)
+ 6209  defect
  6210  gold (and silver)
- 6214  gold (and silver)
- 6215  silver
+ 6214  defect
+ 6215  defect
  6216  defect
- 6218  silver
+ 6218  defect
  6219  defect
- 6220  silver
+ 6220  defect
  6221  defect
  6222  defect
- 6223  gold (and silver)
- 6224  silver
- 6225  defect
+ 6223  defect
+ 6224  defect
+ 6225  silver
  6226  defect
  6227  defect
  6233  defect
  6235  silver
  6236  defect
  6237  defect
- 6239  gold (and silver)
+ 6239  defect
  6240  gold (and silver)
  6241  defect
  6242  gold (and silver)
  6243  gold (and silver)
  6244  defect
- 6245  gold (and silver)
- 6247  defect
+ 6245  defect
+ 6247  gold (and silver)
  6248  silver
- 6249  defect
+ 6249  gold (and silver)
  6250  defect
  6251  defect
- 6252  gold (and silver)
+ 6252  defect
  6253  gold (and silver)
  6254  defect
  6255  gold (and silver)
- 6256  gold (and silver)
+ 6256  defect
  6257  gold (and silver)
  6258  defect
- 6259  silver
- 6260  silver
+ 6259  defect
+ 6260  defect
  6262  defect
  6263  defect
  6265  defect
@@ -688,16 +688,16 @@
  6289  defect
  6296  defect
  6298  defect
- 6299  silver
+ 6299  defect
  6302  gold (and silver)
- 6303  gold (and silver)
- 6305  silver
- 6307  silver
- 6308  silver
+ 6303  defect
+ 6305  defect
+ 6307  defect
+ 6308  defect
  6310  defect
- 6311  gold (and silver)
+ 6311  defect
  6313  gold (and silver)
- 6321  silver
+ 6321  defect
  6322  defect
  6323  defect
  6326  gold (and silver)
@@ -707,19 +707,19 @@
  6330  defect
  6331  defect
  6333  defect
- 6334  silver
+ 6334  defect
  6335  defect
  6336  gold (and silver)
  6337  gold (and silver)
  6338  defect
- 6339  silver
+ 6339  defect
  6340  defect
  6341  defect
  6342  defect
  6346  defect
  6347  defect
  6348  defect
- 6349  silver
+ 6349  defect
  6350  defect
  6351  defect
  6352  defect
@@ -731,7 +731,7 @@
  6361  defect
  6362  defect
  6363  gold (and silver)
- 6366  gold (and silver)
+ 6366  defect
  6367  defect
  6368  gold (and silver)
  6369  defect
@@ -739,19 +739,19 @@
  6371  defect
  6373  defect
  6374  defect
- 6377  gold (and silver)
+ 6377  defect
  6378  defect
  6379  defect
- 6380  defect
- 6381  gold (and silver)
- 6382  silver
+ 6380  gold (and silver)
+ 6381  defect
+ 6382  defect
  6383  defect
  6384  defect
  6385  defect
  6386  defect
  6389  defect
- 6396  silver
- 6399  silver
+ 6396  defect
+ 6399  defect
  6420  defect
  6421  defect
  6422  gold (and silver)
@@ -760,12 +760,12 @@
  6429  defect
  6430  gold (and silver)
  6431  defect
- 6432  silver
- 6433  gold (and silver)
+ 6432  defect
+ 6433  defect
  6437  defect
  6442  defect
  6443  gold (and silver)
- 6444  gold (and silver)
+ 6444  silver
  6445  defect
  6446  defect
  6447  defect
@@ -773,12 +773,12 @@
  6449  defect
  6450  gold (and silver)
  6451  defect
- 6452  silver
+ 6452  defect
  6453  defect
- 6454  defect
- 6455  gold (and silver)
+ 6454  silver
+ 6455  defect
  6456  gold (and silver)
- 6457  silver
+ 6457  defect
  6458  defect
  6459  defect
  6460  defect
@@ -789,9 +789,9 @@
  6465  gold (and silver)
  6466  defect
  6467  defect
- 6468  silver
- 6470  gold (and silver)
- 6471  silver
+ 6468  defect
+ 6470  defect
+ 6471  defect
  6472  defect
  6473  gold (and silver)
  6474  defect
@@ -804,21 +804,21 @@
  6484  defect
  6485  defect
  6486  defect
- 6488  gold (and silver)
+ 6488  defect
  6489  defect
  6491  gold (and silver)
- 6492  gold (and silver)
+ 6492  defect
  6498  defect
  6499  defect
  6501  defect
  6502  defect
- 6510  silver
- 6511  silver
+ 6510  defect
+ 6511  defect
  6512  defect
  6513  gold (and silver)
- 6514  silver
+ 6514  defect
  6515  defect
- 6516  defect
+ 6516  silver
  6522  defect
  6523  defect
  6524  defect
@@ -827,37 +827,37 @@
  6547  gold (and silver)
  6548  defect
  6549  defect
- 6550  silver
+ 6550  defect
  6551  defect
  6557  defect
  6558  gold (and silver)
  6559  defect
- 6560  silver
+ 6560  defect
  6561  defect
  6562  defect
- 6563  gold (and silver)
+ 6563  defect
  6565  gold (and silver)
- 6566  gold (and silver)
- 6567  silver
- 6568  defect
+ 6566  defect
+ 6567  defect
+ 6568  silver
  6569  gold (and silver)
- 6570  silver
+ 6570  defect
  6571  gold (and silver)
  6572  gold (and silver)
  6573  defect
  6576  defect
  6577  defect
  6578  defect
- 6581  silver
+ 6581  defect
  6582  defect
  6585  gold (and silver)
- 6586  silver
+ 6586  defect
  6587  gold (and silver)
  6589  defect
  6590  defect
- 6591  gold (and silver)
+ 6591  defect
  6592  defect
- 6593  silver
+ 6593  defect
  6595  gold (and silver)
  6596  defect
  6597  defect
@@ -987,15 +987,15 @@
  6781  defect
  6783  defect
  11093  defect
- 11094  silver
+ 11094  defect
  11095  defect
  11096  defect
  11097  defect
  11098  defect
  11099  defect
- 11100  silver
+ 11100  defect
  11101  defect
- 11102  silver
+ 11102  defect
  11103  defect
  11107  defect
  11108  defect
@@ -1007,17 +1007,16 @@
  11117  defect
  11119  defect
  11120  defect
- 11121  silver
+ 11121  defect
  11122  defect
  11124  defect
  11125  defect
  11126  defect
  11127  defect
  11128  defect
- 11129  silver
- 11131  gold (and silver)
+ 11129  defect
  11132  defect
- 11143  silver
+ 11143  defect
  11156  defect
  11158  defect
  11159  defect
@@ -1034,11 +1033,11 @@
  11182  defect
  11183  defect
  11189  defect
- 11190  silver
- 11193  silver
- 11194  silver
+ 11190  defect
+ 11193  defect
+ 11194  defect
  11195  defect
- 11197  silver
+ 11197  defect
  11198  defect
  11199  defect
  11200  defect
@@ -1051,10 +1050,10 @@
  11211  defect
  11212  defect
  11213  defect
- 11214  silver
+ 11214  defect
  11215  defect
  11218  defect
- 11220  silver
+ 11220  defect
  11221  defect
  11222  defect
  11223  defect
@@ -1072,12 +1071,12 @@
  11243  defect
  11244  defect
  11247  defect
- 11248  silver
+ 11248  defect
  11250  defect
  11251  defect
- 11252  silver
- 11253  silver
- 11254  silver
+ 11252  defect
+ 11253  defect
+ 11254  defect
  11256  defect
  11257  defect
  11258  defect
@@ -1089,11 +1088,11 @@
  11272  defect
  11273  defect
  11274  defect
- 11276  gold (and silver)
- 11277  silver
+ 11276  defect
+ 11277  defect
  11279  defect
  11282  defect
- 11283  defect
+ 11283  gold (and silver)
  11286  defect
  11287  defect
  11288  defect
@@ -1105,7 +1104,7 @@
  11294  defect
  11295  defect
  11296  defect
- 11297  gold (and silver)
+ 11297  defect
  11298  defect
  11299  defect
  11300  defect
