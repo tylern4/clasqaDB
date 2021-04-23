@@ -1108,3 +1108,184 @@
  11298  defect
  11299  defect
  11300  defect
+ 11323  defect
+ 11324  defect
+ 11325  defect
+ 11326  defect
+ 11327  defect
+ 11328  defect
+ 11329  defect
+ 11330  defect
+ 11331  defect
+ 11336  defect
+ 11338  defect
+ 11339  defect
+ 11340  defect
+ 11341  defect
+ 11342  defect
+ 11345  defect
+ 11347  defect
+ 11348  defect
+ 11352  defect
+ 11354  defect
+ 11356  defect
+ 11357  defect
+ 11358  defect
+ 11361  defect
+ 11362  defect
+ 11363  defect
+ 11364  defect
+ 11365  defect
+ 11366  defect
+ 11367  silver
+ 11368  defect
+ 11370  defect
+ 11372  defect
+ 11373  defect
+ 11374  gold (and silver)
+ 11375  defect
+ 11376  defect
+ 11378  gold (and silver)
+ 11379  defect
+ 11381  defect
+ 11383  gold (and silver)
+ 11386  defect
+ 11387  defect
+ 11389  gold (and silver)
+ 11390  defect
+ 11394  defect
+ 11395  defect
+ 11396  defect
+ 11397  defect
+ 11398  defect
+ 11399  defect
+ 11400  defect
+ 11401  gold (and silver)
+ 11402  defect
+ 11403  defect
+ 11404  defect
+ 11412  defect
+ 11413  defect
+ 11414  defect
+ 11415  defect
+ 11416  defect
+ 11417  gold (and silver)
+ 11418  defect
+ 11419  silver
+ 11420  defect
+ 11421  defect
+ 11422  defect
+ 11423  defect
+ 11429  defect
+ 11430  defect
+ 11432  defect
+ 11433  defect
+ 11434  defect
+ 11435  defect
+ 11436  defect
+ 11437  defect
+ 11438  defect
+ 11439  defect
+ 11440  defect
+ 11441  defect
+ 11442  defect
+ 11443  defect
+ 11444  defect
+ 11445  defect
+ 11446  defect
+ 11447  defect
+ 11449  silver
+ 11450  defect
+ 11451  defect
+ 11458  defect
+ 11460  defect
+ 11462  defect
+ 11463  defect
+ 11465  defect
+ 11466  defect
+ 11467  defect
+ 11468  defect
+ 11469  defect
+ 11470  defect
+ 11471  defect
+ 11472  defect
+ 11473  defect
+ 11474  defect
+ 11475  defect
+ 11476  defect
+ 11477  gold (and silver)
+ 11479  defect
+ 11480  defect
+ 11481  defect
+ 11483  gold (and silver)
+ 11484  defect
+ 11485  defect
+ 11486  defect
+ 11487  defect
+ 11490  defect
+ 11491  silver
+ 11492  defect
+ 11493  defect
+ 11494  defect
+ 11495  defect
+ 11496  defect
+ 11497  defect
+ 11498  defect
+ 11499  defect
+ 11501  defect
+ 11502  defect
+ 11504  defect
+ 11505  defect
+ 11506  defect
+ 11507  defect
+ 11508  defect
+ 11509  defect
+ 11510  defect
+ 11511  defect
+ 11512  defect
+ 11513  defect
+ 11514  defect
+ 11515  gold (and silver)
+ 11516  defect
+ 11517  gold (and silver)
+ 11518  defect
+ 11519  defect
+ 11521  defect
+ 11522  defect
+ 11524  defect
+ 11525  gold (and silver)
+ 11528  defect
+ 11529  defect
+ 11530  defect
+ 11531  defect
+ 11532  gold (and silver)
+ 11533  silver
+ 11534  gold (and silver)
+ 11535  defect
+ 11536  defect
+ 11537  defect
+ 11538  defect
+ 11539  defect
+ 11540  defect
+ 11541  defect
+ 11544  defect
+ 11545  defect
+ 11546  defect
+ 11548  defect
+ 11550  defect
+ 11553  silver
+ 11554  defect
+ 11556  defect
+ 11557  defect
+ 11560  defect
+ 11561  defect
+ 11562  defect
+ 11563  gold (and silver)
+ 11564  defect
+ 11565  defect
+ 11566  defect
+ 11567  defect
+ 11568  defect
+ 11569  defect
+ 11570  defect
+ 11571  defect
