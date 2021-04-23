@@ -177,13 +177,18 @@ Documentation for QADB maintenance and revision
     extraneous output in `text/listOfGoldRuns.txt`, such as the COATJAVA
     version; repeat the same procedure for
     `bin/printGoldenFiles.sh > text/listOfGoldFiles.txt`
+  * update customized QA criteria sets, such as `OkForAsymmetry`
   * use `git status` and `git diff` to review changes, then add and commit to
     git, and push to the remote branch
 
 
 # Change Log
 
-### December 2020
+### v1.1.0 - April 2021
+* C++ `QADB` class is now in the namespace `QA`
+  * this is part of a fix for multiple definitions errors from `QADB` functions
+
+### v1.0.0 - December 2020
 * `qa.*/` directories have been moved to the subdirectory `qadb/`
   `qadb/qa.inbending1` and `qadb/qa.inbending2` have been merged and 
   renamed to `qadb/qa.rga_inbending`; furthermore, `qadb/qa.outbending`

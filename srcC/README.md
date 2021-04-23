@@ -21,6 +21,8 @@ this directory contains the C++ source code to access the QA database
     analysis are applied
 - usage notes:
   - include the `QADB.h` header, then instantiate
+    - `QADB` is in the `QA` namespace, so you will either need to add 
+      `using namespace QA` or use specifiers, such as `QA::QADB *q`
   - the `QADB` class provides several methods for accessing the QA info;
     you only need to provide it a run number and event number
   - database lookups are only performed as needed, so it is safe to
