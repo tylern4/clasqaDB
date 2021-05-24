@@ -181,6 +181,16 @@ Documentation for QADB maintenance and revision
   * use `git status` and `git diff` to review changes, then add and commit to
     git, and push to the remote branch
 
+## Adding new defect bits
+* defect bits must be added in the following places:
+  * Groovy:
+    * `src/clasqa/Tools.groovy` (copy from `clasqa` repository version)
+    * `src/clasqa/QADB.groovy`
+    * `src/examples/dumpQADB.groovy` (optional)
+  * C++:
+    * `srcC/include/QADB.h`
+    * `srcC/examples/dumpQADB.cpp` (optional)
+
 
 # Change Log
 

@@ -72,6 +72,10 @@ int main(int argc, char ** argv) {
       if(qa->HasDefect("SectorLoss"))      cout << "   - SectorLoss defect" << endl;
       if(qa->HasDefect("LowLiveTime"))     cout << "   - LowLiveTime defect" << endl;
       if(qa->HasDefect("Misc"))            cout << "   - Misc defect" << endl;
+      if(qa->HasDefect("TotalOutlierFT"))    cout << "   - TotalOutlierFT defect" << endl;
+      if(qa->HasDefect("TerminalOutlierFT")) cout << "   - TerminalOutlierFT defect" << endl;
+      if(qa->HasDefect("MarginalOutlierFT")) cout << "   - MarginalOutlierFT defect" << endl;
+      if(qa->HasDefect("LossFT"))            cout << "   - LossFT defect" << endl;
 
       // print defect bits for each sector
       sep(".",40);

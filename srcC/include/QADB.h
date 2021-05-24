@@ -206,7 +206,7 @@ namespace QA {
     };
 
 
-    // define bits (must match those in Tools.groovy, in order)
+    // define bits (order and names must match those in ../../src/clasqa/Tools.groovy)
     nbits=0;
     defectNameMap.insert(std::pair<std::string,int>("TotalOutlier",nbits++));
     defectNameMap.insert(std::pair<std::string,int>("TerminalOutlier",nbits++));
@@ -214,6 +214,10 @@ namespace QA {
     defectNameMap.insert(std::pair<std::string,int>("SectorLoss",nbits++));
     defectNameMap.insert(std::pair<std::string,int>("LowLiveTime",nbits++));
     defectNameMap.insert(std::pair<std::string,int>("Misc",nbits++));
+    defectNameMap.insert(std::pair<std::string,int>("TotalOutlierFT",nbits++));
+    defectNameMap.insert(std::pair<std::string,int>("TerminalOutlierFT",nbits++));
+    defectNameMap.insert(std::pair<std::string,int>("MarginalOutlierFT",nbits++));
+    defectNameMap.insert(std::pair<std::string,int>("LossFT",nbits++));
 
     // 6 elements
 

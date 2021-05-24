@@ -63,6 +63,10 @@ for(int filenum=0; filenum<=qa.getMaxFilenum(runnum); filenum+=5) {
     if(qa.hasDefect("SectorLoss"))      println "   - SectorLoss defect"
     if(qa.hasDefect("LowLiveTime"))     println "   - LowLiveTime defect"
     if(qa.hasDefect("Misc"))            println "   - Misc defect"
+    if(qa.hasDefect("TotalOutlierFT"))    println "   - TotalOutlierFT defect"
+    if(qa.hasDefect("TerminalOutlierFT")) println "   - TerminalOutlierFT defect"
+    if(qa.hasDefect("MarginalOutlierFT")) println "   - MarginalOutlierFT defect"
+    if(qa.hasDefect("LossFT"))            println "   - LossFT defect"
 
     // print defect bits for each sector
     sep(".",40)
