@@ -65,7 +65,7 @@ int main(int argc, char ** argv) {
       // print defect bits (OR over all sectors)
       sep("-",40);
       cout << "- defect = " << qa->GetDefect() << " = 0b" <<
-        bitset<6>(qa->GetDefect()) << endl;
+        bitset<16>(qa->GetDefect()) << endl;
       if(qa->HasDefect("TotalOutlier"))    cout << "   - TotalOutlier defect" << endl;
       if(qa->HasDefect("TerminalOutlier")) cout << "   - TerminalOutlier defect" << endl;
       if(qa->HasDefect("MarginalOutlier")) cout << "   - MarginalOutlier defect" << endl;
@@ -82,7 +82,7 @@ int main(int argc, char ** argv) {
       for(int s=1; s<=6; s++) {
         cout << "  sector " << s << " defect = " <<
           qa->GetDefect(s) << " = 0b" <<
-          bitset<6>(qa->GetDefect(s)) << endl;
+          bitset<16>(qa->GetDefect(s)) << endl;
       };
 
       // if there is a sector loss, print which sectors

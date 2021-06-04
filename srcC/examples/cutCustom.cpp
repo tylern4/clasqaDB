@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
   qa->SetMaskBit("Misc",false);
 
   // print the defect bit mask
-  cout << "\ndefect mask = 0b" << bitset<6>(qa->GetMask()) << endl;
+  cout << "\ndefect mask = 0b" << bitset<16>(qa->GetMask()) << endl;
 
 
   // define variables

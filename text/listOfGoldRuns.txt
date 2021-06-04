@@ -377,29 +377,29 @@
  5691  defect
  5692  defect
  5693  defect
- 5694  silver
+ 5694  defect
  5695  defect
  5696  gold (and silver)
  5698  gold (and silver)
- 5699  gold (and silver)
+ 5699  defect
  5700  gold (and silver)
- 5701  silver
- 5702  silver
+ 5701  defect
+ 5702  defect
  5703  defect
  5704  gold (and silver)
  5705  defect
  5706  defect
- 5707  gold (and silver)
+ 5707  defect
  5708  gold (and silver)
- 5715  silver
- 5716  silver
- 5717  silver
+ 5715  defect
+ 5716  defect
+ 5717  defect
  5718  gold (and silver)
  5720  gold (and silver)
  5722  defect
  5723  defect
  5724  gold (and silver)
- 5725  gold (and silver)
+ 5725  defect
  5726  gold (and silver)
  5727  gold (and silver)
  5728  defect
@@ -407,11 +407,11 @@
  5732  gold (and silver)
  5733  defect
  5734  gold (and silver)
- 5735  silver
+ 5735  defect
  5736  gold (and silver)
  5739  gold (and silver)
  5741  defect
- 5742  silver
+ 5742  defect
  5743  defect
  5745  defect
  5746  defect
@@ -420,35 +420,35 @@
  5751  defect
  5753  defect
  5758  defect
- 5759  gold (and silver)
+ 5759  defect
  5760  defect
  5761  defect
  5762  defect
  5763  defect
- 5765  silver
- 5766  silver
+ 5765  defect
+ 5766  defect
  5767  defect
  5768  defect
  5769  defect
  5772  defect
  5774  defect
- 5777  silver
+ 5777  defect
  5787  defect
  5788  gold (and silver)
  5789  defect
  5790  defect
  5791  gold (and silver)
  5792  defect
- 5793  silver
+ 5793  defect
  5794  gold (and silver)
  5795  defect
  5796  defect
- 5797  silver
+ 5797  defect
  5798  gold (and silver)
- 5799  silver
+ 5799  defect
  5800  gold (and silver)
  5801  defect
- 5802  silver
+ 5802  defect
  5803  gold (and silver)
  5804  gold (and silver)
  5806  defect
@@ -467,43 +467,43 @@
  5822  defect
  5823  defect
  5824  gold (and silver)
- 5825  silver
+ 5825  defect
  5826  gold (and silver)
  5827  defect
  5828  gold (and silver)
- 5829  silver
+ 5829  defect
  5830  gold (and silver)
  5832  defect
- 5835  gold (and silver)
+ 5835  defect
  5836  gold (and silver)
  5838  defect
  5839  gold (and silver)
  5841  defect
  5843  defect
  5844  defect
- 5845  silver
+ 5845  defect
  5846  defect
- 5847  silver
+ 5847  defect
  5848  gold (and silver)
  5849  gold (and silver)
  5850  defect
- 5851  silver
+ 5851  defect
  5852  defect
  5853  defect
- 5854  silver
- 5855  gold (and silver)
+ 5854  defect
+ 5855  defect
  5856  gold (and silver)
  5857  defect
  5858  defect
- 5859  silver
+ 5859  defect
  5860  defect
  5861  defect
  5862  defect
  5863  defect
- 5864  silver
+ 5864  defect
  5865  defect
- 5866  silver
- 5867  silver
+ 5866  defect
+ 5867  defect
  5868  defect
  5869  gold (and silver)
  5870  defect
