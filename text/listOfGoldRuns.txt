@@ -413,6 +413,7 @@
  5741  defect
  5742  defect
  5743  defect
+ 5744  defect
  5745  defect
  5746  defect
  5749  defect
@@ -446,7 +447,7 @@
  5797  defect
  5798  gold (and silver)
  5799  defect
- 5800  gold (and silver)
+ 5800  defect
  5801  defect
  5802  defect
  5803  gold (and silver)
@@ -463,6 +464,9 @@
  5815  gold (and silver)
  5816  defect
  5817  defect
+ 5818  defect
+ 5819  defect
+ 5820  defect
  5821  defect
  5822  defect
  5823  defect
@@ -479,6 +483,7 @@
  5838  defect
  5839  gold (and silver)
  5841  defect
+ 5842  defect
  5843  defect
  5844  defect
  5845  defect

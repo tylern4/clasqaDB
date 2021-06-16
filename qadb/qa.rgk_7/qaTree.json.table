@@ -33,45 +33,45 @@ RUN: 5676
 5676 25  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs
 
 RUN: 5677
-5677 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 5  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 10  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 15  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 20  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 25  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 30  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 35  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 40  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 45  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 50  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 55  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 60  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 65  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 70  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 75  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
-5677 80  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 5  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 10  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 15  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 20  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 25  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 30  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 35  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 40  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 45  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 50  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 55  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 60  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 65  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 70  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 75  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
+5677 80  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  ::  on Lucilla's list of bad runs; N/F is sistematically higher for the whole run. Junk
 
 RUN: 5678
-5678 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs. Junk.
+5678 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: on Lucilla's list of bad runs. Junk.
 
 RUN: 5679
-5679 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 5  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 10  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 15  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 20  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 25  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 30  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 35  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 40  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 45  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 50  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 55  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 60  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 65  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 70  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 75  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
-5679 80  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
+5679 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 5  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 10  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 15  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 20  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 25  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 30  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 35  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 40  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 45  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 50  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 55  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 60  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 65  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 70  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 75  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5679 80  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
 
 RUN: 5680
 5680 0  5-Misc[1, 2, 3, 4, 5, 6]  :: on Lucilla's list of bad runs; Junk
@@ -397,21 +397,21 @@ RUN: 5694
 5694 190  GOLDEN
 5694 195  GOLDEN
 5694 200  GOLDEN
-5694 205  9-LossFT[1]  :: FT loss
-5694 210  9-LossFT[1]  :: FT loss
-5694 215  9-LossFT[1]  :: FT loss
-5694 220  9-LossFT[1]  :: FT loss
-5694 225  9-LossFT[1]  :: FT loss
-5694 230  9-LossFT[1]  :: FT loss
-5694 235  9-LossFT[1]  :: FT loss
-5694 240  9-LossFT[1]  :: FT loss
-5694 245  9-LossFT[1]  :: FT loss
-5694 250  9-LossFT[1]  :: FT loss
-5694 255  9-LossFT[1]  :: FT loss
-5694 260  9-LossFT[1]  :: FT loss
-5694 265  9-LossFT[1]  :: FT loss
-5694 270  9-LossFT[1]  :: FT loss
-5694 275  9-LossFT[1]  :: FT loss
+5694 205  9-LossFT[1]
+5694 210  9-LossFT[1]
+5694 215  9-LossFT[1]
+5694 220  9-LossFT[1]
+5694 225  9-LossFT[1]
+5694 230  9-LossFT[1]
+5694 235  9-LossFT[1]
+5694 240  9-LossFT[1]
+5694 245  9-LossFT[1]
+5694 250  9-LossFT[1]
+5694 255  9-LossFT[1]
+5694 260  9-LossFT[1]
+5694 265  9-LossFT[1]
+5694 270  9-LossFT[1]
+5694 275  9-LossFT[1]
 
 RUN: 5695
 5695 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
@@ -2232,100 +2232,100 @@ RUN: 5705
 5705 1000  GOLDEN
 
 RUN: 5706
-5706 0  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 5  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 10  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 15  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 20  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 25  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 30  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 35  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 40  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 45  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 50  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 55  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 60  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 65  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 70  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 75  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 80  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 85  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 90  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 95  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 100  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 105  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 110  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 115  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 120  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 125  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 130  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 135  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 140  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 145  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 150  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 155  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 160  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 165  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 170  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 175  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 180  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 185  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 190  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 195  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 200  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 205  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 210  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 215  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 220  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 225  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 230  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 235  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 0  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 5  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 10  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 15  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 20  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 25  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 30  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 35  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 40  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 45  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 50  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 55  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 60  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 65  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 70  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 75  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 80  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 85  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 90  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 95  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 100  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 105  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 110  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 115  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 120  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 125  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 130  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 135  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 140  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 145  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 150  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 155  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 160  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 165  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 170  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 175  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 180  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 185  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 190  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 195  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 200  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 205  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 210  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 215  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 220  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 225  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 230  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 235  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
 5706 240  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 245  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 250  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 255  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 260  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 265  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 270  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 275  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 280  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 285  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 290  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 295  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 300  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 305  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 310  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 315  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 245  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 250  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 255  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 260  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 265  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 270  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 275  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 280  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 285  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 290  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 295  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 300  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 305  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 310  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 315  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
 5706 320  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 325  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 330  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 335  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 340  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 345  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 350  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 355  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 360  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 365  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 370  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 375  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 380  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 385  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 390  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 395  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 400  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 405  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 410  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 415  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 420  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 425  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 430  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 435  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 440  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 445  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 450  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 455  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 460  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
-5706 465  3-SectorLoss[5]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 325  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 330  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 335  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 340  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 345  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 350  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 355  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 360  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 365  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 370  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 375  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 380  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 385  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 390  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 395  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 400  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 405  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 410  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 415  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 420  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 425  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 430  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 435  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 440  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 445  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 450  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 455  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 460  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
+5706 465  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: The run was stopped due to missing of many channels in ECAL and FTOF TDCs occupancies.
 
 RUN: 5707
 5707 0  GOLDEN
@@ -3714,81 +3714,81 @@ RUN: 5722
 5722 630  GOLDEN
 5722 635  GOLDEN
 5722 640  9-LossFT[1]
-5722 645  9-LossFT[1]
-5722 650  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 655  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 660  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 665  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 670  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 675  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 680  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 685  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 690  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 695  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 700  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 705  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 710  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 715  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 720  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 725  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 730  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 735  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 740  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 745  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 750  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 755  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 760  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 765  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 770  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 775  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 780  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 785  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 790  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 795  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 800  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 805  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 810  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 815  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 820  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 825  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 830  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 835  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 840  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 845  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 850  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 855  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 860  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 865  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 870  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 875  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 880  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 885  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 890  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 895  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 900  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 905  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 910  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 915  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 920  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 925  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 930  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 935  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 940  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 945  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 950  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 955  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 960  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 965  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 970  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 975  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 980  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 985  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 990  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 995  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 1000  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 1005  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 1010  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
-5722 1015  5-Misc[2]  9-LossFT[1]  :: systematically low value of N/F
+5722 645  8-MarginalOutlierFT[1]  9-LossFT[1]
+5722 650  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 655  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 660  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 665  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 670  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 675  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 680  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 685  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 690  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 695  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 700  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 705  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 710  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 715  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 720  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 725  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 730  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 735  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 740  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 745  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 750  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 755  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 760  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 765  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 770  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 775  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 780  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 785  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 790  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 795  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 800  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 805  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 810  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 815  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 820  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 825  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 830  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 835  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 840  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 845  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 850  5-Misc[2]  6-TotalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 855  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 860  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 865  5-Misc[2]  6-TotalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 870  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 875  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 880  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 885  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 890  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 895  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 900  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 905  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 910  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 915  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 920  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 925  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 930  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 935  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 940  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 945  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 950  5-Misc[2]  6-TotalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 955  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 960  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 965  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 970  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 975  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 980  5-Misc[2]  6-TotalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 985  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 990  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 995  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 1000  5-Misc[2]  6-TotalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 1005  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 1010  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
+5722 1015  5-Misc[2]  8-MarginalOutlierFT[1]  9-LossFT[1]  :: systematically low value of N/F
 
 RUN: 5723
 5723 0  GOLDEN
@@ -4411,16 +4411,16 @@ RUN: 5725
 5725 1055  9-LossFT[1]
 5725 1060  9-LossFT[1]
 5725 1065  9-LossFT[1]
-5725 1070  9-LossFT[1]
-5725 1075  9-LossFT[1]
-5725 1080  9-LossFT[1]
-5725 1085  9-LossFT[1]
-5725 1090  9-LossFT[1]
-5725 1095  9-LossFT[1]
-5725 1100  9-LossFT[1]
-5725 1105  9-LossFT[1]
-5725 1110  9-LossFT[1]
-5725 1115  9-LossFT[1]
+5725 1070  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1075  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1080  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1085  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1090  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1095  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1100  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1105  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1110  8-MarginalOutlierFT[1]  9-LossFT[1]
+5725 1115  8-MarginalOutlierFT[1]  9-LossFT[1]
 
 RUN: 5726
 5726 0  GOLDEN
@@ -6287,7 +6287,7 @@ RUN: 5739
 5739 1040  GOLDEN
 
 RUN: 5741
-5741 0  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
+5741 0  1-TerminalOutlier[1]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: on Lucilla's list of bad runs; Junk
 
 RUN: 5742
 5742 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
@@ -6460,7 +6460,7 @@ RUN: 5743
 5743 695  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 700  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 705  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
-5743 710  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5743 710  2-MarginalOutlier[2]  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 715  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 720  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 725  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
@@ -6472,7 +6472,7 @@ RUN: 5743
 5743 755  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 760  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 765  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
-5743 770  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5743 770  2-MarginalOutlier[2]  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 775  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 780  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 785  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
@@ -6482,7 +6482,7 @@ RUN: 5743
 5743 805  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 810  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 815  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
-5743 820  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5743 820  2-MarginalOutlier[2]  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 825  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 830  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 835  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
@@ -6495,7 +6495,7 @@ RUN: 5743
 5743 870  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 875  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 880  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
-5743 885  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5743 885  2-MarginalOutlier[2]  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 890  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 895  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 900  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
@@ -6506,11 +6506,11 @@ RUN: 5743
 5743 925  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 930  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 935  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
-5743 940  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5743 940  2-MarginalOutlier[2]  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 945  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 950  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 955  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
-5743 960  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5743 960  2-MarginalOutlier[2]  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 965  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 970  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 975  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
@@ -6520,210 +6520,213 @@ RUN: 5743
 5743 995  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 5743 1000  3-SectorLoss[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 
+RUN: 5744
+5744 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
+
 RUN: 5745
-5745 0  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 5  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 10  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 15  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 20  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 25  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 30  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 35  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 40  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 45  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 50  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 55  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 60  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 65  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 70  2-MarginalOutlier[2]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 75  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 80  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 85  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 90  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 95  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 100  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 105  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 110  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 115  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 120  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 125  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 130  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 135  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 140  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 145  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 150  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 155  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 160  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 165  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 170  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 175  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 180  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 185  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 190  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 195  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 200  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 205  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 210  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 215  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 220  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 225  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 230  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 235  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 240  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 245  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 250  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 255  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 260  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 265  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 270  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 275  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 280  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 285  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 290  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 295  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 300  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 305  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 310  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 315  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 320  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 325  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 330  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 335  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 340  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 345  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 350  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 355  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 360  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 365  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 370  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 375  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 380  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 385  2-MarginalOutlier[2]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 390  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 395  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 400  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 405  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 410  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 415  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 420  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 425  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 430  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 435  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 440  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 445  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 450  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 455  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 460  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 465  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 470  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 475  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 480  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 485  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 490  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 495  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 500  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 505  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 510  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 515  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 520  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 525  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 530  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 535  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 540  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 545  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 550  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 555  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 560  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 565  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 570  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 575  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 580  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 585  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 590  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 595  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 600  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 605  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 610  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 615  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 620  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 625  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 630  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 635  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 640  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 645  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 650  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 655  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 660  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 665  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 670  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 675  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 680  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 685  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 690  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 695  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 700  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 705  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 710  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 715  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 720  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 725  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 730  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 735  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 740  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 745  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 750  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 755  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 760  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 765  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 770  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 775  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 780  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 785  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 790  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 795  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 800  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 805  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 810  0-TotalOutlier[2]  2-MarginalOutlier[1, 4, 5, 6]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 815  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 820  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 825  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 830  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 835  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 840  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 845  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 850  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 855  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 860  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 865  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 870  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 875  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 880  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 885  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 890  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 895  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 900  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 905  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 910  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 915  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 920  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 925  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 930  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 935  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 940  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 945  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 950  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 955  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 960  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 965  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 970  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 975  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 980  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 985  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 990  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 995  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 1000  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 1005  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
-5745 1010  2-MarginalOutlier[2]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for all the runs afterward
+5745 0  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 5  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 10  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 15  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 20  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 25  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 30  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 35  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 40  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 45  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 50  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 55  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 60  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 65  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 70  2-MarginalOutlier[2]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 75  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 80  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 85  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 90  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 95  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 100  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 105  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 110  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 115  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 120  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 125  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 130  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 135  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 140  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 145  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 150  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 155  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 160  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 165  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 170  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 175  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 180  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 185  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 190  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 195  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 200  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 205  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 210  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 215  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 220  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 225  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 230  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 235  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 240  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 245  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 250  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 255  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 260  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 265  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 270  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 275  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 280  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 285  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 290  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 295  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 300  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 305  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 310  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 315  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 320  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 325  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 330  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 335  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 340  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 345  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 350  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 355  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 360  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 365  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 370  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 375  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 380  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 385  2-MarginalOutlier[2]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 390  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 395  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 400  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 405  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 410  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 415  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 420  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 425  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 430  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 435  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 440  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[2]  6-TotalOutlierFT[1]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 445  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 450  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 455  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 460  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 465  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 470  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 475  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 480  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 485  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 490  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 495  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 500  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 505  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 510  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 515  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 520  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 525  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 530  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 535  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 540  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 545  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 550  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 555  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 560  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 565  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 570  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 575  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 580  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 585  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 590  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 595  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 600  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 605  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 610  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 615  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 620  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 625  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 630  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 635  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 640  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 645  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 650  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 655  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 660  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 665  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 670  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 675  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 680  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 685  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 690  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 695  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 700  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 705  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 710  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 715  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 720  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 725  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 730  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 735  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 740  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 745  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 750  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 755  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 760  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 765  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 770  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 775  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 780  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 785  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 790  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 795  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 800  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 805  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 810  0-TotalOutlier[2]  2-MarginalOutlier[1, 4, 5, 6]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 815  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 820  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 825  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 830  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 835  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 840  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 845  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 850  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 855  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 860  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 865  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 870  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 875  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 880  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 885  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 890  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 895  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 900  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 905  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 910  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 915  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 920  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 925  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 930  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 935  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 940  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 945  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 950  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 955  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 960  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 965  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 970  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 975  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 980  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 985  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 990  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 995  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 1000  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 1005  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
+5745 1010  2-MarginalOutlier[2]  5-Misc[2]  :: noticed a slight decrease in N/F that persists for several runs afterward
 
 RUN: 5746
 5746 0  5-Misc[1, 2, 3, 4, 5, 6]  :: helicity sign is wrong
@@ -6898,103 +6901,103 @@ RUN: 5746
 5746 845  5-Misc[1, 2, 3, 4, 5, 6]  :: helicity sign is wrong
 5746 850  5-Misc[1, 2, 3, 4, 5, 6]  :: helicity sign is wrong
 5746 855  5-Misc[1, 2, 3, 4, 5, 6]  :: helicity sign is wrong
-5746 860  1-TerminalOutlier[1, 2, 4, 5]  2-MarginalOutlier[3, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: helicity sign is wrong
+5746 860  1-TerminalOutlier[1, 2, 4, 5]  2-MarginalOutlier[3, 6]  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: helicity sign is wrong
 
 RUN: 5749
-5749 0  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: empty target run
-5749 5  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 10  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 15  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 20  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 25  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 30  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 35  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 40  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 45  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 50  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 55  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 60  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 65  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 70  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 75  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 80  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 85  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 90  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 95  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 100  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 105  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 110  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 115  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 120  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 125  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 130  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 135  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 140  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 145  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 150  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 155  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 160  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 165  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 170  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 175  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 180  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 185  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 190  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 195  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 200  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 205  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 210  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 215  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 220  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 225  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 230  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 235  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 240  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 245  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 250  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 255  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 260  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 265  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 270  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 275  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 280  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 285  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 290  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 295  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 300  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 305  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 310  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 315  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 320  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 325  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 330  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 335  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 340  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 345  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 350  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 355  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 360  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 365  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 370  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 375  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 380  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 385  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 390  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 395  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 400  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 405  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 410  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 415  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 420  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 425  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 430  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 435  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 440  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 445  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 450  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 455  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 460  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
-5749 465  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: empty target run
+5749 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: empty target run
+5749 5  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 10  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 15  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 20  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 25  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 30  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 35  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 40  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 45  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 50  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 55  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 60  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 65  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 70  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 75  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 80  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 85  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 90  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 95  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 100  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 105  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 110  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 115  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 120  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 125  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 130  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 135  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 140  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 145  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 150  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 155  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 160  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 165  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 170  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 175  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 180  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 185  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 190  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 195  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 200  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 205  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 210  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 215  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 220  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 225  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 230  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 235  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 240  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 245  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 250  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 255  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 260  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 265  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 270  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 275  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 280  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 285  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 290  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 295  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 300  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 305  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 310  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 315  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 320  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 325  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 330  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 335  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 340  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 345  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 350  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 355  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 360  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 365  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 370  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 375  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 380  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 385  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 390  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 395  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 400  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 405  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 410  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 415  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 420  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 425  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 430  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 435  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 440  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 445  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 450  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 455  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 460  0-TotalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: empty target run
+5749 465  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: empty target run
 
 RUN: 5750
 5750 0  5-Misc[2]  :: noticed a slight decrease in N/F for sector 2 that persists for all the run.
@@ -7920,10 +7923,10 @@ RUN: 5761
 5761 220  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
 
 RUN: 5762
-5762 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: only one file (DAQ error)
+5762 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: only one file (DAQ error)
 
 RUN: 5763
-5763 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: only one file (DAQ error)
+5763 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: only one file (DAQ error)
 
 RUN: 5765
 5765 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]
@@ -8231,7 +8234,7 @@ RUN: 5768
 5768 20  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
 5768 25  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
 5768 30  5-Misc[1, 2, 3, 4, 5, 6]  :: Low value of defined helicity fraction, 0.87521
-5768 35  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
+5768 35  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
 5768 40  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
 5768 45  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
 5768 50  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: Low value of defined helicity fraction, 0.87521
@@ -10365,8 +10368,8 @@ RUN: 5799
 5799 640  GOLDEN
 
 RUN: 5800
-5800 0  GOLDEN
-5800 5  GOLDEN
+5800 0  7-TerminalOutlierFT[1]
+5800 5  8-MarginalOutlierFT[1]
 
 RUN: 5801
 5801 0  GOLDEN
@@ -11133,9 +11136,9 @@ RUN: 5807
 5807 910  2-MarginalOutlier[1, 2, 3, 4, 5]
 
 RUN: 5808
-5808 0  5-Misc[1, 2, 3, 4, 5, 6]  :: BSA irregularity
+5808 0  1-TerminalOutlier[1, 3, 4, 5, 6]  2-MarginalOutlier[2]  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: BSA irregularity
 5808 5  5-Misc[1, 2, 3, 4, 5, 6]  :: BSA irregularity
-5808 10  5-Misc[1, 2, 3, 4, 5, 6]  :: BSA irregularity
+5808 10  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: BSA irregularity
 
 RUN: 5809
 5809 0  2-MarginalOutlier[2, 3, 4, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: on Lucilla's list of bad runs
@@ -11253,18 +11256,18 @@ RUN: 5810
 5810 200  GOLDEN
 5810 205  GOLDEN
 5810 210  GOLDEN
-5810 215  3-SectorLoss[5]  9-LossFT[1]
-5810 220  3-SectorLoss[5]  9-LossFT[1]
-5810 225  3-SectorLoss[5]  9-LossFT[1]
-5810 230  3-SectorLoss[5]  9-LossFT[1]
-5810 235  3-SectorLoss[5]  9-LossFT[1]
-5810 240  3-SectorLoss[5]  9-LossFT[1]
-5810 245  3-SectorLoss[5]  9-LossFT[1]
-5810 250  3-SectorLoss[5]  9-LossFT[1]
-5810 255  3-SectorLoss[5]  9-LossFT[1]
-5810 260  3-SectorLoss[5]  9-LossFT[1]
-5810 265  3-SectorLoss[5]  9-LossFT[1]
-5810 270  3-SectorLoss[5]  9-LossFT[1]
+5810 215  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 220  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 225  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 230  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 235  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 240  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 245  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 250  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 255  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 260  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 265  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5810 270  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]
 
 RUN: 5811
 5811 0  GOLDEN
@@ -11306,13 +11309,13 @@ RUN: 5811
 5811 180  GOLDEN
 
 RUN: 5812
-5812 0  1-TerminalOutlier[1, 2, 3, 4, 6]  3-SectorLoss[5]  9-LossFT[1]
-5812 5  3-SectorLoss[5]  9-LossFT[1]
-5812 10  3-SectorLoss[5]  9-LossFT[1]
-5812 15  3-SectorLoss[5]  9-LossFT[1]
-5812 20  3-SectorLoss[5]  9-LossFT[1]
-5812 25  3-SectorLoss[5]  9-LossFT[1]
-5812 30  3-SectorLoss[5]  9-LossFT[1]
+5812 0  1-TerminalOutlier[1, 2, 3, 4, 6]  3-SectorLoss[5]  7-TerminalOutlierFT[1]  9-LossFT[1]
+5812 5  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5812 10  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5812 15  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5812 20  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5812 25  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5812 30  3-SectorLoss[5]  7-TerminalOutlierFT[1]  9-LossFT[1]
 
 RUN: 5813
 5813 0  GOLDEN
@@ -11990,13 +11993,13 @@ RUN: 5816
 5816 580  GOLDEN
 5816 585  GOLDEN
 5816 590  GOLDEN
-5816 595  3-SectorLoss[5]  9-LossFT[1]
-5816 600  3-SectorLoss[5]  9-LossFT[1]
-5816 605  3-SectorLoss[5]  9-LossFT[1]
-5816 610  3-SectorLoss[5]  9-LossFT[1]
-5816 615  3-SectorLoss[5]  9-LossFT[1]
-5816 620  3-SectorLoss[5]  9-LossFT[1]
-5816 625  3-SectorLoss[5]  9-LossFT[1]
+5816 595  3-SectorLoss[5]  8-MarginalOutlierFT[1]  9-LossFT[1]
+5816 600  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5816 605  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5816 610  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5816 615  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5816 620  3-SectorLoss[5]  6-TotalOutlierFT[1]  9-LossFT[1]
+5816 625  3-SectorLoss[5]  7-TerminalOutlierFT[1]  9-LossFT[1]
 
 RUN: 5817
 5817 0  GOLDEN
@@ -12094,6 +12097,15 @@ RUN: 5817
 5817 460  GOLDEN
 5817 465  2-MarginalOutlier[4]
 5817 470  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
+
+RUN: 5818
+5818 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
+
+RUN: 5819
+5819 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
+
+RUN: 5820
+5820 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
 
 RUN: 5821
 5821 0  1-TerminalOutlier[1, 3, 4, 5, 6]  2-MarginalOutlier[2]  7-TerminalOutlierFT[1]
@@ -12649,7 +12661,7 @@ RUN: 5826
 5826 670  GOLDEN
 
 RUN: 5827
-5827 0  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: irregularity in the defined helicity fraction
+5827 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: irregularity in the defined helicity fraction
 5827 5  5-Misc[1, 2, 3, 4, 5, 6]  :: irregularity in the defined helicity fraction
 5827 10  5-Misc[1, 2, 3, 4, 5, 6]  :: irregularity in the defined helicity fraction
 5827 15  5-Misc[1, 2, 3, 4, 5, 6]  :: irregularity in the defined helicity fraction
@@ -12928,10 +12940,10 @@ RUN: 5832
 5832 585  GOLDEN
 5832 590  GOLDEN
 5832 595  GOLDEN
-5832 600  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: N/F value higher than the median
-5832 605  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: N/F value higher than the median
-5832 610  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: N/F value higher than the median
-5832 615  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: N/F value higher than the median
+5832 600  0-TotalOutlier[2, 4]  2-MarginalOutlier[1, 3, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: N/F value higher than the median
+5832 605  2-MarginalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: N/F value higher than the median
+5832 610  2-MarginalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  6-TotalOutlierFT[1]  :: N/F value higher than the median
+5832 615  2-MarginalOutlier[1]  5-Misc[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]  :: N/F value higher than the median
 
 RUN: 5835
 5835 0  8-MarginalOutlierFT[1]
@@ -13040,10 +13052,13 @@ RUN: 5839
 5839 45  GOLDEN
 
 RUN: 5841
-5841 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: Junk
+5841 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: Junk
+
+RUN: 5842
+5842 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
 
 RUN: 5843
-5843 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: Junk
+5843 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: Junk
 
 RUN: 5844
 5844 0  GOLDEN
@@ -14762,7 +14777,7 @@ RUN: 5850
 5850 805  9-LossFT[1]
 5850 810  9-LossFT[1]
 5850 815  9-LossFT[1]
-5850 820  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  9-LossFT[1]
+5850 820  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  9-LossFT[1]
 
 RUN: 5851
 5851 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]
@@ -15144,24 +15159,24 @@ RUN: 5852
 
 RUN: 5853
 5853 0  3-SectorLoss[1]
-5853 5  3-SectorLoss[1]  9-LossFT[1]
-5853 10  3-SectorLoss[1]  9-LossFT[1]
-5853 15  3-SectorLoss[1]  9-LossFT[1]
-5853 20  3-SectorLoss[1]  9-LossFT[1]
-5853 25  3-SectorLoss[1]  9-LossFT[1]
-5853 30  3-SectorLoss[1]  9-LossFT[1]
-5853 35  3-SectorLoss[1]  9-LossFT[1]
-5853 40  3-SectorLoss[1]  9-LossFT[1]
-5853 45  3-SectorLoss[1]  9-LossFT[1]
-5853 50  3-SectorLoss[1]  9-LossFT[1]
-5853 55  3-SectorLoss[1]  9-LossFT[1]
-5853 60  3-SectorLoss[1]  9-LossFT[1]
-5853 65  3-SectorLoss[1]  9-LossFT[1]
-5853 70  3-SectorLoss[1]  9-LossFT[1]
-5853 75  3-SectorLoss[1]  9-LossFT[1]
-5853 80  3-SectorLoss[1]  9-LossFT[1]
-5853 85  3-SectorLoss[1]  9-LossFT[1]
-5853 90  3-SectorLoss[1]  9-LossFT[1]
+5853 5  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 10  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 15  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 20  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 25  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 30  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 35  3-SectorLoss[1]  8-MarginalOutlierFT[1]  9-LossFT[1]
+5853 40  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 45  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 50  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 55  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 60  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 65  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 70  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 75  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 80  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 85  3-SectorLoss[1]  6-TotalOutlierFT[1]  9-LossFT[1]
+5853 90  3-SectorLoss[1]  7-TerminalOutlierFT[1]  9-LossFT[1]
 
 RUN: 5854
 5854 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  8-MarginalOutlierFT[1]
@@ -15643,53 +15658,53 @@ RUN: 5855
 5855 1245  GOLDEN
 5855 1250  GOLDEN
 5855 1255  GOLDEN
-5855 1260  9-LossFT[1]
-5855 1265  9-LossFT[1]
-5855 1270  9-LossFT[1]
-5855 1275  9-LossFT[1]
-5855 1280  9-LossFT[1]
-5855 1285  9-LossFT[1]
-5855 1290  9-LossFT[1]
-5855 1295  9-LossFT[1]
-5855 1300  9-LossFT[1]
-5855 1305  9-LossFT[1]
-5855 1310  9-LossFT[1]
-5855 1315  9-LossFT[1]
-5855 1320  9-LossFT[1]
-5855 1325  9-LossFT[1]
-5855 1330  9-LossFT[1]
-5855 1335  9-LossFT[1]
-5855 1340  9-LossFT[1]
-5855 1345  9-LossFT[1]
-5855 1350  9-LossFT[1]
-5855 1355  9-LossFT[1]
-5855 1360  9-LossFT[1]
-5855 1365  9-LossFT[1]
-5855 1370  9-LossFT[1]
-5855 1375  9-LossFT[1]
-5855 1380  9-LossFT[1]
-5855 1385  9-LossFT[1]
-5855 1390  9-LossFT[1]
-5855 1395  9-LossFT[1]
-5855 1400  9-LossFT[1]
-5855 1405  9-LossFT[1]
-5855 1410  9-LossFT[1]
-5855 1415  9-LossFT[1]
-5855 1420  9-LossFT[1]
-5855 1425  9-LossFT[1]
-5855 1430  9-LossFT[1]
-5855 1435  9-LossFT[1]
-5855 1440  9-LossFT[1]
-5855 1445  9-LossFT[1]
-5855 1450  9-LossFT[1]
-5855 1455  9-LossFT[1]
-5855 1460  9-LossFT[1]
-5855 1465  9-LossFT[1]
-5855 1470  9-LossFT[1]
-5855 1475  9-LossFT[1]
-5855 1480  9-LossFT[1]
-5855 1485  9-LossFT[1]
-5855 1490  9-LossFT[1]
+5855 1260  9-LossFT[1]  :: FT loss
+5855 1265  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1270  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1275  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1280  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1285  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1290  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1295  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1300  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1305  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1310  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1315  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1320  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1325  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1330  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1335  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1340  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1345  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1350  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1355  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1360  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1365  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1370  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1375  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1380  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1385  9-LossFT[1]  :: FT loss
+5855 1390  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1395  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1400  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1405  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1410  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1415  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1420  9-LossFT[1]  :: FT loss
+5855 1425  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1430  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1435  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1440  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1445  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1450  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1455  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1460  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1465  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1470  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1475  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1480  6-TotalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1485  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
+5855 1490  8-MarginalOutlierFT[1]  9-LossFT[1]  :: FT loss
 
 RUN: 5856
 5856 0  GOLDEN
@@ -16559,21 +16574,21 @@ RUN: 5859
 5859 50  GOLDEN
 
 RUN: 5860
-5860 0  5-Misc[1, 2, 3, 4, 5, 6]  :: Junk
+5860 0  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: Junk
 
 RUN: 5861
-5861 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: Junk
+5861 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: Junk
 
 RUN: 5862
-5862 0  1-TerminalOutlier[2]  5-Misc[2]  :: Junk, only 27 files
-5862 5  0-TotalOutlier[2]  5-Misc[2]  :: Junk, only 27 files
-5862 10  0-TotalOutlier[2]  5-Misc[2]  :: Junk, only 27 files
-5862 15  0-TotalOutlier[2]  5-Misc[2]  :: Junk, only 27 files
-5862 20  0-TotalOutlier[2]  5-Misc[2]  :: Junk, only 27 files
-5862 25  1-TerminalOutlier[2]  5-Misc[2]  :: Junk, only 27 files
+5862 0  1-TerminalOutlier[2]  5-Misc[2]  7-TerminalOutlierFT[1]  :: Junk, only 27 files
+5862 5  0-TotalOutlier[2]  5-Misc[2]  6-TotalOutlierFT[1]  :: Junk, only 27 files
+5862 10  0-TotalOutlier[2]  5-Misc[2]  6-TotalOutlierFT[1]  :: Junk, only 27 files
+5862 15  0-TotalOutlier[2]  5-Misc[2]  6-TotalOutlierFT[1]  :: Junk, only 27 files
+5862 20  0-TotalOutlier[2]  5-Misc[2]  6-TotalOutlierFT[1]  :: Junk, only 27 files
+5862 25  1-TerminalOutlier[2]  5-Misc[2]  8-MarginalOutlierFT[1]  :: Junk, only 27 files
 
 RUN: 5863
-5863 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  :: Junk
+5863 0  1-TerminalOutlier[1, 2, 3, 4, 5, 6]  4-LowLiveTime[1, 2, 3, 4, 5, 6]  5-Misc[1, 2, 3, 4, 5, 6]  7-TerminalOutlierFT[1]  :: Junk
 
 RUN: 5864
 5864 0  GOLDEN
