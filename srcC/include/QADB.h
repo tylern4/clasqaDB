@@ -1,6 +1,10 @@
 #ifndef QADB_H_
 #define QADB_H_
 
+#ifdef MULTI_THREADED
+  #include <mutex>
+#endif
+
 #include "rapidjson/document.h"
 #include "rapidjson/filereadstream.h"
 #include <iostream>
@@ -31,6 +35,9 @@ namespace QA {
       //```````````````````````````````
       // returns false if the event is in a file with *any* defect
       inline bool Golden(int runnum_, int evnum_) { 
+        #ifdef MULTI_THREADED
+        std::lock_guard<std::mutex> lk(mutex);
+        #endif
         bool foundHere = this->Query(runnum_,evnum_);
         return foundHere && defect==0;
       };
@@ -122,6 +129,9 @@ namespace QA {
 
 
     private:
+      #ifdef MULTI_THREADED
+      std::mutex mutex;
+      #endif
 
       int runnumMin, runnumMax;
       bool verbose = true;
@@ -491,6 +501,9 @@ namespace QA {
   // Faraday Cup charge accumulator
   //`````````````````````````````````
   void QADB::AccumulateCharge() {
+    #ifdef MULTI_THREADED
+    std::lock_guard<std::mutex> lk(mutex);
+    #endif
     if(!chargeCounted) {
       if(
         find(
